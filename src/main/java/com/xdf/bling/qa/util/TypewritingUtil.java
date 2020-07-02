@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class TypewritingUtil {
 
-    private static String adbHome="/Users/liuzhanhui/lzh/soft/android-sdk-macosx/platform-tools/adb ";
+    private static String adbHome="/Users/wangxuesong/Library/Android/sdk/platform-tools/adb ";
 
     public static void chineseSendKeys (String chinese) {
         try {

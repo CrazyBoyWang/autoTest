@@ -10,4 +10,8 @@
         <chineseName>华山</chineseName>
         <userName>黄山</userName>
     </TestBabyPage>
+
+    <testEnterSettingPage>
+        <version>2.1.5</version>
+    </testEnterSettingPage>
 </data>

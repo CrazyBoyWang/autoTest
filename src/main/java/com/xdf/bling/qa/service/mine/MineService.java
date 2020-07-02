@@ -126,6 +126,7 @@ public class MineService {
     }
 
 
+
     public void changeLocation () {
         minePage.clickLocation();
         for (int i = -0;i<5;i++) {

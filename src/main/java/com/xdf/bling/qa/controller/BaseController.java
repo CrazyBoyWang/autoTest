@@ -30,12 +30,13 @@ public class BaseController {
     protected static AndroidDriver<MobileElement> driver;
 
     @Parameters(value = {"port", "udid"})
+    //建议需要安装输入法
     @BeforeTest(description = "初始化appium服务")
     public void setUp(String port,String udid) throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("deviceName","MI 9 SE");
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("noReset", "true");
+        capabilities.setCapability("noReset", "true");//是否重头开始
         capabilities.setCapability("udid", udid);
         capabilities.setCapability("appPackage", "com.blingabc.student");
         capabilities.setCapability("appActivity", "com.blingabc.student.MainActivity");
