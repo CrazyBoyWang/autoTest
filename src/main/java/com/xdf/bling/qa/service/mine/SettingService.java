@@ -1,8 +1,7 @@
 package com.xdf.bling.qa.service.mine;
 
-import com.xdf.bling.qa.page.mine.MinePage;
+import com.xdf.bling.qa.page.home.HomePage;
 import com.xdf.bling.qa.page.mine.SettingPage;
-import io.appium.java_client.Setting;
 import org.testng.Assert;
 
 /**
@@ -27,18 +26,22 @@ public class SettingService {
      *
      * */
 
-    public void clickSetUpService(String version){
+    public void clickSetUpService(String version,String phone){
         settingPage.clickSetUp();
         Assert.assertTrue(settingPage.isPresentLogoutButton(), "进入设置页面失败");
-        settingPage.aboutUs();
-        Assert.assertTrue(settingPage.isPresentAboutUs(),"进入关于界面失败");
+        settingPage.accountSecurity();
+        Assert.assertTrue(settingPage.isShowToastAccount(phone));
+        settingPage.clickBack();
         settingPage.CleanCache();
         Assert.assertTrue(settingPage.isShowToastCleanCache(),"清理未成功");
         try {
-            Thread.sleep(2000);
+            Thread.sleep(4000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        settingPage.aboutUs();
+        Assert.assertTrue(settingPage.isPresentAboutUs(),"进入关于界面失败");
+        settingPage.clickBack();
         settingPage.CheckUpdate();
         Assert.assertTrue(settingPage.isShowToastCheckUpdate(),"版本信息获取失败");
         Assert.assertTrue(settingPage.checkVersionText(version),"版本号不一致");

@@ -32,7 +32,7 @@ public class SettingController extends BaseController {
         SettingPage settingPage = new SettingPage(driver);
 
         SettingService settingService = new SettingService(settingPage);
-        settingService.clickSetUpService(params.get("version"));
+        settingService.clickSetUpService(params.get("version"),params.get("phone"));
     }
 
 

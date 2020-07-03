@@ -29,6 +29,22 @@ public class SettingPage extends BasePage {
         MobileElement mobileElement = driver.findElementByXPath("//android.view.View[@text='退出登录']");
         return isPresent(mobileElement);
     }
+    /**
+     *
+     * 账户安全
+     *
+     *
+     * */
+    public void accountSecurity(){
+        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@text='账户安全']");
+        mobileElement.click();
+    }
+
+    public boolean isShowToastAccount(String phone){
+        MobileElement mobileElement = driver.findElementByXPath("//android.view.View[contains(@text,'绑定手机')]");
+        return phone.equals(mobileElement.getText().split("绑定手机")[1].trim());
+
+    }
 
     /**
      * 清理缓存
@@ -56,8 +72,6 @@ public class SettingPage extends BasePage {
     public boolean isPresentAboutUs(){
         MobileElement mobileElement = driver.findElementByXPath("//android.view.View[@text='关于我们']");
         return isPresent(mobileElement);
-
-
     }
 
 

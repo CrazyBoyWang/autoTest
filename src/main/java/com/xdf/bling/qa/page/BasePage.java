@@ -68,6 +68,10 @@ public class BasePage {
         }
     }
 
+    public void clickBack() {
+        MobileElement element = driver.findElementByXPath("//android.widget.Button[1]");
+        element.click();
+    }
     /**
      * 判断toast出现
      * @param toast
