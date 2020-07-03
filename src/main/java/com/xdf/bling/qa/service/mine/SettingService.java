@@ -30,6 +30,8 @@ public class SettingService {
     public void clickSetUpService(String version){
         settingPage.clickSetUp();
         Assert.assertTrue(settingPage.isPresentLogoutButton(), "进入设置页面失败");
+        settingPage.aboutUs();
+        Assert.assertTrue(settingPage.isPresentAboutUs(),"进入关于界面失败");
         settingPage.CleanCache();
         Assert.assertTrue(settingPage.isShowToastCleanCache(),"清理未成功");
         try {

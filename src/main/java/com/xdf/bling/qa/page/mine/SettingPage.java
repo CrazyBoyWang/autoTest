@@ -44,6 +44,34 @@ public class SettingPage extends BasePage {
     }
 
     /**
+     *
+     *
+     * 关于我们
+     *
+     * */
+    public void aboutUs(){
+        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@text='关于我们']");
+        mobileElement.click();
+    }
+    public boolean isPresentAboutUs(){
+        MobileElement mobileElement = driver.findElementByXPath("//android.view.View[@text='关于我们']");
+        return isPresent(mobileElement);
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
      * 检查更新
      *
      *
