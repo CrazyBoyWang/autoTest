@@ -18,6 +18,7 @@
 │       │                   │   ├── login               -->登录模块
 │       │                   │   │   └── LoginCrontroller.java   
 │       │                   │   └── mine                 -->我的模块
+                                    ├──LogisticsMsgController.java  -->我的，物流信息
 │       │                   │       ├── MineController.java     -->我的，头像信息页面
 │       │                   │       └── SettingController.java  -->我的，设置页面
 │       │                   ├── listener
@@ -29,6 +30,7 @@
 │       │                   │   ├── login
 │       │                   │   │   └── LoginPage.java  -->登录操作
 │       │                   │   └── mine
+                                    ├──LogisticsMsgPage.java  -->我的，物流信息
 │       │                   │       ├── MinePage.java   -->我的账户信息操作
 │       │                   │       └── SettingPage.java    -->我的设置操作
 │       │                   ├── service                 -->构建执行服务
@@ -37,6 +39,7 @@
 │       │                   │   ├── login
 │       │                   │   │   └── LoginService.java
 │       │                   │   └── mine
+                                    ├──LogisticsMsgService.java  -->我的，物流信息
 │       │                   │       ├── MineService.java
 │       │                   │       └── SettingService.java
 │       │                   └── util                    -->配置包相关

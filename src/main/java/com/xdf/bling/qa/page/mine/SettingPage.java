@@ -44,6 +44,7 @@ public class SettingPage extends BasePage {
         MobileElement mobileElement = driver.findElementByXPath("//android.view.View[contains(@text,'绑定手机')]");
         return phone.equals(mobileElement.getText().split("绑定手机")[1].trim());
 
+
     }
 
     /**

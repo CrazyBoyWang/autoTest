@@ -31,27 +31,24 @@ public class BaseController {
     protected static AndroidDriver<MobileElement> driver;
 
     //准备自动获取配置信息
-    public void test(){
-        try{
+    public void test() {
+        try {
             Process process = Runtime.getRuntime().exec("adb devices");
             process.destroy();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
 
-
-
-
     @Parameters(value = {"port", "udid"})
 
     //建议需要安装输入法
     @BeforeTest(description = "初始化appium服务")
-    public void setUp(String port,String udid) throws Exception {
+    public void setUp(String port, String udid) throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName","MI 9 SE");
+        capabilities.setCapability("deviceName", "MI 9 SE");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("noReset", "true");//是否重头开始
         capabilities.setCapability("udid", udid);
@@ -78,14 +75,14 @@ public class BaseController {
     }
 
     @DataProvider
-    public Object[][] providerMethod (Method method) {
+    public Object[][] providerMethod(Method method) {
         Object[][] result = null;
         Map<String, String> data = XmlParse.getData(method.getName());
-        result = new Object[][]{new Object[] {data}};
+        result = new Object[][]{new Object[]{data}};
         return result;
     }
 
-    public static AppiumDriver<MobileElement> getDriver () {
+    public static AppiumDriver<MobileElement> getDriver() {
         return driver;
     }
 
