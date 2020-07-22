@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -29,7 +30,23 @@ public class BaseController {
     AppiumDriverLocalService appiumService;
     protected static AndroidDriver<MobileElement> driver;
 
+    //准备自动获取配置信息
+    public void test(){
+        try{
+            Process process = Runtime.getRuntime().exec("adb devices");
+            process.destroy();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
+
+
+
+
+
     @Parameters(value = {"port", "udid"})
+
     //建议需要安装输入法
     @BeforeTest(description = "初始化appium服务")
     public void setUp(String port,String udid) throws Exception {

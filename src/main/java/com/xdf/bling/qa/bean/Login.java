@@ -12,6 +12,7 @@ public class Login {
 
     private String phone;
     private String password;
+    private String agreement;
 
     public String getPhone() {
         return phone;
@@ -27,5 +28,11 @@ public class Login {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getAgreement(){return agreement;}
+
+    public void setAgreement(String agreement) {
+        this.agreement = agreement;
     }
 }

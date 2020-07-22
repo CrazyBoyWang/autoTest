@@ -74,17 +74,6 @@ public class SettingPage extends BasePage {
         return isPresent(mobileElement);
     }
 
-
-
-
-
-
-
-
-
-
-
-
     /**
      * 检查更新
      *

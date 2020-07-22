@@ -3,6 +3,7 @@
     <testLogin>
         <phone>17621763856</phone>
         <password>123456a</password>
+        <agreement>隐私政策以及用户协议</agreement>
     </testLogin>
 
     <TestBabyPage>

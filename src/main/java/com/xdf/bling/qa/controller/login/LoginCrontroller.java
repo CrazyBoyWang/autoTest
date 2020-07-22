@@ -27,6 +27,7 @@ public class LoginCrontroller extends BaseController {
         Login login = new Login();
         login.setPhone(param.get("phone"));
         login.setPassword(param.get("password"));
+        login.setAgreement(param.get("agreement"));
         loginService.login(login);
         loginService.assertLoginSuccess();
     }

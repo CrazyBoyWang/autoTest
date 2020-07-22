@@ -1,7 +1,6 @@
 package com.xdf.bling.qa.page.login;
 
 import com.xdf.bling.qa.page.BasePage;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
@@ -10,14 +9,38 @@ import io.appium.java_client.android.AndroidDriver;
  * @ProjectName: autoTest
  * @ClassName: LoginPage
  * @Description: TODO(一句话描述该类的功能)
- * @Author: liuzhanhui
- * @Date: 2020/6/15 6:51 下午
+ * @Author: wangxuesong
+ * @Date: 2020/7/02 6:51 下午
  */
 public class LoginPage extends BasePage {
 
     public LoginPage (AndroidDriver<MobileElement> driver) {
         super(driver);
     }
+
+
+    /**
+     *
+     * 判断协议配置存在
+     * @return
+     */
+    public boolean isAgreement(String agreement){
+            MobileElement mobileElement = driver.findElementByXPath("android.view.View[@text='隐私政策以及用户协议']");
+            return agreement.equals(mobileElement.getText());
+        }
+
+
+    /**
+     *
+     *登录隐私政策以及用户协议
+     *
+     *
+     */
+    public void clickAgreement(){
+        MobileElement element =  driver.findElementByXPath("//android.view.View[@text='同意并继续']");
+        element.click();
+    }
+
 
     /**
      * 点击密码去登录tab

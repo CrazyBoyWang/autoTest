@@ -3,6 +3,7 @@ package com.xdf.bling.qa.service.login;
 import com.xdf.bling.qa.bean.Login;
 import com.xdf.bling.qa.page.login.LoginPage;
 import org.testng.Assert;
+import sun.tools.jconsole.JConsole;
 
 /**
  * @version v1.0
@@ -16,25 +17,28 @@ public class LoginService {
 
     private final LoginPage loginPage;
 
-    public LoginService (LoginPage loginPage) {
+    public LoginService(LoginPage loginPage) {
         this.loginPage = loginPage;
     }
 
     /**
      * 登录操作
+     *
      * @param login
      */
-    public void login (Login login) {
-        loginPage.clickPasswordToLoginTab();
-        loginPage.setLoginMobileNumber(login.getPhone());
-        loginPage.setLoginPassword(login.getPassword());
-        loginPage.clickLoginButton();
+    public void login(Login login) {
+            loginPage.clickPasswordToLoginTab();
+            loginPage.setLoginMobileNumber(login.getPhone());
+            loginPage.setLoginPassword(login.getPassword());
+            loginPage.clickLoginButton();
+
     }
+
 
     /**
      * 断言登录成功
      */
-    public void assertLoginSuccess () {
+    public void assertLoginSuccess() {
         Assert.assertTrue(loginPage.homePageTabIsExist(), "期望登录成功后首页tab出现");
     }
 }
