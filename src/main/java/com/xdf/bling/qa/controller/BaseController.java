@@ -11,6 +11,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
+import com.xdf.bling.qa.common.*;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -22,36 +23,25 @@ import java.util.concurrent.TimeUnit;
  * @ProjectName: autoTest
  * @ClassName: BaseController
  * @Description: TODO(一句话描述该类的功能)
- * @Author: liuzhanhui
- * @Date: 2020/6/15 7:19 下午
+ * @Author: 王雪松
+ * @Date: 2020/7/15 7:19 下午
  */
 public class BaseController {
 
     AppiumDriverLocalService appiumService;
     protected static AndroidDriver<MobileElement> driver;
 
-    //准备自动获取配置信息
-    public void test() {
-        try {
-            Process process = Runtime.getRuntime().exec("adb devices");
-            process.destroy();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-
-    @Parameters(value = {"port", "udid"})
-
+    @Parameters(value = {"port"})
     //建议需要安装输入法
     @BeforeTest(description = "初始化appium服务")
-    public void setUp(String port, String udid) throws Exception {
+    public void setUp(String port) throws Exception {
+        //获取设备ID
+        get_devices_info test = new get_devices_info();
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("deviceName", "MI 9 SE");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("noReset", "true");//是否重头开始
-        capabilities.setCapability("udid", udid);
+        capabilities.setCapability("udid", test.get_all_devices());
         capabilities.setCapability("appPackage", "com.blingabc.student");
         capabilities.setCapability("appActivity", "com.blingabc.student.MainActivity");
         capabilities.setCapability("automationName", "uiautomator2");
@@ -62,7 +52,6 @@ public class BaseController {
         driver = new AndroidDriver<MobileElement>(appiumService, capabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
-
 
     @AfterTest(alwaysRun = true, description = "关闭appium服务")
     public void tearDown() throws Exception {
