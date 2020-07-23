@@ -12,6 +12,8 @@
 │       │                   ├── MainTest.java   -->主函数
 │       │                   ├── bean    -->工具类
 │       │                   │   └── Login.java  -->登录配置
+                            ├── common    -->配置adb命令给
+                                └── get_all_devices.java      -->获取devicesID                          
 │       │                   ├── controller  -->控制器
 │       │                   │   ├── BaseController.java --> 初始化appium
 │       │                   │   ├── ConsumerTest.java   --> 账户信息配置
