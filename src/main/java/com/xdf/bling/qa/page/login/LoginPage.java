@@ -24,10 +24,10 @@ public class LoginPage extends BasePage {
      * 判断协议配置存在
      * @return
      */
-    public boolean isAgreement(String agreement){
-            MobileElement mobileElement = driver.findElementByXPath("android.view.View[@text='隐私政策以及用户协议']");
-            return agreement.equals(mobileElement.getText());
-        }
+//    public boolean isAgreement(String agreement){
+//            MobileElement mobileElement = driver.findElementByXPath("android.view.View[@text='隐私政策以及用户协议']");
+//            return agreement.equals(mobileElement.getText());
+//        }
 
 
     /**
@@ -36,10 +36,10 @@ public class LoginPage extends BasePage {
      *
      *
      */
-    public void clickAgreement(){
-        MobileElement element =  driver.findElementByXPath("//android.view.View[@text='同意并继续']");
-        element.click();
-    }
+//    public void clickAgreement(){
+//        MobileElement element =  driver.findElementByXPath("//android.view.View[@text='同意并继续']");
+//        element.click();
+//    }
 
 
     /**
@@ -81,6 +81,7 @@ public class LoginPage extends BasePage {
     public boolean homePageTabIsExist () {
         MobileElement homePageElement = driver.findElementByXPath("//android.widget.ImageView[@text='首页\n" +
                 "第 1 个标签，共 3 个']");
+
         return isPresent(homePageElement);
     }
 }

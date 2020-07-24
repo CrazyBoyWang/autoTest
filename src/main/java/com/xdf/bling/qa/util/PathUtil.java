@@ -33,6 +33,6 @@ public class PathUtil {
 
     public static void main(String[] args) throws IOException {
         String path = returnFilePath("testng/mine/mine.xml");
-        System.out.println(path);
+        System.out.println("***********************************************" + path);
     }
 }

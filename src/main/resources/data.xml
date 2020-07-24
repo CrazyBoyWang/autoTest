@@ -16,4 +16,10 @@
         <phone>17621763856</phone>
         <version>2.1.5</version>
     </testEnterSettingPage>
+
+    <testAlertByPage>
+        <SwitchingCourses>在这里切换「课程类型」和「等级」</SwitchingCourses>
+
+    </testAlertByPage>
+
 </data>
