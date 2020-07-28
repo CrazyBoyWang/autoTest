@@ -20,29 +20,6 @@ public class LoginPage extends BasePage {
 
 
     /**
-     *
-     * 判断协议配置存在
-     * @return
-     */
-//    public boolean isAgreement(String agreement){
-//            MobileElement mobileElement = driver.findElementByXPath("android.view.View[@text='隐私政策以及用户协议']");
-//            return agreement.equals(mobileElement.getText());
-//        }
-
-
-    /**
-     *
-     *登录隐私政策以及用户协议
-     *
-     *
-     */
-//    public void clickAgreement(){
-//        MobileElement element =  driver.findElementByXPath("//android.view.View[@text='同意并继续']");
-//        element.click();
-//    }
-
-
-    /**
      * 点击密码去登录tab
      */
     public void clickPasswordToLoginTab () {

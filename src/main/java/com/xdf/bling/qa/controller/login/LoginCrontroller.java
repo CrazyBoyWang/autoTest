@@ -2,6 +2,7 @@ package com.xdf.bling.qa.controller.login;
 
 import com.xdf.bling.qa.bean.Login;
 import com.xdf.bling.qa.controller.BaseController;
+import com.xdf.bling.qa.listener.AlertPageListener;
 import com.xdf.bling.qa.page.login.LoginPage;
 import com.xdf.bling.qa.service.login.LoginService;
 import io.qameta.allure.Feature;
@@ -20,14 +21,13 @@ import java.util.Map;
 @Feature("登录场景")
 public class LoginCrontroller extends BaseController {
 
-    @Test(description = "测试手机号和密码登录", dataProvider = "providerMethod")
+    @Test(retryAnalyzer = AlertPageListener.class, description = "测试手机号和密码登录", dataProvider = "providerMethod")
     public void testLogin (Map<String, String> param) {
-        LoginPage loginPage = new LoginPage(super.driver);
+        LoginPage loginPage = new LoginPage(driver);
         LoginService loginService = new LoginService(loginPage);
         Login login = new Login();
         login.setPhone(param.get("phone"));
         login.setPassword(param.get("password"));
-    //  login.setAgreement(param.get("agreement"));
         loginService.login(login);
         loginService.assertLoginSuccess();
     }

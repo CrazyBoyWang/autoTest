@@ -2,6 +2,7 @@
 <suite name="Suite" parallel="tests" thread-count="5" >
         <listeners>
             <listener class-name="com.xdf.bling.qa.listener.TestngListener"></listener>
+            <listener class-name="com.xdf.bling.qa.listener.AlertPageListener"></listener>
         </listeners>
         <test name="emulator-5554" >
             <parameter name="port" value="4567"></parameter>

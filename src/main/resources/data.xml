@@ -3,7 +3,6 @@
     <testLogin>
         <phone>17621763856</phone>
         <password>123456a</password>
-        <agreement>隐私政策以及用户协议</agreement>
     </testLogin>
 
     <TestBabyPage>
@@ -18,7 +17,12 @@
     </testEnterSettingPage>
 
     <testAlertByPage>
-        <SwitchingCourses>在这里切换「课程类型」和「等级」</SwitchingCourses>
+        <switchingCourses>在这里切换「课程类型」和「等级」</switchingCourses>
+        <photoRights>要允许 比邻外教 访问以下权限吗？</photoRights>
+        <agreement>隐私政策以及用户协议</agreement>
+        <homePageTipsLr>都在[学习中心]哦</homePageTipsLr>
+        <timetableCourse>哪天有课程？来[课表]查看~</timetableCourse>
+        <challengeProgress>你的进度</challengeProgress>
 
     </testAlertByPage>
 

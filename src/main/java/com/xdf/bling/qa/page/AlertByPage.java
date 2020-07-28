@@ -33,5 +33,109 @@ public class AlertByPage {
     }
 
 
+    /**
+     *
+     * app系统权限申请
+     *
+     */
+    public void clickPhotoRights(){
+        MobileElement element = driver.findElementByXPath("//com.lbe.security.miui[@text='允许']");
+        element.click();
+    }
+
+    //判断循环3个
+    public boolean isPhotoRights(String photoRights){
+        MobileElement element = driver.findElementByXPath("//com.lbe.security.miui[@text='要允许 比邻外教 访问以下权限吗？']");
+        String text = element.getText();
+        return photoRights.equals(text);
+    }
+
+    /**
+     *
+     * 判断协议配置存在
+     * @return
+     */
+    public boolean isAgreement(String agreement){
+            MobileElement element = driver.findElementByXPath("android.view.View[@text='隐私政策以及用户协议']");
+            String text = element.getText();
+            return agreement.equals(text);
+        }
+
+
+    /**
+     *
+     *登录隐私政策以及用户协议
+     *
+     *
+     */
+    public void clickAgreement(){
+        MobileElement element =  driver.findElementByXPath("//android.view.View[@text='同意并继续']");
+        element.click();
+    }
+
+    /**
+     *
+     *
+     *首页首次登录操作教程--学习中心
+     *
+     */
+
+    public void clickHomePageTipsLr(){
+        MobileElement element = driver.findElementByXPath("//com.blingabc.student[@text='预习，复习，监课，回放，\n" +
+                "都在[学习中心]哦']");
+        element.click();
+    }
+
+    public boolean isHomePageTipsLr(String homePageTipsLr){
+        MobileElement element = driver.findElementByXPath("//com.blingabc.student[@text='预习，复习，监课，回放，\n" +
+                "都在[学习中心]哦']");
+        String text = element.getText().split("，")[4].trim();
+        return homePageTipsLr.equals(text);
+
+    }
+
+
+    //首页课表操作教程
+
+    public void clickTimetableCourse(){
+        MobileElement element = driver.findElementByXPath("//com.blingabc.student[@text='哪天有课程？来[课表]查看~']");
+        element.click();
+    }
+
+    public boolean isTimetableCourse(String timetableCourse){
+        MobileElement element = driver.findElementByXPath("//com.blingabc.student[@text='哪天有课程？来[课表]查看~']");
+        String text = element.getText();
+        return timetableCourse.equals(text);
+    }
+
+
+    /**
+     *
+     *
+     *XXX挑战了你的进度弹窗
+     *
+     *
+     */
+    public void clickChallengeProgress(){
+        MobileElement element = driver.findElementByXPath("//com.blingabc.student[contains(@text,'挑战了你的进度')]");
+        element.click();
+    }
+
+    public boolean isChallengeProgress(String challengeProgress){
+        MobileElement element = driver.findElementByXPath("//com.blingabc.student[contains(@text,'挑战了你的进度')]");
+        String text = element.getText().split("了")[1].trim();
+        return  challengeProgress.equals(text);
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 }
