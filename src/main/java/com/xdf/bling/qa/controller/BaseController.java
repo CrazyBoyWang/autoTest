@@ -1,5 +1,6 @@
 package com.xdf.bling.qa.controller;
 
+import com.xdf.bling.qa.common.get_devices_info;
 import com.xdf.bling.qa.util.XmlParse;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -11,9 +12,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
-import com.xdf.bling.qa.common.*;
 
-import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -35,6 +34,7 @@ public class BaseController {
     //建议需要安装输入法
     @BeforeTest(description = "初始化appium服务")
     public void setUp(String port) throws Exception {
+
         //获取设备ID
         get_devices_info test = new get_devices_info();
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -45,12 +45,27 @@ public class BaseController {
         capabilities.setCapability("appPackage", "com.blingabc.student");
         capabilities.setCapability("appActivity", "com.blingabc.student.MainActivity");
         capabilities.setCapability("automationName", "uiautomator2");
-        capabilities.setCapability("unicodeKeyboard", "true");
-        capabilities.setCapability("resetKeyboard", "true");
+        capabilities.setCapability("unicodeKeyboard", "true");//使用unicode编码方式发送字符串
+        capabilities.setCapability("resetKeyboard", "true");//键盘隐藏起来
         appiumService = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingPort(Integer.parseInt(port)));
         appiumService.start();
         driver = new AndroidDriver<MobileElement>(appiumService, capabilities);
+        AlertByPageController alertByPageController = new AlertByPageController();
+        //隐式等待
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+        //流畅等待
+
+//        FluentWait<MobileDriver> fluentWait = new FluentWait<MobileDriver>(driver)
+//                .withTimeout(2, TimeUnit.SECONDS)
+//                .pollingEvery(1,TimeUnit.SECONDS)
+//                .ignoring(NoSuchElementException.class);
+   //     fluentWait.until(ExpectedConditions.visibilityOf(driver.findElementByXPath("//android.view.View[@text='密码登录']"))).click();
+
+
+
+
+
     }
 
     @AfterTest(alwaysRun = true, description = "关闭appium服务")

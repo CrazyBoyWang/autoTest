@@ -17,14 +17,11 @@ public class AlertByPageController extends BaseController {
         AlertByPageService alertByPageService = new AlertByPageService(alertByPage);
         Altert alert = new Altert();
         //增加所有判断参数
-
         alertByPageService.alertByPageService(
-                param.get("timetableCourse"),
                 param.get("switchingCourses"),
                 param.get("photoRights"),
-                param.get("agreement"),
-                param.get("homePageTipsLr"),
-                param.get("challengeProgress")
+                param.get("challengeProgress"),
+                param.get("babyTest")
         );
 
     }

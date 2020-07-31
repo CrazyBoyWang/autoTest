@@ -21,9 +21,14 @@ public class TestngListener extends TestListenerAdapter {
     @Override
     public void onTestFailure(ITestResult tr) {
         super.onTestFailure(tr);
-        takePhoto(BaseController.getDriver());
+//        AlertPageListener alertPageListener = (AlertPageListener) tr.getMethod();
+//        alertPageListener.reset();
+
+        takePhoto(BaseController.getDriver());;
     }
 
+
+    //截图数据有问题
     @Attachment(value = "失败截图如下：",type = "image/png")
     public byte[]  takePhoto(AppiumDriver driver){
         byte[] screenshotAs = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);

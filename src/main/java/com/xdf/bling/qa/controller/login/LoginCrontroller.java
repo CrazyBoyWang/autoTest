@@ -22,6 +22,7 @@ import java.util.Map;
 public class LoginCrontroller extends BaseController {
 
     @Test(retryAnalyzer = AlertPageListener.class, description = "测试手机号和密码登录", dataProvider = "providerMethod")
+    //@Test(retryAnalyzer = AlertPageListener.class)
     public void testLogin (Map<String, String> param) {
         LoginPage loginPage = new LoginPage(driver);
         LoginService loginService = new LoginService(loginPage);

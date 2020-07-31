@@ -18,23 +18,25 @@ public class AlertByPageService {
         this.alertByPage = alertByPage;
     }
 
-    public void alertByPageService(String timetableCourse,String switchingCourses,String photoRights,String agreement,String homePageTipsLr,String challengeProgress){
+    public void alertByPageService(String switchingCourses, String photoRights, String challengeProgress, String babyTest) {
 
-        if (alertByPage.isTimetableCourse(timetableCourse)){
-            alertByPage.clickTimetableCourse();
-        }else if (alertByPage.isChallengeProgress(challengeProgress)){
-            alertByPage.clickChallengeProgress();
-        }else if ( alertByPage.isHomePageTipsLr(homePageTipsLr)){
-            alertByPage.clickHomePageTipsLr();
-        }else if (alertByPage.isAgreement(agreement)){
+        if (alertByPage.isAgreement()) {
             alertByPage.clickAgreement();
-        }else if (alertByPage.isPhotoRights(photoRights)){
+        } else if (alertByPage.isTimetableCourse()) {
+            alertByPage.clickTimetableCourse();
+        } else if (alertByPage.isChallengeProgress(challengeProgress)) {
+            alertByPage.clickChallengeProgress();
+        } else if (alertByPage.isHomePageTipsLr()) {
+            alertByPage.clickHomePageTipsLr();
+        } else if (alertByPage.isPhotoRights(photoRights)) {
             alertByPage.clickPhotoRights();
-        }else if ( alertByPage.isSwitchingCourses(switchingCourses)){
+        } else if (alertByPage.isSwitchingCourses(switchingCourses)) {
             alertByPage.clickSwitchingCourses();
+        } else if (alertByPage.isBabyGenome()) {
+            alertByPage.clickBabyGenome();
+        } else if (alertByPage.isBabyInformation()) {
+            alertByPage.clickBabyInformation(babyTest);
+            alertByPage.enterBabyInformation();
         }
-
     }
-
-
 }

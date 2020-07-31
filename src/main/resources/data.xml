@@ -7,8 +7,8 @@
 
     <TestBabyPage>
         <englishName>gank</englishName>
-        <chineseName>华山</chineseName>
-        <userName>黄山</userName>
+        <chineseName>熊大</chineseName>
+        <userName>远航</userName>
     </TestBabyPage>
 
     <testEnterSettingPage>
@@ -23,7 +23,7 @@
         <homePageTipsLr>都在[学习中心]哦</homePageTipsLr>
         <timetableCourse>哪天有课程？来[课表]查看~</timetableCourse>
         <challengeProgress>你的进度</challengeProgress>
-
+        <babyTest>babytest</babyTest>
     </testAlertByPage>
 
 </data>

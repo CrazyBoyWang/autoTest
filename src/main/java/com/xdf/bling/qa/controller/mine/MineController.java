@@ -6,7 +6,6 @@ import com.xdf.bling.qa.page.mine.MinePage;
 import com.xdf.bling.qa.service.home.HomeService;
 import com.xdf.bling.qa.service.mine.MineService;
 import org.testng.annotations.Test;
-import io.appium.java_client.AppiumDriver;
 
 import java.util.Map;
 
@@ -39,7 +38,7 @@ public class MineController extends BaseController {
         mineService.verityEnterMineInfoPage();
         mineService.verifyChangeAvatar();
         mineService.changeBabyEnglishNameService(param.get("englishName"));
-        mineService.changeBabyChineseNameService(param.get("chineseName"));
+//        mineService.changeBabyChineseNameService(param.get("chineseName"));
         mineService.changeBabyGenderService();
         mineService.changeUserName(param.get("userName"));
         mineService.changeLocation();

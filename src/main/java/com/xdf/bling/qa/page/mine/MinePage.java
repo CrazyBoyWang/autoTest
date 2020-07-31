@@ -4,8 +4,6 @@ import com.xdf.bling.qa.page.BasePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-import java.util.List;
-
 /**
  * @version v1.0
  * @ProjectName: autoTest
@@ -137,7 +135,8 @@ public class MinePage extends BasePage {
      * 点击输入框保存按钮
      */
     public void clickBabyPageTextInputSaveButton () {
-        MobileElement babyPageTextEditorSaveButton = driver.findElementByXPath("//android.widget.Button[@text='保存']");
+    //    MobileElement babyPageTextEditorSaveButton = driver.findElementByXPath("//android.widget.Button[@text='保存']");
+        MobileElement babyPageTextEditorSaveButton = driver.findElementByXPath("//android.widget.Button/following-sibling::android.view.View[2]");
         babyPageTextEditorSaveButton.click();
     }
 
@@ -208,6 +207,14 @@ public class MinePage extends BasePage {
     /**
      * 点击我的信息tab
      */
+
+
+    public void clickBabyInfoTab () {
+       driver.findElementByXPath("//android.widget.Button[1]/following-sibling::android.view.View[2]").click();
+
+    }
+
+
     public void clickMineInfoTab () {
         driver.findElementByXPath("//android.widget.Button[1]/following-sibling::android.view.View[3]").click();
     }

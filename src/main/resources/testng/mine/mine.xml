@@ -11,7 +11,7 @@
         <listeners>
             <listener class-name="com.xdf.bling.qa.listener.TestngListener"></listener>
         </listeners>
-        <test name="192.168.6.116:8888" >
+        <test name="账户信息" >
             <parameter name="port" value="4568"></parameter>
     <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
     <!--        <parameter name="udid" value="c7626d73"></parameter>-->
