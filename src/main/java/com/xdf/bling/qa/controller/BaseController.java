@@ -71,7 +71,7 @@ public class BaseController {
     @AfterTest(alwaysRun = true, description = "关闭appium服务")
     public void tearDown() throws Exception {
         if (driver != null) {
-            driver.quit();
+       //     driver.quit();
         }
         if (appiumService != null) {
             appiumService.stop();

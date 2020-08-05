@@ -81,7 +81,7 @@ public class SettingPage extends BasePage {
      *
      * */
     public void CheckUpdate(){
-        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@text='关于我们']/following-sibling::android.widget.ImageView[1]");
+        MobileElement mobileElement = driver.findElementByXPath("//android.w idget.ImageView[@text='关于我们']/following-sibling::android.widget.ImageView[1]");
         mobileElement.click();
     }
     //判断版本号是否一致

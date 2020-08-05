@@ -33,7 +33,7 @@
 │       │                   │   │   └── LoginPage.java  -->登录操作
 │       │                   │   └── mine
                                     ├──LogisticsMsgPage.java  -->我的，物流信息
-│       │                   │       ├── MinePage.java   -->我的账户信息操作
+│       │                   │       ├── MinePage.java   -->我的设置操作
 │       │                   │       └── SettingPage.java    -->我的设置操作
 │       │                   ├── service                 -->构建执行服务
 │       │                   │   ├── home
