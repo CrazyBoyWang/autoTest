@@ -1,10 +1,8 @@
 package com.xdf.bling.qa.page.home;
 
 import com.xdf.bling.qa.page.BasePage;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.WebElement;
 
 /**
  * @version v1.0
@@ -20,22 +18,6 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    /**
-     * 点击首页tab
-     */
-    public void clickHomePageTab () {
-        MobileElement homePageElement = driver.findElementByXPath("//android.widget.ImageView[@text='首页\n" +
-                "第 1 个标签，共 3 个']");
-    }
-
-    /**
-     * 点击消息tab
-     */
-    public void clickMessageTab () {
-        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@text='消息\n" +
-                "第 2 个标签，共 3 个']");
-        mobileElement.click();
-    }
 
     /**
      * 点击我的tab

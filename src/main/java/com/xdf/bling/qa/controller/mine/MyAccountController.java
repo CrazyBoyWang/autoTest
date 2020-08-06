@@ -6,8 +6,6 @@ import com.xdf.bling.qa.page.mine.MyAccountPage;
 import com.xdf.bling.qa.service.mine.MyAccountService;
 import org.testng.annotations.Test;
 
-import java.util.Map;
-
 /**
  * @version v1.0
  * @ProjectName: autoTest
@@ -21,13 +19,13 @@ import java.util.Map;
 
 public class MyAccountController extends BaseController {
 
-    @Test(description = "测试我的账户-设置-我的课程",dataProvider = "providerMethod",priority = 1)
-    public void testMyAccountController (Map<String,String> params) {
+    @Test(description = "测试我的账户-设置-我的课程",priority = 1)
+    public void testMyAccountController () {
         //进入我的页面
         MyAccountPage myAccountPage = new MyAccountPage(driver);
         MyAccountService myAccountService = new MyAccountService(myAccountPage);
         //执行设置
-        myAccountService.myAccountPage();
+        myAccountService.myAccountService();
 
 
     }

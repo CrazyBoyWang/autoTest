@@ -15,13 +15,13 @@ import org.testng.Assert;
 
 public class MyAccountService {
     private final MyAccountPage myAccountPage;
-
     public MyAccountService(MyAccountPage myAccountPage) {
         this.myAccountPage = myAccountPage;
     }
 
+
     //设定执行流程
-    public void myAccountPage() {
+    public void myAccountService() {
         myAccountPage.clickMineTab();
 
         try {
@@ -31,6 +31,14 @@ public class MyAccountService {
         }
         myAccountPage.clickMyCourse();
         Assert.assertTrue(myAccountPage.isMyCourse(), "进入我的课程失败");
+        myAccountPage.clickClassStarted();
+        myAccountPage.clickClasses();
+        Assert.assertTrue(myAccountPage.isCourseDetails(),"进入课程详情失败");
+        myAccountPage.clickBack();
+        myAccountPage.clickClassNoStarted();
+        myAccountPage.clickClasses();
+
+    //    myAccountPage.clickCourseDetails();
 
 
 //        myAccountPage.clickMineTab();

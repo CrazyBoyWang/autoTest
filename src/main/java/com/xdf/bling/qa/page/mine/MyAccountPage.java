@@ -22,16 +22,6 @@ public class MyAccountPage extends BasePage {
         super(driver);
     }
 
-
-    /**
-     * 点击我的tab
-     */
-    public void clickMineTab() {
-        driver.findElementByXPath("//android.widget.ImageView[@text='我的\n" +
-                "第 3 个标签，共 3 个']").click();
-
-    }
-
     /**
      * 点击进入我的课程
      * 根据坐标获取地址
@@ -43,10 +33,6 @@ public class MyAccountPage extends BasePage {
   //      MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
         TouchAction touchAction = new TouchAction(driver);
         touchAction.tap(PointOption.point(x,y)).perform();
-
-
-
-
     }
 
     //判断进入我的课程界面
@@ -70,9 +56,9 @@ public class MyAccountPage extends BasePage {
 
 
     //判断进入课程详情
-    public void isCourseDetails() {
+    public boolean isCourseDetails() {
         MobileElement element = driver.findElementByXPath("//android.view.View[@text='课程详情']");
-        element.click();
+        return isPresent(element);
 
     }
 
