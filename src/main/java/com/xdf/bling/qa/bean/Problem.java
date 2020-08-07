@@ -4,9 +4,9 @@ package com.xdf.bling.qa.bean;
  * @version v1.0
  * @ProjectName: autoTest
  * @ClassName: Login
- * @Description: 登录bean
- * @Author: liuzhanhui
- * @Date: 2020/6/15 7:14 下午
+ * @Description: 意见反馈输入文字
+ * @Author: 王雪松
+ * @Date: 2020/8/8 15:24 下午
  */
 public class Problem {
 
