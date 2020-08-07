@@ -12,8 +12,8 @@ import java.util.Map;
 /**
  * @version v1.0
  * @ProjectName: autoTest
- * @ClassName: CouponController
- * @Description: 我的-优惠券
+ * @ClassName: FeedBackController
+ * @Description: 我的-意见反馈
  * @Author: 王雪松
  * @Date: 2020/8/05 17:26 下午
  */

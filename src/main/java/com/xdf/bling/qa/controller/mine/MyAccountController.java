@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 
 public class MyAccountController extends BaseController {
 
-    @Test(description = "测试我的账户-设置-我的课程",priority = 1)
+    @Test(description = "测试我的账户-我的课程",priority = 1)
     public void testMyAccountController () {
         //进入我的页面
         MyAccountPage myAccountPage = new MyAccountPage(driver);

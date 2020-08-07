@@ -12,7 +12,7 @@ import io.appium.java_client.android.AndroidDriver;
  * @ClassName: FeedBackPage
  * @Description: 我的-意见反馈
  * @Author: 王雪松
- * @Date: 2020/8/07 10:28 下午
+ * @Date: 2020/8/07 10:28 上午
  */
 
 public class FeedBackPage extends BasePage {

@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 
 public class MyOrderController extends BaseController {
 
-    @Test(description = "测试我的账户-设置-我的订单",priority = 1)
+    @Test(description = "测试我的账户-我的订单",priority = 1)
     public void testMyOrderController () {
         MyOrderPage myOrderPage = new MyOrderPage(driver);
         MyOrderService myOrderService = new MyOrderService(myOrderPage);

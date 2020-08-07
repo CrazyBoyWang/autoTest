@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 
 public class BlingShopController extends BaseController {
 
-    @Test(description = "测试我的账户-设置-比邻商城",priority = 1)
+    @Test(description = "测试我的账户-比邻商城",priority = 1)
     public void testMyOrderController () {
         BlingShopPage blingShopPage = new BlingShopPage(driver);
         BlingShopService blingShopService = new BlingShopService(blingShopPage);

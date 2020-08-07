@@ -8,10 +8,10 @@ import org.testng.Assert;
 /**
  * @version v1.0
  * @ProjectName: autoTest
- * @ClassName: DeliveryAddressService
- * @Description: 我的-收货地址
+ * @ClassName: feedBackService
+ * @Description: 我的-意见反馈
  * @Author: 王雪松
- * @Date: 2020/8/06 19:40 下午
+ * @Date: 2020/8/07 15:20 下午
  */
 
 //比邻商城
