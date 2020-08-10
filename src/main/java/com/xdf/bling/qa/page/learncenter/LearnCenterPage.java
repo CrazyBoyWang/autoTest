@@ -88,6 +88,14 @@ public class LearnCenterPage extends BasePage {
         driver.findElementByXPath("//android.widget.ImageView[@text='课前课后测试']").click();
 
     }
+
+    /**
+     *
+     * 选择关卡1进入
+     */
+    public void clickCheckPoint(){
+        driver.findElementByXPath("//android.widget.ImageView[contains(@text,'关卡1')]").click();
+    }
     /**
      *
      * 判断进入到课前课后关卡1

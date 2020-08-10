@@ -30,7 +30,6 @@ public class BasePage {
     public BasePage(AndroidDriver<MobileElement> driver) {
         this.driver = driver;
     }
-    TouchAction touchAction = new TouchAction(driver);
 
     /**
      * 模拟输入
@@ -105,6 +104,7 @@ public class BasePage {
      * 退回课堂
      */
     public void clickBackClass(){
+        TouchAction touchAction = new TouchAction(driver);
         MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView");
         //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
         int[] center = site(element);
@@ -154,7 +154,7 @@ public class BasePage {
      * @param element
      */
     protected void swipe(Direction direction, MobileElement element) {
-
+        TouchAction touchAction = new TouchAction(driver);
         if (element == null) {
             int width = driver.manage().window().getSize().width;
             int height = driver.manage().window().getSize().height;

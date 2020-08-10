@@ -4,12 +4,14 @@
     <listeners>
         <listener class-name="com.xdf.bling.qa.listener.TestngListener"></listener>
     </listeners>
-    <test name="学习中心-进入学习课程" >
+    <test name="学习中心-进入预习小胶囊" >
         <parameter name="port" value="4571"></parameter>
         <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
         <!--        <parameter name="udid" value="c7626d73"></parameter>-->
         <classes>
             <class name="com.xdf.bling.qa.controller.learncenter.LearnCenterController" />
+            <class name="com.xdf.bling.qa.controller.learncenter.previewcapsule.PreviewCapsuleController" />
         </classes>
+
     </test>
 </suite>

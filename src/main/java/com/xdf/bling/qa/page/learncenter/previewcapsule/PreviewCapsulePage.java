@@ -50,8 +50,16 @@ public class PreviewCapsulePage extends BasePage {
      * 滑动到预习小胶囊
      */
     public void swipeCapsule(){
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='预习小锦囊']");
-        swipe(Direction.LEFT,element);
+     //   MobileElement element = driver.findElementByXPath("//android.view.View[@text='预习小锦囊']");
+      MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]");
+        swipe(Direction.RIGHT,element);
+    }
+    /**
+     *
+     * 点击进入预习小胶囊
+     */
+    public void clickCapsule(){
+        driver.findElementByXPath("//android.view.View[@text='预习小锦囊']").click();
     }
 
 

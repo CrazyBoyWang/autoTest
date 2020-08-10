@@ -27,6 +27,13 @@ public class LearnCenterService {
         learnCenterPage.clickPop();
         learnCenterPage.swipeAimClass();
         learnCenterPage.clikAimClass();
+        //如果不延迟
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        learnCenterPage.clickCheckPoint();
         Assert.assertTrue(learnCenterPage.isAimClass(),"进入课程页面失败");
     }
 
