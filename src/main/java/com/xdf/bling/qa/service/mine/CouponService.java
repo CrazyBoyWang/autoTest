@@ -13,7 +13,6 @@ import org.testng.Assert;
  * @Date: 2020/8/06 19:00 下午
  */
 
-//比邻商城
 public class CouponService {
     private final CouponPage couponPage;
 

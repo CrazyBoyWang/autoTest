@@ -13,7 +13,6 @@ import org.testng.Assert;
  * @Date: 2020/7/31 17:00 下午
  */
 
-//比邻商城
 public class BlingShopService {
     private final BlingShopPage blingShopPage;
 
