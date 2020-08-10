@@ -30,6 +30,7 @@ public class BasePage {
     public BasePage(AndroidDriver<MobileElement> driver) {
         this.driver = driver;
     }
+    TouchAction touchAction = new TouchAction(driver);
 
     /**
      * 模拟输入
@@ -97,7 +98,17 @@ public class BasePage {
     public void clickMineTab() {
         driver.findElementByXPath("//android.widget.ImageView[@text='我的\n" +
                 "第 3 个标签，共 3 个']").click();
+    }
 
+    /**
+     *
+     * 退回课堂
+     */
+    public void clickBackClass(){
+        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView");
+        //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
+        int[] center = site(element);
+        touchAction.tap(PointOption.point(center[0]-20, center[1]-20)).perform();
     }
 
     /**
@@ -143,7 +154,7 @@ public class BasePage {
      * @param element
      */
     protected void swipe(Direction direction, MobileElement element) {
-        TouchAction touchAction = new TouchAction(driver);
+
         if (element == null) {
             int width = driver.manage().window().getSize().width;
             int height = driver.manage().window().getSize().height;
@@ -186,6 +197,8 @@ public class BasePage {
                 break;
         }
     }
+
+
 
     protected enum Direction {
         UP, DOWN, LEFT, RIGHT
