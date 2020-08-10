@@ -20,7 +20,6 @@ public class PreviewCapsulePage extends BasePage {
     public PreviewCapsulePage(AndroidDriver<MobileElement> driver) {
         super(driver);
     }
-    TouchAction touchAction = new TouchAction(driver);
 
     /**
      *
