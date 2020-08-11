@@ -5,6 +5,7 @@ import com.xdf.bling.qa.page.BasePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.touch.offset.PointOption;
 
 
 /**
@@ -60,6 +61,102 @@ public class PreviewCapsulePage extends BasePage {
     public void clickCapsule(){
         driver.findElementByXPath("//android.view.View[@text='预习小锦囊']").click();
     }
+
+
+    /**
+     *
+     * 点击赞过我
+     *
+     */
+    public void clickPraiseMe(){
+        driver.findElementByXPath("//android.widget.ImageView[@text='赞过我']").click();
+    }
+
+    /**
+     *
+     *点击戳过我
+     *
+     */
+    public void clickStabbedMe(){
+        driver.findElementByXPath("//android.widget.ImageView[@text='戳过我']").click();
+    }
+
+    /**
+     *
+     * 词句轮轮看
+     */
+    public void clickLookAround(){
+        driver.findElementByXPath("//android.widget.ImageView[@text='词句轮轮看']").click();
+    }
+
+
+    /**
+     *
+     * 轮轮看点击向前
+     *
+     */
+
+    public void clickAhead(){
+        driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[6]").click();
+    }
+
+    /**
+     *
+     * 轮轮看点击向后
+     */
+    public void clickBackWard(){
+        driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[4]").click();
+
+    }
+
+    /**
+     *
+     * 判断学习完成
+     */
+    public boolean isAroundFinish(){
+        MobileElement element = driver.findElementByXPath("//android.view.View[@text='恭喜你，完成了本关卡']");
+        return isPresent(element);
+
+    }
+    /**
+     *
+     * 点击Word Fun
+     *
+     */
+
+    public void clickWordFun(){
+        driver.findElementByXPath("//android.widget.ImageView[@text='Word Fun']").click();
+    }
+
+    /**
+     *
+     * Word Fun点击下一步
+     *
+     *元素已经超出屏幕位置，需要想个办法修改下定位
+     */
+    public void  clickWordFunNext(){
+        TouchAction touchAction = new TouchAction(driver);
+        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[3]");
+
+        int[] center = site(element);
+        touchAction.tap(PointOption.point(center[0], center[1])).perform();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

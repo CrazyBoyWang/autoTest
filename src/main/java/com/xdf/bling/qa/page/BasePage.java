@@ -100,15 +100,22 @@ public class BasePage {
     }
 
     /**
-     *
      * 退回课堂
      */
-    public void clickBackClass(){
+    public void clickBackClass() {
         TouchAction touchAction = new TouchAction(driver);
         MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView");
         //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
         int[] center = site(element);
-        touchAction.tap(PointOption.point(center[0]-20, center[1]-20)).perform();
+        touchAction.tap(PointOption.point(center[0] - 20, center[1] - 20)).perform();
+    }
+
+    /**
+     * 课程学习完成点击下一步
+     */
+
+    public void clickNextLevel() {
+        driver.findElementByXPath("//android.view.View[@text='下一关']").click();
     }
 
     /**
@@ -197,7 +204,6 @@ public class BasePage {
                 break;
         }
     }
-
 
 
     protected enum Direction {

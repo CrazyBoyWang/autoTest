@@ -24,8 +24,12 @@ public class PreviewCapsuleController extends BaseController {
         PreviewCapsulePage previewCapsulePage = new PreviewCapsulePage(driver);
         PreviewCapsuleService previewCapsuleService = new PreviewCapsuleService(previewCapsulePage);
         previewCapsuleService.previewCapsuleService();
-
-
+        //内部小胶囊
+        previewCapsuleService.interiorPraiseService();
+        //词句轮轮看操作
+        previewCapsuleService.interiorLookAroundService();
+        //Word Fun 操作
+        previewCapsuleService.interiorWordFunService();
 
 
     }
