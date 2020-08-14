@@ -52,7 +52,7 @@ public class BaseController {
         driver = new AndroidDriver<MobileElement>(appiumService, capabilities);
         AlertByPageController alertByPageController = new AlertByPageController();
         //隐式等待
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
         //流畅等待
 

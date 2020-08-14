@@ -21,12 +21,8 @@ public class PreviewCapsuleService {
     /**
      * 预习小胶囊
      */
-    public void previewCapsuleService() {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public void previewCapsuleService() throws InterruptedException {
+        Thread.sleep(2000);
         previewCapsulePage.swipeCapsule();
         previewCapsulePage.clickCapsule();
     }
@@ -47,39 +43,74 @@ public class PreviewCapsuleService {
 
     /**
      * 词句轮轮看
-     *
      */
-    public void interiorLookAroundService() {
+    public void interiorLookAroundService() throws InterruptedException {
         previewCapsulePage.clickLookAround();
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
+        Thread.sleep(4000);
         for (int i = 0; i < 7; i++) {
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            Thread.sleep(5000);
             previewCapsulePage.clickAhead();
         }
-        Assert.assertTrue(previewCapsulePage.isAroundFinish(),"获取闯关完成失败");
+        Assert.assertTrue(previewCapsulePage.isAroundFinish(), "获取闯关完成失败");
         previewCapsulePage.clickNextLevel();
 
 
     }
 
     /**
-     *
      * 完成轮轮后开始wordfun
-     *
+     * 现在获取地址不好获取。稍后在写
      */
-  public void interiorWordFunService() {
+    public void interiorWordFunService() throws InterruptedException {
+        Thread.sleep(3000);
+        for (int i = 0; i < 5; i++) {
+            Thread.sleep(5000);
+            previewCapsulePage.clickWordFunNext();
 
-      previewCapsulePage.clickWordFunNext();
+        }
 
+    }
+
+    /**
+     * 开始知识小预热
+     */
+    public void KnowledgePreheatingService() throws InterruptedException {
+
+        Thread.sleep(2000);
+        previewCapsulePage.clickBackInClass();
+        previewCapsulePage.clickKnowledgePreheating();
+        for (int i = 0; i < 10; i++) {
+            Thread.sleep(5000);
+            previewCapsulePage.clickAhead();
+        }
+        Assert.assertTrue(previewCapsulePage.isAroundFinish(), "获取闯关完成失败");
+        previewCapsulePage.clickNextLevel();
+    }
+
+
+    /**
+     * Look and Listen
+     */
+
+    public void LookAndListenService() throws InterruptedException {
+        for (int i = 0; i < 2; i++) {
+            previewCapsulePage.clickChangeCode();
+        }
+        for (int i = 0; i < 10; i++) {
+            Thread.sleep(1000);
+            previewCapsulePage.clickTurn();
+        }
+        Assert.assertTrue(previewCapsulePage.isAroundFinish(), "获取闯关完成失败");
+        previewCapsulePage.clickNextLevel();
+
+    }
+
+    public void finshVideoService() throws InterruptedException {
+        Thread.sleep(1000);
+        Assert.assertTrue(previewCapsulePage.isFinshVideo(), "视频未读取完成或读取失败");
+        previewCapsulePage.clickFinshVideo();
+        Assert.assertTrue(previewCapsulePage.isPrepareSucess(), "获取闯关完成失败");
+        previewCapsulePage.clickLearnRank();
 
 
     }
