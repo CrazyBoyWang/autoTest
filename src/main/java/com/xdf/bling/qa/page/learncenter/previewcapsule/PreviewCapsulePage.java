@@ -125,10 +125,20 @@ public class PreviewCapsulePage extends BasePage {
      * 元素已经超出屏幕位置，需要想个办法修改下定位
      */
     public void clickWordFunNext() {
-        TouchAction touchAction = new TouchAction(driver);
+
+//        System.out.println("获取屏幕大小：" + driver.manage().window().getSize());
+//        System.out.println("获得浏览器在屏幕的位置：" + driver.manage().window().getPosition());
+//        System.out.println("当前屏幕为：" + driver.getOrientation().name());
+//        Dimension targetSize = new Dimension(2208,1080);
+//
+//        driver.manage().window().setSize(targetSize);
+//        System.out.println("当前屏幕为：" + driver.manage().window().getSize());
+
+//        driver.rotate(ScreenOrientation.PORTRAIT);//设置竖屏
         MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[3]");
         int[] center = site(element);
-        touchAction.tap(PointOption.point(2185, 673 )).perform();
+        new TouchAction<>(driver).press(PointOption.point(2130, 673)).release().perform();
+
     }
 
 
@@ -145,7 +155,6 @@ public class PreviewCapsulePage extends BasePage {
      */
     public void clickLookAndListen() {
         driver.findElementByXPath("//android.widget.ImageView[@text='Look and Listen']").click();
-
     }
 
     /**
@@ -159,56 +168,74 @@ public class PreviewCapsulePage extends BasePage {
      * 翻页
      */
     public void clickTurn() {
-        TouchAction touchAction = new TouchAction(driver);
-    //    MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[4]");
-    //    int[] center = site(element);
-     //   touchAction.tap(PointOption.point(center[0] / 3, center[1] / 3)).perform();
-        touchAction.longPress(PointOption.point(2000, 300)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(50))).moveTo(PointOption.point(300, 300)).release().perform();
+        //    MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[4]");
+        //    int[] center = site(element);
+        //   touchAction.tap(PointOption.point(center[0] / 3, center[1] / 3)).perform();
+        new TouchAction<>(driver).longPress(PointOption.point(2000, 300)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(50))).moveTo(PointOption.point(300, 300)).release().perform();
 
     }
+
     /**
      * 判断视频播放完成
-     *
      */
-    public boolean isFinshVideo(){
+    public boolean isFinshVideo() {
         MobileElement element = driver.findElementByXPath("//android.view.View[@text='恭喜你完成本关卡~']");
         return isPresent(element);
     }
 
 
-
-
-
     /**
      * 点击全部完成后视频按钮
-     *
      */
-    public void clickFinshVideo(){
+    public void clickFinshVideo() {
         TouchAction touchAction = new TouchAction(driver);
         MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[2]");
         int[] center = site(element);
-        touchAction.tap(PointOption.point(center[0]-50, center[1])).perform();
+        touchAction.tap(PointOption.point(center[0] - 50, center[1])).perform();
     }
 
 
     /**
-     *
      * 判断预习完成界面
      */
-    public boolean isPrepareSucess(){
+    public boolean isPrepareSucess() {
         MobileElement element = driver.findElementByXPath("//android.view.View[@text='恭喜你完成预习 ！']");
         return isPresent(element);
     }
 
     /**
-     *
      * 点击进入预习排行榜
      */
-    public void clickLearnRank(){
+    public void clickLearnRank() {
         driver.findElementByXPath("//android.view.View[@text='学习排行']").click();
 
+    }
 
+    /**
+     * 判断文件列表出现
+     */
+    public boolean isLearnRank() {
+        MobileElement element = driver.findElementByXPath("//android.view.View[contains(@text,'完成')]");
+        return isPresent(element);
+    }
 
+    /**
+     * 点击排行列表
+     */
+    public void clickRankClose() {
+        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[2]");
+        int[] center = site(element);
+        new TouchAction<>(driver).press(PointOption.point(center[0] - 20, center[1])).release().perform();
+
+    }
+    /**
+     *
+     * 返回预习小课堂
+     */
+    public void clickBackClasses(){
+        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.widget.ImageView[2]");
+        int[] center = site(element);
+        new TouchAction<>(driver).press(PointOption.point(center[0] - 20, center[1])).release().perform();
     }
 
 

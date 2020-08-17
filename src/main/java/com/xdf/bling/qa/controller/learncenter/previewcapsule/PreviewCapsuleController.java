@@ -16,11 +16,10 @@ import org.testng.annotations.Test;
  */
 
 
-
 public class PreviewCapsuleController extends BaseController {
 
-    @Test(description = "学习中心--预习小胶囊",priority = 1)
-    public void testPreviewCapsuleController () throws InterruptedException {
+    @Test(description = "学习中心--预习小胶囊", priority = 1)
+    public void testPreviewCapsuleController() throws InterruptedException {
         PreviewCapsulePage previewCapsulePage = new PreviewCapsulePage(driver);
         PreviewCapsuleService previewCapsuleService = new PreviewCapsuleService(previewCapsulePage);
         previewCapsuleService.previewCapsuleService();
@@ -28,10 +27,10 @@ public class PreviewCapsuleController extends BaseController {
         previewCapsuleService.interiorPraiseService();
         //词句轮轮看操作
         previewCapsuleService.interiorLookAroundService();
-        //Word Fun 操作
-   //     previewCapsuleService.interiorWordFunService();
+        //Word Fun 操作 屏幕获取最大与实际不符
+//        previewCapsuleService.interiorWordFunService();
         //知识小预热
- //       previewCapsuleService.KnowledgePreheatingService();
+        previewCapsuleService.KnowledgePreheatingService();
         //look and listen
         previewCapsuleService.LookAndListenService();
         //预习完成视频

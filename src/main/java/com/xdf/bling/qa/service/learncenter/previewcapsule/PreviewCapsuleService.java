@@ -73,13 +73,14 @@ public class PreviewCapsuleService {
 
     /**
      * 开始知识小预热
+     *
      */
     public void KnowledgePreheatingService() throws InterruptedException {
 
         Thread.sleep(2000);
         previewCapsulePage.clickBackInClass();
         previewCapsulePage.clickKnowledgePreheating();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i <= 10; i++) {
             Thread.sleep(5000);
             previewCapsulePage.clickAhead();
         }
@@ -110,7 +111,12 @@ public class PreviewCapsuleService {
         Assert.assertTrue(previewCapsulePage.isFinshVideo(), "视频未读取完成或读取失败");
         previewCapsulePage.clickFinshVideo();
         Assert.assertTrue(previewCapsulePage.isPrepareSucess(), "获取闯关完成失败");
+        Thread.sleep(1000);
         previewCapsulePage.clickLearnRank();
+        Assert.assertTrue(previewCapsulePage.isLearnRank(), "判断排行列表成功");
+        previewCapsulePage.clickRankClose();
+        previewCapsulePage.clickBackInClass();
+        previewCapsulePage.clickBackClasses();
 
 
     }
