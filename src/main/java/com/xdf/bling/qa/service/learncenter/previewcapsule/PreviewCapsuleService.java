@@ -26,8 +26,6 @@ public class PreviewCapsuleService {
         previewCapsulePage.swipeCapsule();
         previewCapsulePage.clickCapsule();
     }
-
-
     /**
      * 预习小胶囊内部功能
      */
@@ -80,7 +78,7 @@ public class PreviewCapsuleService {
         Thread.sleep(2000);
         previewCapsulePage.clickBackInClass();
         previewCapsulePage.clickKnowledgePreheating();
-        for (int i = 0; i <= 10; i++) {
+        for (int i = 0; i < 10; i++) {
             Thread.sleep(5000);
             previewCapsulePage.clickAhead();
         }
@@ -106,6 +104,11 @@ public class PreviewCapsuleService {
 
     }
 
+    /**
+     * 完成视频
+     * @throws InterruptedException
+     */
+
     public void finshVideoService() throws InterruptedException {
         Thread.sleep(1000);
         Assert.assertTrue(previewCapsulePage.isFinshVideo(), "视频未读取完成或读取失败");
@@ -117,9 +120,5 @@ public class PreviewCapsuleService {
         previewCapsulePage.clickRankClose();
         previewCapsulePage.clickBackInClass();
         previewCapsulePage.clickBackClasses();
-
-
     }
-
-
 }

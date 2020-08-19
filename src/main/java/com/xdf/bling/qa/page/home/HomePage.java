@@ -19,15 +19,6 @@ public class HomePage extends BasePage {
     }
 
 
-    /**
-     * 点击我的tab
-     */
-    public void clickMineTab () {
-        driver.findElementByXPath("//android.widget.ImageView[@text='我的\n" +
-                "第 3 个标签，共 3 个']").click();
-
-    }
-
 
     public void clickBanner () {
         driver.findElementByXPath("//android.widget.ImageView[@text='我的老师']/following-sibling::android.view.View[1]").click();

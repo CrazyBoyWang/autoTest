@@ -86,32 +86,6 @@ public class PreviewCapsulePage extends BasePage {
 
 
     /**
-     * 轮轮看/知识小预热点击向前
-     */
-
-    public void clickAhead() {
-        driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[6]").click();
-    }
-
-    /**
-     * 轮轮看/知识小预热点击向后
-     */
-    public void clickBackWard() {
-        driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[4]").click();
-
-    }
-
-    /**
-     * 判断学习完成
-     */
-    public boolean isAroundFinish() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='恭喜你，完成了本关卡']");
-
-        return isPresent(element);
-
-    }
-
-    /**
      * 点击Word Fun
      */
 
