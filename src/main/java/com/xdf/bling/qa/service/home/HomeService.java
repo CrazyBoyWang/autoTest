@@ -1,6 +1,7 @@
 package com.xdf.bling.qa.service.home;
 
 import com.xdf.bling.qa.page.home.HomePage;
+import org.testng.Assert;
 
 /**
  * @version v1.0
@@ -21,12 +22,25 @@ public class HomeService {
     /**
      * 进入我的页面
      */
-    public void enterMinePageService () {
+    public void enterMinePageService() {
         homePage.clickMineTab();
-       }
+    }
+
+    /**
+     * 我的老师
+     */
+    public void enterMyTeacher() throws InterruptedException {
+        homePage.clickMyTeacher();
+        Assert.assertTrue(homePage.isMyTeacher(), "进入我的老师页面失败");
+        homePage.swipeMyTeacher();
+        for (int i = 0; i < 3 ; i++) {
+            homePage.swipeDownTeacher();
+
+        }
+    }
 
 
-    public void swipeHomePageService () {
+    public void swipeHomePageService() {
         homePage.swipeHomePage();
     }
 }

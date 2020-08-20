@@ -6,14 +6,11 @@ import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
-import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 /**
  * @version v1.0
@@ -210,16 +207,16 @@ public class BasePage {
             int x2 = width / 4;
             switch (direction) {
                 case UP:
-                    touchAction.longPress(PointOption.point(width / 2, y1)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(200))).moveTo(PointOption.point(width / 2, y2)).release().perform();
+                    touchAction.longPress(PointOption.point(width / 2, y1)).moveTo(PointOption.point(width / 2, y2)).release().perform();
                     break;
                 case DOWN:
-                    touchAction.longPress(PointOption.point(width / 2, y2)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(200))).moveTo(PointOption.point(width / 2, y1)).release().perform();
+                    touchAction.longPress(PointOption.point(width / 2, y2)).moveTo(PointOption.point(width / 2, y1)).release().perform();
                     break;
                 case LEFT:
-                    touchAction.longPress(PointOption.point(x1, height / 2)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(200))).moveTo(PointOption.point(x2, height / 2)).release().perform();
+                    touchAction.longPress(PointOption.point(x1, height / 2)).moveTo(PointOption.point(x2, height / 2)).release().perform();
                     break;
                 case RIGHT:
-                    touchAction.longPress(PointOption.point(x2, height / 2)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(200))).moveTo(PointOption.point(x1, height / 2)).release().perform();
+                    touchAction.longPress(PointOption.point(x2, height / 2)).moveTo(PointOption.point(x1, height / 2)).release().perform();
                     break;
             }
             return;
@@ -230,16 +227,16 @@ public class BasePage {
         System.out.println("控件X；" + pointX + "控件Y：" + pointY);
         switch (direction) {
             case LEFT:
-                touchAction.longPress(PointOption.point(pointX * 3 / 4, pointY / 2)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(200))).moveTo(PointOption.point(pointX / 4, pointY / 2)).release().perform();
+                touchAction.longPress(PointOption.point(pointX * 3 / 4, pointY / 2)).moveTo(PointOption.point(pointX / 4, pointY / 2)).release().perform();
                 break;
             case RIGHT:
-                touchAction.longPress(PointOption.point(pointX / 4, pointY / 2)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(200))).moveTo(PointOption.point(pointX * 3 / 4, pointY / 2)).release().perform();
+                touchAction.longPress(PointOption.point(pointX / 4, pointY / 2)).moveTo(PointOption.point(pointX * 3 / 4, pointY / 2)).release().perform();
                 break;
             case DOWN:
-                touchAction.longPress(PointOption.point(pointX / 2, pointY / 4)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(200))).moveTo(PointOption.point(pointX / 2, pointY * 3 / 4)).release().perform();
+                touchAction.longPress(PointOption.point(pointX / 2, pointY / 4)).moveTo(PointOption.point(pointX / 2, pointY * 3 / 4)).release().perform();
                 break;
             case UP:
-                touchAction.longPress(PointOption.point(pointX / 2, pointY * 3 / 4)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(500))).moveTo(PointOption.point(pointX / 2, pointY / 4)).release().perform();
+                touchAction.longPress(PointOption.point(pointX / 2, pointY * 3 / 4)).moveTo(PointOption.point(pointX / 2, pointY / 4)).release().perform();
                 break;
         }
     }
