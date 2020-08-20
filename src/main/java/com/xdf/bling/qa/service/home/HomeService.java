@@ -29,18 +29,70 @@ public class HomeService {
     /**
      * 我的老师
      */
-    public void enterMyTeacher() throws InterruptedException {
+    public void enterMyTeacherService() throws InterruptedException {
         homePage.clickMyTeacher();
         Assert.assertTrue(homePage.isMyTeacher(), "进入我的老师页面失败");
         homePage.swipeMyTeacher();
-        for (int i = 0; i < 3 ; i++) {
+        for (int i = 0; i < 3; i++) {
             homePage.swipeDownTeacher();
-
         }
+        homePage.clickBacks();
     }
+
+
+    /**
+     * banner相关操作
+     */
+    public void bannerAboutService() {
+        homePage.clickBanner();
+        homePage.clickSystemBack();
+    }
+
+    /**
+     * 比邻公开课
+     */
+    public void blingOpenClassService() throws InterruptedException {
+        Thread.sleep(2000);
+        //   homePage.swipeBlingOpenClass();
+
+        homePage.swipeDownTeacher();
+        Assert.assertTrue(homePage.isBlingOpenClass(), "界面中没有比邻公开课内容");
+
+        homePage.clickOpenMoreClass();
+        Thread.sleep(1000);
+        homePage.clickBack();
+        //   homePage.clickBack();
+
+    }
+
+    /**
+     * 比邻绘本
+     */
+    public void blingPictureBookService() throws InterruptedException {
+        homePage.swipeHomePage();
+        Assert.assertTrue(homePage.isPictureBook(), "获取绘本失败");
+        homePage.clickPictureBook();
+        Thread.sleep(1000);
+        for (int i = 0; i < 3; i++) {
+            homePage.swipePictureBook();
+        }
+        homePage. clickBack();
+
+    }
+
+
+
+
+
+
+
+
+
 
 
     public void swipeHomePageService() {
         homePage.swipeHomePage();
+
+
     }
 }
