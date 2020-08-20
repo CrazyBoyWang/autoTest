@@ -65,6 +65,12 @@ public class BasePage {
         }
     }
 
+    //系统退出按钮
+    public void clickSystemBack(){
+        driver.navigate().back();
+
+    }
+
     //后退按钮
     public void clickBack() {
         MobileElement element = driver.findElementByXPath("//android.widget.Button[1]");
