@@ -80,6 +80,21 @@ public class HomeService {
 
     }
 
+    /**
+     *
+     * 课表相关
+     */
+    public void classListService() throws InterruptedException {
+        Assert.assertTrue(homePage.isDateList(),"获取课表列表失败");
+        homePage.clickClassList();
+        Thread.sleep(1000);
+        homePage.clickDateList();
+        for (int i = 0; i < 5 ; i++) {
+            homePage.clickDate();
+
+        }
+    }
+
 
 
 

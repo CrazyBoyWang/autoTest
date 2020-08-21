@@ -4,6 +4,8 @@ import com.xdf.bling.qa.page.BasePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
+import java.util.Random;
+
 /**
  * @version v1.0
  * @ProjectName: autoTest
@@ -102,7 +104,6 @@ public class HomePage extends BasePage {
     }
 
 
-
     //点击分级阅读
     public void clickPictureBook(){
         driver.findElementByXPath("//android.widget.ImageView[@text='分级阅读']").click();
@@ -112,4 +113,32 @@ public class HomePage extends BasePage {
     public void swipePictureBook(){
         swipe(Direction.LEFT, null);
     }
+
+    /**
+     *
+     * 课表相关
+     */
+    //判断课表
+    public boolean isDateList()  {
+        for (int i = 0; i < 3; i++) {
+            swipe(Direction.DOWN, null);
+        }
+        MobileElement element = driver.findElementByXPath("//android.widget.ImageView[contains(@text,'课表')]");
+      return isPresent(element);
+    }
+    //进入课表
+    public void clickClassList(){
+        driver.findElementByXPath("//android.widget.ImageView[@text='课表']").click();
+    }
+    //下拉日期列表
+    public void clickDateList(){
+        driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[3]").click();
+    }
+    //随机选择日期
+    public void clickDate(){
+        int date = new Random().nextInt(26)+1;
+        driver.findElementByXPath("//android.view.View[@text="+date+"]").click();
+    }
+
+
 }

@@ -18,7 +18,10 @@ public class HomeController extends BaseController {
   //    homeService.enterMyTeacherService();
  //     homeService.bannerAboutService();
         homeService.blingOpenClassService();
+       // 首页相关信息
         homeService.blingPictureBookService();
+        //课表
+        homeService.classListService();
 
     }
 
