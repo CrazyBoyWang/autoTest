@@ -43,8 +43,9 @@ public class HomeService {
     /**
      * banner相关操作
      */
-    public void bannerAboutService() {
+    public void bannerAboutService() throws InterruptedException {
         homePage.clickBanner();
+        Thread.sleep(5000);
         homePage.clickSystemBack();
     }
 
@@ -54,8 +55,10 @@ public class HomeService {
     public void blingOpenClassService() throws InterruptedException {
         Thread.sleep(2000);
         //   homePage.swipeBlingOpenClass();
+        for (int i = 0; i <2 ; i++) {
+            homePage.swipeDownTeacher();
 
-        homePage.swipeDownTeacher();
+        }
         Assert.assertTrue(homePage.isBlingOpenClass(), "界面中没有比邻公开课内容");
 
         homePage.clickOpenMoreClass();
@@ -91,8 +94,8 @@ public class HomeService {
         homePage.clickDateList();
         for (int i = 0; i < 5 ; i++) {
             homePage.clickDate();
-
         }
+        homePage.clickBack();
     }
 
 

@@ -76,7 +76,7 @@ public class ConsumerTest extends BaseController {
         int Heighty=wh.getHeight();
         int endX = Widthx + startX;
         int endY = Heighty + startY;
-        (new TouchAction(driver))
+        (new TouchAction<>(driver))
                 .longPress(PointOption.point(startX,endY-Heighty/2))
                 .moveTo(PointOption.point(startX,endY))
                 .release()

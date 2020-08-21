@@ -15,10 +15,10 @@ public class HomeController extends BaseController {
     public void testHomeController() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         HomeService homeService = new HomeService(homePage);
-  //    homeService.enterMyTeacherService();
- //     homeService.bannerAboutService();
+        homeService.enterMyTeacherService();
+        homeService.bannerAboutService();
         homeService.blingOpenClassService();
-       // 首页相关信息
+        // 首页相关信息
         homeService.blingPictureBookService();
         //课表
         homeService.classListService();
