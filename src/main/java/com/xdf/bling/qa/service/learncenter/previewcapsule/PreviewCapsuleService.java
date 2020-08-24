@@ -3,6 +3,8 @@ package com.xdf.bling.qa.service.learncenter.previewcapsule;
 import com.xdf.bling.qa.page.learncenter.previewcapsule.PreviewCapsulePage;
 import org.testng.Assert;
 
+import static java.lang.Thread.sleep;
+
 /**
  * @version v1.0
  * @ProjectName: autoTest
@@ -22,7 +24,7 @@ public class PreviewCapsuleService {
      * 预习小胶囊
      */
     public void previewCapsuleService() throws InterruptedException {
-        Thread.sleep(2000);
+        sleep(2000);
         previewCapsulePage.swipeCapsule();
         previewCapsulePage.clickCapsule();
     }
@@ -44,9 +46,9 @@ public class PreviewCapsuleService {
      */
     public void interiorLookAroundService() throws InterruptedException {
         previewCapsulePage.clickLookAround();
-        Thread.sleep(4000);
+        sleep(4000);
         for (int i = 0; i < 7; i++) {
-            Thread.sleep(5000);
+            sleep(5000);
             previewCapsulePage.clickAhead();
         }
         Assert.assertTrue(previewCapsulePage.isAroundFinish(), "获取闯关完成失败");
@@ -60,9 +62,9 @@ public class PreviewCapsuleService {
      * 现在获取地址不好获取。稍后在写
      */
     public void interiorWordFunService() throws InterruptedException {
-        Thread.sleep(3000);
+        sleep(3000);
         for (int i = 0; i < 5; i++) {
-            Thread.sleep(5000);
+            sleep(5000);
             previewCapsulePage.clickWordFunNext();
 
         }
@@ -75,11 +77,11 @@ public class PreviewCapsuleService {
      */
     public void KnowledgePreheatingService() throws InterruptedException {
 
-        Thread.sleep(2000);
+        sleep(2000);
         previewCapsulePage.clickBackInClass();
         previewCapsulePage.clickKnowledgePreheating();
         for (int i = 0; i < 10; i++) {
-            Thread.sleep(5000);
+            sleep(5000);
             previewCapsulePage.clickAhead();
         }
         Assert.assertTrue(previewCapsulePage.isAroundFinish(), "获取闯关完成失败");
@@ -96,7 +98,7 @@ public class PreviewCapsuleService {
             previewCapsulePage.clickChangeCode();
         }
         for (int i = 0; i < 10; i++) {
-            Thread.sleep(1000);
+            sleep(1000);
             previewCapsulePage.clickTurn();
         }
         Assert.assertTrue(previewCapsulePage.isAroundFinish(), "获取闯关完成失败");
@@ -110,11 +112,11 @@ public class PreviewCapsuleService {
      */
 
     public void finshVideoService() throws InterruptedException {
-        Thread.sleep(1000);
+        sleep(1000);
         Assert.assertTrue(previewCapsulePage.isFinshVideo(), "视频未读取完成或读取失败");
         previewCapsulePage.clickFinshVideo();
         Assert.assertTrue(previewCapsulePage.isPrepareSucess(), "获取闯关完成失败");
-        Thread.sleep(1000);
+        sleep(1000);
         previewCapsulePage.clickLearnRank();
         Assert.assertTrue(previewCapsulePage.isLearnRank(), "判断排行列表成功");
         previewCapsulePage.clickRankClose();

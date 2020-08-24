@@ -3,6 +3,8 @@ package com.xdf.bling.qa.service.learncenter.previewcapsule;
 import com.xdf.bling.qa.page.learncenter.previewcapsule.ReviewDaLeDouPage;
 import org.testng.Assert;
 
+import static java.lang.Thread.sleep;
+
 /**
  * @author: wangxuesong
  * @description:TODO
@@ -21,7 +23,7 @@ public class ReviewDaLeDouService {
      * @throws InterruptedException
      */
     public void reviewDaLeDouService() throws InterruptedException {
-        Thread.sleep(2000);
+        sleep(2000);
         reviewDaLeDouPage.clickReviewDaLeDou();
         reviewDaLeDouPage.clickPraiseMe();
         reviewDaLeDouPage.clickBack();
@@ -35,7 +37,7 @@ public class ReviewDaLeDouService {
     public void languageReviewService() throws InterruptedException {
         reviewDaLeDouPage.clickLanguageReview();
         for (int i = 0; i < 18; i++) {
-            Thread.sleep(4000);
+            sleep(4000);
             reviewDaLeDouPage.clickAhead();
         }
         Assert.assertTrue(reviewDaLeDouPage.isAroundFinish(), "获取闯关完成失败");
@@ -64,7 +66,7 @@ public class ReviewDaLeDouService {
      */
     public void learnToBeBullyService() throws InterruptedException {
         reviewDaLeDouPage.clickNextLevel();
-        Thread.sleep(1000);
+        sleep(1000);
         Assert.assertTrue(reviewDaLeDouPage.isFinshVideo(), "视频未读取完成或读取失败");
         reviewDaLeDouPage.clickFinshVideo();
         Assert.assertTrue(reviewDaLeDouPage.isAroundFinish());
@@ -76,17 +78,17 @@ public class ReviewDaLeDouService {
      * Small Talk Quiz
      */
     public void smallTalkQuizService() throws InterruptedException {
-        Thread.sleep(3000);
+        sleep(3000);
         reviewDaLeDouPage.swipSmallTalkQuiz();
         reviewDaLeDouPage.clickSmallTalkQuiz();
         Assert.assertTrue(reviewDaLeDouPage.isCorrectAnswer(), "进入Small成功");
         reviewDaLeDouPage.clickOurHobbies();
-        Thread.sleep(1000);
+        sleep(1000);
         reviewDaLeDouPage.clickFavouriteSubject();
         Assert.assertTrue(reviewDaLeDouPage.isSnakeCute(), "进入snake cute失败");
         reviewDaLeDouPage.clickIsArent();
         reviewDaLeDouPage.clickIsIsnt();
-        Thread.sleep(1000);
+        sleep(1000);
 
 
     }
