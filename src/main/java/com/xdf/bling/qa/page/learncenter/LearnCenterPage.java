@@ -3,7 +3,6 @@ package com.xdf.bling.qa.page.learncenter;
 
 import com.xdf.bling.qa.page.BasePage;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 
 
@@ -20,7 +19,6 @@ public class LearnCenterPage extends BasePage {
     public LearnCenterPage(AndroidDriver<MobileElement> driver) {
         super(driver);
     }
-    TouchAction touchAction = new TouchAction(driver);
 
     /**
      * 点击进入学习中心

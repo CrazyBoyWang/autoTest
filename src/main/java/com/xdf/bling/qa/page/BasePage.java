@@ -106,11 +106,10 @@ public class BasePage {
      * 退回课堂
      */
     public void clickBackClass() {
-        TouchAction touchAction = new TouchAction(driver);
         MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView");
         //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
         int[] center = site(element);
-        touchAction.tap(PointOption.point(center[0] - 20, center[1] - 20)).perform();
+        new TouchAction<>(driver).tap(PointOption.point(center[0] - 20, center[1] - 20)).perform();
     }
 
     /**
@@ -118,10 +117,9 @@ public class BasePage {
      * 小课堂内返回按钮
      */
     public void clickBackInClass(){
-        TouchAction touchAction = new TouchAction(driver);
         MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[1]");
         int[] center = site(element);
-        touchAction.tap(PointOption.point(center[0]/2, center[1]/2)).perform();
+        new TouchAction<>(driver).tap(PointOption.point(center[0]/2, center[1]/2)).perform();
     }
 
     /**

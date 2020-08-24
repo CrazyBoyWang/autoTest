@@ -97,17 +97,6 @@ public class HomeService {
         }
         homePage.clickBack();
     }
-
-
-
-
-
-
-
-
-
-
-
     public void swipeHomePageService() {
         homePage.swipeHomePage();
 

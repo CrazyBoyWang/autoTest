@@ -21,7 +21,6 @@ public class DeliveryAddressPage extends BasePage {
         super(driver);
     }
 
-    TouchAction touchAction = new TouchAction(driver);
 
     /**
      * 点击进入收货地址

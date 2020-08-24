@@ -22,8 +22,6 @@ public class CouponPage extends BasePage {
         super(driver);
     }
 
-    TouchAction touchAction = new TouchAction(driver);
-
     /**
      * 点击进入优惠券
      * 根据坐标获取地址
@@ -34,7 +32,7 @@ public class CouponPage extends BasePage {
         MobileElement element = driver.findElementByXPath("//android.widget.ImageView[@text='优惠券']");
         //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
         int[] center = site(element);
-        touchAction.tap(PointOption.point(center[0], center[1] + 30)).perform();
+       new  TouchAction<>(driver).tap(PointOption.point(center[0], center[1] + 30)).perform();
     }
 
     /**

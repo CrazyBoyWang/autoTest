@@ -31,8 +31,8 @@ public class MyAccountPage extends BasePage {
         int y = 823;
         MobileElement element = driver.findElementByXPath("//android.widget.ImageView[@text='我的课程']");
   //      MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
-        TouchAction touchAction = new TouchAction(driver);
-        touchAction.tap(PointOption.point(x,y)).perform();
+
+        new TouchAction<>(driver).tap(PointOption.point(x,y)).perform();
     }
 
     //判断进入我的课程界面

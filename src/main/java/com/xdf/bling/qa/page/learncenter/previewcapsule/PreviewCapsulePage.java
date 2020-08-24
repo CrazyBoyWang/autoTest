@@ -162,10 +162,9 @@ public class PreviewCapsulePage extends BasePage {
      * 点击全部完成后视频按钮
      */
     public void clickFinshVideo() {
-        TouchAction touchAction = new TouchAction(driver);
         MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[2]");
         int[] center = site(element);
-        touchAction.tap(PointOption.point(center[0] - 50, center[1])).perform();
+        new TouchAction<>(driver).tap(PointOption.point(center[0] - 50, center[1])).perform();
     }
 
 
