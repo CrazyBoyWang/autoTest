@@ -1,7 +1,5 @@
 package com.xdf.bling.qa.util;
 
-import java.io.IOException;
-
 /**
  * @version v1.0
  * @ProjectName: autoTest
@@ -12,15 +10,15 @@ import java.io.IOException;
  */
 public class TypewritingUtil {
 
-    private static String adbHome="/Users/wangxuesong/Library/Android/sdk/platform-tools/adb ";
+    private static String adbHome = "/Users/wangxuesong/Library/Android/sdk/platform-tools/adb ";
 
-    public static void chineseSendKeys (String chinese) {
+    public static void chineseSendKeys(String chinese) {
         try {
-            Runtime.getRuntime().exec(adbHome+ "shell ime set com.android.adbkeyboard/.AdbIME");
+            Runtime.getRuntime().exec(adbHome + "shell ime set com.android.adbkeyboard/.AdbIME");
             Thread.sleep(2000);
-            Runtime.getRuntime().exec(adbHome+ "shell am broadcast -a ADB_INPUT_TEXT --es msg "+chinese);
+            Runtime.getRuntime().exec(adbHome + "shell am broadcast -a ADB_INPUT_TEXT --es msg " + chinese);
             Thread.sleep(3000);
-            Runtime.getRuntime().exec(adbHome+ "shell ime set io.appium.settings/.UnicodeIME");
+            Runtime.getRuntime().exec(adbHome + "shell ime set io.appium.settings/.UnicodeIME");
         } catch (Exception e) {
             e.printStackTrace();
         }

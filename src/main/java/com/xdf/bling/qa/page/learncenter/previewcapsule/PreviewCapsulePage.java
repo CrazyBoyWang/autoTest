@@ -110,7 +110,6 @@ public class PreviewCapsulePage extends BasePage {
 
 //        driver.rotate(ScreenOrientation.PORTRAIT);//设置竖屏
         MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[3]");
-        int[] center = site(element);
         new TouchAction<>(driver).press(PointOption.point(2130, 673)).release().perform();
 
     }

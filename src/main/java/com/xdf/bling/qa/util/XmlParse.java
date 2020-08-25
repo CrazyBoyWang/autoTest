@@ -39,7 +39,7 @@ public class XmlParse {
         Element rootElement = document.getRootElement();
         List<Element> elements = rootElement.elements();
         for (Element element : elements) {
-            if (element.getName() == methodName) {
+            if (element.getName().equals(methodName)) {
                 List<Element> nodeList = element.elements();
                 for (Element nodeElement : nodeList) {
                     result.put(nodeElement.getName(), nodeElement.getStringValue());
