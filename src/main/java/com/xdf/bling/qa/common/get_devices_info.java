@@ -3,12 +3,7 @@ package com.xdf.bling.qa.common;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.InetAddress;
-import java.net.Socket;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 public class get_devices_info {
     //region 初始化
 
@@ -42,7 +37,7 @@ public class get_devices_info {
                     }
                 }
                 if (!list.contains("* daemon started successfully *")) {
-                    if (list != null && list.size() > 1) {
+                    if (list.size() > 1) {
                         if (!list.contains("device")) {
                             for (int i = 1; i < list.size(); i++) {
                                 for (int j = 0; j < list.get(i).split(" ").length; j++) {
@@ -66,7 +61,7 @@ public class get_devices_info {
                                             reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
                                             line = null;
                                             while ((line = reader.readLine()) != null) {
-                                                if (line.indexOf("ro.build.version.release") != -1) {
+                                                if (line.contains("ro.build.version.release")) {
                                                     //获取设备版本号
                                                     String device_version = line.split("=")[1];
                                                     System.out.println("当前系统版本号为:" + device_version);
