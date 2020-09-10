@@ -23,8 +23,6 @@ public class TestngListener extends TestListenerAdapter {
         super.onTestFailure(tr);
 //        AlertPageListener alertPageListener = (AlertPageListener) tr.getMethod();
 //        alertPageListener.reset();
-
-        takePhoto(BaseController.getDriver());;
     }
 
 

@@ -4,6 +4,8 @@ package com.xdf.bling.qa.controller.mine;
 import com.xdf.bling.qa.controller.BaseController;
 import com.xdf.bling.qa.page.mine.DeliveryAddressPage;
 import com.xdf.bling.qa.service.mine.DeliveryAddressService;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.Test;
 
 /**
@@ -20,7 +22,7 @@ public class DeliveryAddressController extends BaseController {
 
     @Test(description = "测试我的账户-我的-收货地址", priority = 1)
     public void testDeliveryAddressController() {
-        DeliveryAddressPage deliveryAddressPage = new DeliveryAddressPage(driver);
+        DeliveryAddressPage deliveryAddressPage = new DeliveryAddressPage((AndroidDriver<MobileElement>) driver);
         DeliveryAddressService deliveryAddressService = new DeliveryAddressService(deliveryAddressPage);
         deliveryAddressService.deliveryAddressService();
 

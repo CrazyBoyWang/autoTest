@@ -3,6 +3,8 @@ package com.xdf.bling.qa.controller.learncenter.previewcapsule;
 import com.xdf.bling.qa.controller.BaseController;
 import com.xdf.bling.qa.page.learncenter.previewcapsule.ReviewDaLeDouPage;
 import com.xdf.bling.qa.service.learncenter.previewcapsule.ReviewDaLeDouService;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.Test;
 
 /**
@@ -13,7 +15,7 @@ import org.testng.annotations.Test;
 public class ReviewDaLeDouController extends BaseController {
     @Test(description="学习中心-复习大乐斗",priority = 1)
     public void testReviewDaLeDouController() throws InterruptedException {
-        ReviewDaLeDouPage reviewDaLeDouPage = new ReviewDaLeDouPage(driver);
+        ReviewDaLeDouPage reviewDaLeDouPage = new ReviewDaLeDouPage((AndroidDriver<MobileElement>) driver);
         ReviewDaLeDouService reviewDaLeDouService = new ReviewDaLeDouService(reviewDaLeDouPage);
        reviewDaLeDouService.reviewDaLeDouService();
         //Language Review相关操作

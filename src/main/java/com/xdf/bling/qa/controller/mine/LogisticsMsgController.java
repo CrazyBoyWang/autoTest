@@ -1,15 +1,11 @@
 package com.xdf.bling.qa.controller.mine;
 
 import com.xdf.bling.qa.controller.BaseController;
-import com.xdf.bling.qa.page.home.HomePage;
 import com.xdf.bling.qa.page.mine.LogisticsMsgPage;
-import com.xdf.bling.qa.page.mine.SettingPage;
-import com.xdf.bling.qa.service.home.HomeService;
 import com.xdf.bling.qa.service.mine.LogisticsMsgService;
-import com.xdf.bling.qa.service.mine.SettingService;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.Test;
-
-import java.util.Map;
 
 /**
  * @version v1.0
@@ -25,7 +21,7 @@ public class LogisticsMsgController extends BaseController {
     public void testLogisticsMsgPage() {
         //进入物流信息
         //    LogisticsMsgController logisticsMsgController = new LogisticsMsgController(driver);
-        LogisticsMsgPage logisticsMsgPage = new LogisticsMsgPage(driver);
+        LogisticsMsgPage logisticsMsgPage = new LogisticsMsgPage((AndroidDriver<MobileElement>) driver);
         LogisticsMsgService logisticsMsgService = new LogisticsMsgService(logisticsMsgPage);
         logisticsMsgService.logisticsMsgService();
 

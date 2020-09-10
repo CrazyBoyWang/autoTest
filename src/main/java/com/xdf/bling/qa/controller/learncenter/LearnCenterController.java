@@ -4,6 +4,8 @@ package com.xdf.bling.qa.controller.learncenter;
 import com.xdf.bling.qa.controller.BaseController;
 import com.xdf.bling.qa.page.learncenter.LearnCenterPage;
 import com.xdf.bling.qa.service.learncenter.LearnCenterService;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.Test;
 
 /**
@@ -21,7 +23,7 @@ public class LearnCenterController extends BaseController {
 
     @Test(description = "学习中心--学习课程",priority = 1)
     public void testLearnCenterController () {
-        LearnCenterPage learnCenterPage = new LearnCenterPage(driver);
+        LearnCenterPage learnCenterPage = new LearnCenterPage((AndroidDriver<MobileElement>) driver);
         LearnCenterService learnCenterService = new LearnCenterService(learnCenterPage);
         learnCenterService.learnCenterService();
 

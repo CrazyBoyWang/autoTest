@@ -5,6 +5,8 @@ import com.xdf.bling.qa.page.home.HomePage;
 import com.xdf.bling.qa.page.mine.MinePage;
 import com.xdf.bling.qa.service.home.HomeService;
 import com.xdf.bling.qa.service.mine.MineService;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.Test;
 
 import java.util.Map;
@@ -21,18 +23,18 @@ public class MineController extends BaseController {
 
     @Test(description = "测试进入我的页面",priority = 1)
     public void testEnterMinePage () {
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage((AndroidDriver<MobileElement>) driver);
         HomeService homeService = new HomeService(homePage);
         //homeService.swipeHomePageService();
         homeService.enterMinePageService();
-        MinePage minePage = new MinePage(driver);
+        MinePage minePage = new MinePage((AndroidDriver<MobileElement>) driver);
         MineService mineService = new MineService(minePage);
         mineService.verifyEnterMinePageService();
     }
 
     @Test(description = "测试宝贝页面", dataProvider = "providerMethod", priority = 2)
     public void TestBabyPage (Map<String, String> param) {
-        MinePage minePage = new MinePage(driver);
+        MinePage minePage = new MinePage((AndroidDriver<MobileElement>) driver);
         MineService mineService = new MineService(minePage);
         mineService.verifyEnterBabyPageService();
         mineService.verityEnterMineInfoPage();

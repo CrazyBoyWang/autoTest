@@ -4,6 +4,8 @@ import com.xdf.bling.qa.bean.Altert;
 import com.xdf.bling.qa.page.AlertByPage;
 import com.xdf.bling.qa.service.AlertByPageService;
 import com.xdf.bling.qa.util.XmlParse;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.Test;
 
 import java.util.Map;
@@ -13,7 +15,7 @@ public class AlertByPageController extends BaseController {
     public void testAlertByPage() {
         Map<String, String> param = XmlParse.getData("testAlertByPage");
 
-        AlertByPage alertByPage = new AlertByPage(driver);
+        AlertByPage alertByPage = new AlertByPage((AndroidDriver<MobileElement>) driver);
         AlertByPageService alertByPageService = new AlertByPageService(alertByPage);
         Altert alert = new Altert();
         //增加所有判断参数

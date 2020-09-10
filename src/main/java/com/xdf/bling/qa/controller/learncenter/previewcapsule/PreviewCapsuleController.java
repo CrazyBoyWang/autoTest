@@ -4,6 +4,8 @@ package com.xdf.bling.qa.controller.learncenter.previewcapsule;
 import com.xdf.bling.qa.controller.BaseController;
 import com.xdf.bling.qa.page.learncenter.previewcapsule.PreviewCapsulePage;
 import com.xdf.bling.qa.service.learncenter.previewcapsule.PreviewCapsuleService;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.Test;
 
 /**
@@ -20,7 +22,7 @@ public class PreviewCapsuleController extends BaseController {
 
     @Test(description = "学习中心--预习小胶囊", priority = 1)
     public void testPreviewCapsuleController() throws InterruptedException {
-        PreviewCapsulePage previewCapsulePage = new PreviewCapsulePage(driver);
+        PreviewCapsulePage previewCapsulePage = new PreviewCapsulePage((AndroidDriver<MobileElement>) driver);
         PreviewCapsuleService previewCapsuleService = new PreviewCapsuleService(previewCapsulePage);
         previewCapsuleService.previewCapsuleService();
         //内部小胶囊

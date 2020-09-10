@@ -4,6 +4,8 @@ package com.xdf.bling.qa.controller.mine;
 import com.xdf.bling.qa.controller.BaseController;
 import com.xdf.bling.qa.page.mine.MyOrderPage;
 import com.xdf.bling.qa.service.mine.MyOrderService;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.Test;
 
 /**
@@ -21,7 +23,7 @@ public class MyOrderController extends BaseController {
 
     @Test(description = "测试我的账户-我的订单",priority = 1)
     public void testMyOrderController () {
-        MyOrderPage myOrderPage = new MyOrderPage(driver);
+        MyOrderPage myOrderPage = new MyOrderPage((AndroidDriver<MobileElement>) driver);
         MyOrderService myOrderService = new MyOrderService(myOrderPage);
         myOrderService.myOrderService();
 

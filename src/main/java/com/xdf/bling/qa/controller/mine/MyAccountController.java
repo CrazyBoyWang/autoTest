@@ -4,6 +4,8 @@ package com.xdf.bling.qa.controller.mine;
 import com.xdf.bling.qa.controller.BaseController;
 import com.xdf.bling.qa.page.mine.MyAccountPage;
 import com.xdf.bling.qa.service.mine.MyAccountService;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.Test;
 
 /**
@@ -22,7 +24,7 @@ public class MyAccountController extends BaseController {
     @Test(description = "测试我的账户-我的课程",priority = 1)
     public void testMyAccountController () {
         //进入我的页面
-        MyAccountPage myAccountPage = new MyAccountPage(driver);
+        MyAccountPage myAccountPage = new MyAccountPage((AndroidDriver<MobileElement>) driver);
         MyAccountService myAccountService = new MyAccountService(myAccountPage);
         //执行设置
         myAccountService.myAccountService();

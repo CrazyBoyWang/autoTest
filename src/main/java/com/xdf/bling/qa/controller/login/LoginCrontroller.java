@@ -5,6 +5,8 @@ import com.xdf.bling.qa.controller.BaseController;
 import com.xdf.bling.qa.listener.AlertPageListener;
 import com.xdf.bling.qa.page.login.LoginPage;
 import com.xdf.bling.qa.service.login.LoginService;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Feature;
 import org.testng.annotations.Test;
 
@@ -24,7 +26,7 @@ public class LoginCrontroller extends BaseController {
     @Test(retryAnalyzer = AlertPageListener.class, description = "测试手机号和密码登录", dataProvider = "providerMethod")
     //@Test(retryAnalyzer = AlertPageListener.class)
     public void testLogin (Map<String, String> param) {
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage((AndroidDriver<MobileElement>) driver);
         LoginService loginService = new LoginService(loginPage);
         Login login = new Login();
         login.setPhone(param.get("phone"));

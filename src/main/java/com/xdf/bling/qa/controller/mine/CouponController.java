@@ -4,6 +4,8 @@ package com.xdf.bling.qa.controller.mine;
 import com.xdf.bling.qa.controller.BaseController;
 import com.xdf.bling.qa.page.mine.CouponPage;
 import com.xdf.bling.qa.service.mine.CouponService;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.Test;
 
 /**
@@ -21,7 +23,7 @@ public class CouponController extends BaseController {
 
     @Test(description = "测试我的账户-我的-优惠券",priority = 1)
     public void testCouponController () {
-        CouponPage couponPage = new CouponPage(driver);
+        CouponPage couponPage = new CouponPage((AndroidDriver<MobileElement>) driver);
         CouponService couponService = new CouponService(couponPage);
         couponService.couponService();
 
