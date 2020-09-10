@@ -1,6 +1,5 @@
 package com.xdf.bling.qa.listener;
 
-import com.xdf.bling.qa.controller.BaseController;
 import io.appium.java_client.AppiumDriver;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;

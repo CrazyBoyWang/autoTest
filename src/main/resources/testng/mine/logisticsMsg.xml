@@ -16,14 +16,14 @@
     <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
     <!--        <parameter name="udid" value="c7626d73"></parameter>-->
               <classes>
-                  <class name="com.xdf.bling.qa.controller.mine.LogisticsMsgController" />
+                  <class name="com.xdf.bling.qa.android.controller.mine.LogisticsMsgController" />
               </classes>
           </test>
   <!--        <test name="emulator-5556" >-->
 <!--        <parameter name="port" value="4726"></parameter>-->
 <!--        <parameter name="udid" value="emulator-5556"></parameter>-->
 <!--        <classes>-->
-<!--            <class name="com.xdf.bling.qa.controller.login.LoginCrontroller" />-->
+<!--            <class name="com.xdf.bling.qa.android.controller.login.LoginCrontroller" />-->
 <!--        </classes>-->
 <!--        </test>-->
 </suite>

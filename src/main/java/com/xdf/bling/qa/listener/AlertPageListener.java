@@ -1,6 +1,6 @@
 package com.xdf.bling.qa.listener;
 
-import com.xdf.bling.qa.controller.AlertByPageController;
+import com.xdf.bling.qa.android.controller.AlertByPageController;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestNGListener;
 import org.testng.ITestResult;

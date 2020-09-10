@@ -9,7 +9,7 @@
         <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
         <!--        <parameter name="udid" value="c7626d73"></parameter>-->
         <classes>
-            <class name="com.xdf.bling.qa.controller.mine.FeedBackController" />
+            <class name="com.xdf.bling.qa.android.controller.mine.FeedBackController" />
         </classes>
     </test>
 </suite>
