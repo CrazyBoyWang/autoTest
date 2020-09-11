@@ -30,7 +30,6 @@ import java.util.concurrent.TimeUnit;
  * @Date: 2020/7/15 7:19 下午
  */
 public class BaseController {
-
     public static OS executionOS = OS.IOS;
     public enum OS {
         ANDROID,
@@ -45,24 +44,45 @@ public class BaseController {
     @Parameters(value = {"port"})
     //建议需要安装输入法
     @BeforeTest(description = "初始化appium服务")
+
     public void setUp(String port) throws Exception {
-        if (driver != null) {
-            return;
-        }
+        get_devices_info map = new get_devices_info();
+        String udid = null;
         DesiredCapabilities capabilities = new DesiredCapabilities();
+    try {
+
+        Map map1 = map.get_all_devices();
+
+        for (Object key : map1.keySet()) {
+            String value = (String) map1.get(key);
+            System.out.println(key + "    " + value);
+            if (value.equals("ANDROID")) {
+                executionOS = OS.ANDROID;
+            } else {
+                executionOS = OS.IOS;
+            }
+            udid = (String) key;
+        }
+    }catch (Exception e){
+        System.err.println("获取手机信息失败" + e.getMessage());
+    }
+        //       Sy
+
+
         switch (executionOS) {
             case ANDROID:
                 //获取设备ID
-                get_devices_info test = new get_devices_info();
+
+
                 capabilities.setCapability("deviceName", "MI 9 SE");
                 capabilities.setCapability("platformName", "Android");
                 capabilities.setCapability("noReset", "true");//是否重头开始
-                capabilities.setCapability("udid", test.get_all_devices());
+                capabilities.setCapability("udid",udid);
                 capabilities.setCapability("appPackage", "com.blingabc.student");
                 capabilities.setCapability("appActivity", "com.blingabc.student.MainActivity");
                 capabilities.setCapability("automationName", "uiautomator2");
                 capabilities.setCapability("unicodeKeyboard", "true");//使用unicode编码方式发送字符串
-                capabilities.setCapability("resetKeyboard", "true");//键盘隐藏起来
+                capabilities.setCapability("resetKyboard", "true");//键盘隐藏起来
                 appiumService = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingPort(Integer.parseInt(port)));
                 appiumService.start();
                 driver = new AndroidDriver(appiumService, capabilities);
@@ -77,7 +97,9 @@ public class BaseController {
                 capabilities.setCapability(IOSMobileCapabilityType.XCODE_SIGNING_ID, "iPhone Developer");
                 capabilities.setCapability(MobileCapabilityType.APP, "com.blingabc.student");
                 capabilities.setCapability("appActivity", "com.blingabc.student.MainActivity");
-                capabilities.setCapability(MobileCapabilityType.UDID, "020994577e6df69731d3d0a055b428480de2df85");
+                capabilities.setCapability("unicodeKeyboard", "true");//使用unicode编码方式发送字符串
+                capabilities.setCapability("resetKyboard", "true");//键盘隐藏起来
+                capabilities.setCapability(MobileCapabilityType.UDID, udid);
 
                 appiumService = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingPort(Integer.parseInt(port)));
                 appiumService.start();

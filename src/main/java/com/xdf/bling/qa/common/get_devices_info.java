@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class get_devices_info {
     //region 初始化
 
@@ -15,20 +18,42 @@ public class get_devices_info {
      * @Author: 王雪松
      * @Date: 2020/7/23 15:03 下午
      */
-    public static String get_all_devices() throws Exception {
-        ArrayList<String> list = null;
-        Process process;
-        BufferedReader reader;
-        String line = null;
-        String device_tpye;
-        Commons commons = new Commons();
+    ArrayList<String> list = null;
+    Process process;
+    Process iosProcess;
+    BufferedReader reader;
+    String line = null;
+    String device_tpye;
+    Map<String, String> map = new HashMap();
+
+    public Map<String, String> get_all_devices() throws Exception {
+//        process = ;
+//        iosProcess = ;
+
+        //设置adb.exe存放路径，如果设置了环境变量，直接输入adb即可
+
+        //执行adb device操作，查看pc当前连接手机或模拟器设备列表
+        //注意：一定要先配置好sdk环境变量，否则无法直接执行adb命令
+        String iosUdid = this.iosUdid(Commons.excuteShell("idevice_id -l"));
+        String androidUdid = this.androidUdid(Commons.excuteShell("adb devices -l"));
+
+        if (iosUdid != null) {
+            map.put(iosUdid, "IOS");
+        } else if (androidUdid != null) {
+            map.put(androidUdid, "ANDROID");
+        }
+        return map;
+    }
+
+    public String androidUdid(Process process) throws IOException {
+
         try {
             list = new ArrayList<String>();
             //设置adb.exe存放路径，如果设置了环境变量，直接输入adb即可
             String adb_path = "adb";
             //执行adb device操作，查看pc当前连接手机或模拟器设备列表
             //注意：一定要先配置好sdk环境变量，否则无法直接执行adb命令
-            process = commons.excuteShell(adb_path + " devices -l");
+            process = Commons.excuteShell(adb_path + " devices -l");
             if (process != null) {
                 reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
                 while ((line = reader.readLine()) != null) {
@@ -56,7 +81,7 @@ public class get_devices_info {
                                         System.out.println("当前设备名称为:" + device_sn);
 
                                         String shell = adb_path + " -s " + device_sn + " shell cat /system/build.prop /| grep 'ro.build.version.release'";
-                                        process = commons.excuteShell(shell);
+                                        process = Commons.excuteShell(shell);
                                         if (process != null) {
                                             reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
                                             line = null;
@@ -78,8 +103,6 @@ public class get_devices_info {
                     } else {
                         System.out.println("当前设备列表没有连接的设备，请检查！");
                     }
-                } else {
-                    get_all_devices();
                 }
             } else {
                 System.out.println("当前执行adb命令异常，请检查adb环境！");
@@ -87,6 +110,19 @@ public class get_devices_info {
         } catch (IOException e) {
             System.err.println("IOException" + e.getMessage());
             return null;
+        }
+        return null;
+    }
+
+
+    public String iosUdid(Process iosProcess) {
+        try {
+            reader = new BufferedReader(new InputStreamReader(iosProcess.getInputStream()));
+            String device_sn = reader.readLine();
+            System.out.println("ios数据信息" + device_sn);
+            return device_sn;
+        } catch (IOException e) {
+            System.err.println("IOS获取信息" + e.getMessage());
         }
         return null;
     }

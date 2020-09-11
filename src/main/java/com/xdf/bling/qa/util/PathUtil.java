@@ -20,7 +20,7 @@ public class PathUtil {
 
     public static String returnFilePath(String filePath) throws IOException {
         //此处如果用File file = Resource.getFile(filePath)会报异常：找不到文件
-        Resource resource = new ClassPathResource("classpath:testng/mine/mine.xml");
+        Resource resource = new ClassPathResource("classpath:testng/android/mine/mine.xml");
         InputStream is = resource.getInputStream();
         ByteArrayOutputStream result = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024];
@@ -32,7 +32,7 @@ public class PathUtil {
     }
 
     public static void main(String[] args) throws IOException {
-        String path = returnFilePath("testng/mine/mine.xml");
+        String path = returnFilePath("testng/android/mine/mine.xml");
         System.out.println("***********************************************" + path);
     }
 }
