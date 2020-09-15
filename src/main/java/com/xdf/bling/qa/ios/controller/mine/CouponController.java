@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 public class CouponController extends BaseController {
 
     @Test(description = "测试我的账户-我的-优惠券",priority = 1)
-    public void testCouponController () {
+    public void testCouponController () throws InterruptedException {
         CouponPage couponPage = new CouponPage((IOSDriver<MobileElement>) driver);
         CouponService couponService = new CouponService(couponPage);
         couponService.couponService();
