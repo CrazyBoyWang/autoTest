@@ -1,6 +1,6 @@
-package com.xdf.bling.qa.android.service.mine;
+package com.xdf.bling.qa.ios.service.mine;
 
-import com.xdf.bling.qa.android.page.mine.MinePage;
+import com.xdf.bling.qa.ios.page.mine.MinePage;
 import org.testng.Assert;
 
 /**
@@ -15,22 +15,22 @@ public class MineService {
 
     private final MinePage minePage;
 
-    public MineService( MinePage minePage) {
+    public MineService(MinePage minePage) {
         this.minePage = minePage;
     }
 
     /**
      * 验证进入登录页面
      */
-    public void verifyEnterMinePageService () {
+    public void verifyEnterMinePageService() {
         Assert.assertTrue(minePage.isShowMinePageHeaderImage(), "进入我的页面头像没显示");
-   //     Assert.assertTrue(minePage.isShowMinePageUserName(), "进入我的页面用户名没显示");
+        //       Assert.assertTrue(minePage.isShowMinePageUserName(), "进入我的页面用户名没显示");
     }
 
     /**
      * 验证进入baby页面
      */
-    public void verifyEnterBabyPageService () {
+    public void verifyEnterBabyPageService() {
         minePage.clickMinePageHeaderImage();
         Assert.assertTrue(minePage.isShowBabyPageBirthday(), "进入宝贝页面生日没显示");
         Assert.assertTrue(minePage.isShowBabyPageHeaderImage(), "进入宝贝页面头像没显示");
@@ -39,7 +39,7 @@ public class MineService {
         Assert.assertTrue(minePage.isShowBabyPageGender(), "进入宝贝页面性别没显示");
     }
 
-    public void verifyChangeAvatar() {
+    public void verifyChangeAvatar() throws InterruptedException {
         minePage.clickBabyPageHeaderImage();
         minePage.clickChooseHeaderFormMobileAlbum();
         Assert.assertTrue(minePage.changeHeaderImageSuccessToast(), "更新头像成功的toast没出现");
@@ -47,14 +47,15 @@ public class MineService {
 
     /**
      * 修改英文名称
+     *
      * @param englishName
      */
-    public void changeBabyEnglishNameService (String englishName) {
+    public void changeBabyEnglishNameService(String englishName) {
         String oldName = minePage.getBabyPageEnglishName();
         minePage.clickBabyPageEnglishName();
         minePage.setBabyPageTextInput(englishName, false);
         minePage.clickBabyPageTextInputSaveButton();
- //       Assert.assertTrue(minePage.isShowBabyGenderupdateSuccessToast(), "更新性别的toast没提示");
+        //       Assert.assertTrue(minePage.isShowBabyGenderupdateSuccessToast(), "更新性别的toast没提示");
         String newName = minePage.getBabyPageEnglishName();
         Assert.assertEquals(englishName.trim(), newName.trim(), "需要修改的名称：" + englishName + "，修改后显示的名称：" + newName + "不一致");
         minePage.clickBabyPageEnglishName();
@@ -82,8 +83,9 @@ public class MineService {
     /**
      * 修改baby性别
      */
-    public void changeBabyGenderService () {
+    public void changeBabyGenderService() throws InterruptedException {
         String babyShowGender = minePage.getShowBabyPageGender();
+        Thread.sleep(3000);
         minePage.clickBabyPageGender();
         if ("男".equals(babyShowGender)) {
             minePage.clickGenderOfFemale();
@@ -109,36 +111,37 @@ public class MineService {
 
     /**
      * 修改我的信息用户名
+     *
      * @param userName
      */
-    public void changeUserName (String userName) {
+    public void changeUserName(String userName) {
         minePage.clickMineInfoTab();
         String oldName = minePage.getUserName();
         minePage.clickUserName();
-     //   minePage.setBabyPageTextInput(userName, true);
-        minePage.clickBabyPageTextInputSaveButton();
-        Assert.assertTrue(minePage.isShowUpdateSuccessToast(), "更新成功toast没提示");
-        String newName = minePage.getUserName();
-        Assert.assertEquals(userName, newName.trim(), "需要修改的名称：" + userName + "，修改后显示的名称：" + newName + "不一致");
-
-        // 恢复旧name
-        minePage.clickUserName();
-   //     minePage.setBabyPageTextInput(oldName, true);
-        minePage.clickBabyPageTextInputSaveButton();
+        minePage.goBack();
+//        minePage.setBabyPageTextInputCN(userName, true);
+//        minePage.clickBabyPageTextInputSaveButton();
+//        Assert.assertTrue(minePage.isShowUpdateSuccessToast(), "更新成功toast没提示");
+//        String newName = minePage.getUserName();
+//        Assert.assertEquals(userName, newName.trim(), "需要修改的名称：" + userName + "，修改后显示的名称：" + newName + "不一致");
+//
+//        // 恢复旧name
+//        minePage.clickUserName();
+//   //     minePage.setBabyPageTextInput(oldName, true);
+//        minePage.clickBabyPageTextInputSaveButton();
     }
 
 
-
-    public void changeLocation () {
+    public void changeLocation() throws InterruptedException {
         minePage.clickLocation();
-        for (int i = -0;i<5;i++) {
+        for (int i = -0; i < 5; i++) {
             minePage.swipeCity();
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
+            Thread.sleep(1000);
+
         }
+        minePage.clickCity();
+        Assert.assertTrue(minePage.isShowUpdateSuccessToast(),"更新失败啦～找原因吧！");
 
     }
 }

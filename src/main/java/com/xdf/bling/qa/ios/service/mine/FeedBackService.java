@@ -45,7 +45,7 @@ public class FeedBackService {
             e.printStackTrace();
         }
         for (int i = 0; i < 3; i++) {
-            feedBackPage.feedBackBack();
+            feedBackPage.goBack();
 
         }
         // myOrderPage.clickAllOrderList();
