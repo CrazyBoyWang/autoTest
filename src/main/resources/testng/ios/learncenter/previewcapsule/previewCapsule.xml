@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite" parallel="tests" thread-count="5" >
+
+    <listeners>
+        <listener class-name="com.xdf.bling.qa.listener.TestngListener"></listener>
+    </listeners>
+    <test name="学习中心-进入预习小胶囊" >
+        <parameter name="port" value="4571"></parameter>
+        <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
+        <!--        <parameter name="udid" value="c7626d73"></parameter>-->
+        <classes>
+            <class name="com.xdf.bling.qa.ios.controller.learncenter.LearnCenterController" />
+            <class name="com.xdf.bling.qa.ios.controller.learncenter.previewcapsule.PreviewCapsuleController" />
+        </classes>
+
+    </test>
+</suite>

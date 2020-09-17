@@ -108,7 +108,7 @@ public class BaseController {
 
         }
         //隐式等待
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 
         //流畅等待
 
