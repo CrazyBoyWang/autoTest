@@ -21,8 +21,9 @@ public class DeliveryAddressService {
     }
 
 
-    public void deliveryAddressService() {
+    public void deliveryAddressService() throws InterruptedException {
         deliveryAddressPage.clickMineTab();
+        Thread.sleep(3000);
         deliveryAddressPage.clickShipPage();
         deliveryAddressPage.isShipPage();
         Assert.assertTrue(deliveryAddressPage.isShipPage(), "//进入优惠券失败");
@@ -32,7 +33,7 @@ public class DeliveryAddressService {
             e.printStackTrace();
         }
 
-        deliveryAddressPage.clickBack();
+        deliveryAddressPage.goBack();
 
         // myOrderPage.clickAllOrderList();
     }

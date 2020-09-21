@@ -51,8 +51,7 @@ public class PreviewCapsulePage extends BasePage {
      */
     public void swipeCapsule() {
         //   MobileElement element = driver.findElementByXPath("//android.view.View[@text='预习小锦囊']");
-        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]");
-        swipe(Direction.RIGHT, element);
+        swipe(Direction.RIGHT, null);
     }
 
     /**

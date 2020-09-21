@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class get_devices_info {
+public class Get_devices_info {
     //region 初始化
 
     /**
@@ -35,7 +35,7 @@ public class get_devices_info {
         //执行adb device操作，查看pc当前连接手机或模拟器设备列表
         //注意：一定要先配置好sdk环境变量，否则无法直接执行adb命令
         String iosUdid = this.iosUdid(Commons.excuteShell("idevice_id -l"));
-        String androidUdid = this.androidUdid(Commons.excuteShell("adb devices -l"));
+        String androidUdid = this.androidUdid();
 
         if (iosUdid != null) {
             map.put(iosUdid, "IOS");
@@ -45,7 +45,7 @@ public class get_devices_info {
         return map;
     }
 
-    public String androidUdid(Process process) throws IOException {
+    public String androidUdid() {
 
         try {
             list = new ArrayList<String>();
@@ -53,7 +53,7 @@ public class get_devices_info {
             String adb_path = "adb";
             //执行adb device操作，查看pc当前连接手机或模拟器设备列表
             //注意：一定要先配置好sdk环境变量，否则无法直接执行adb命令
-            process = Commons.excuteShell(adb_path + " devices -l");
+            Process process = Commons.excuteShell(adb_path + " devices -l");
             if (process != null) {
                 reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
                 while ((line = reader.readLine()) != null) {

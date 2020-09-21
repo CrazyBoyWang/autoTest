@@ -3,7 +3,6 @@ package com.xdf.bling.qa.ios.page.mine;
 
 import com.xdf.bling.qa.ios.page.BasePage;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 
 
@@ -29,7 +28,7 @@ public class DeliveryAddressPage extends BasePage {
     public void clickShipPage() {
 //        int x = 434;
 //        int y = 810;
-        MobileElement element = driver.findElementByXPath("//XCUIElementTypeImage[@name='收货地址']\n");
+        MobileElement element = driver.findElementByXPath("//XCUIElementTypeOther[@name=\"收货地址\"]\n");
         element.click();
         //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
 
@@ -39,7 +38,7 @@ public class DeliveryAddressPage extends BasePage {
      * 判断进入收货地址
      */
     public boolean isShipPage() {
-        MobileElement element = driver.findElementByXPath("//XCUIElementTypeStaticText[contains(@name,'收货地址')}");
+        MobileElement element = driver.findElementByXPath("//XCUIElementTypeOther[contains(@name,'收货地址')]");
         return isPresent(element);
     }
 

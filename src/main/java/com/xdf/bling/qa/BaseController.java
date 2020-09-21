@@ -1,7 +1,8 @@
 package com.xdf.bling.qa;
 
 import com.xdf.bling.qa.android.controller.AlertByPageController;
-import com.xdf.bling.qa.common.get_devices_info;
+import com.xdf.bling.qa.common.Commons;
+import com.xdf.bling.qa.common.Get_devices_info;
 import com.xdf.bling.qa.util.XmlParse;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -17,6 +18,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -30,6 +33,7 @@ import java.util.concurrent.TimeUnit;
  * @Date: 2020/7/15 7:19 下午
  */
 public class BaseController {
+    BufferedReader reader;
     public static OS executionOS = OS.IOS;
     public enum OS {
         ANDROID,
@@ -46,7 +50,7 @@ public class BaseController {
     @BeforeTest(description = "初始化appium服务")
 
     public void setUp(String port) throws Exception {
-        get_devices_info map = new get_devices_info();
+        Get_devices_info map = new Get_devices_info();
         String udid = null;
         DesiredCapabilities capabilities = new DesiredCapabilities();
     try {
@@ -129,6 +133,11 @@ public class BaseController {
         if (appiumService != null) {
             appiumService.stop();
         }
+
+        Process result = Commons.excuteShell("allure generate report/ -o report/html --clean");
+        assert result != null;
+        reader = new BufferedReader(new InputStreamReader(result.getInputStream()));
+        System.out.println("清理并生成测试报告：" + reader.readLine());
     }
 
     @DataProvider

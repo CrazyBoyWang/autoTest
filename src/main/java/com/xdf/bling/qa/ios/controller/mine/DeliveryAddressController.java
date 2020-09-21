@@ -21,7 +21,7 @@ import org.testng.annotations.Test;
 public class DeliveryAddressController extends BaseController {
 
     @Test(description = "测试我的账户-我的-收货地址", priority = 1)
-    public void testDeliveryAddressController() {
+    public void testDeliveryAddressController() throws InterruptedException {
         DeliveryAddressPage deliveryAddressPage = new DeliveryAddressPage((IOSDriver<MobileElement>) driver);
         DeliveryAddressService deliveryAddressService = new DeliveryAddressService(deliveryAddressPage);
         deliveryAddressService.deliveryAddressService();

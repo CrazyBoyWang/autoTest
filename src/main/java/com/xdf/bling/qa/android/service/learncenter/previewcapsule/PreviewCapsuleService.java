@@ -80,8 +80,9 @@ public class PreviewCapsuleService {
         sleep(2000);
         previewCapsulePage.clickBackInClass();
         previewCapsulePage.clickKnowledgePreheating();
+
         for (int i = 0; i < 10; i++) {
-            sleep(5000);
+            sleep(6000);
             previewCapsulePage.clickAhead();
         }
         Assert.assertTrue(previewCapsulePage.isAroundFinish(), "获取闯关完成失败");
