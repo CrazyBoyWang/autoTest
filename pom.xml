@@ -10,6 +10,13 @@
 
     <properties>
         <aspectj.version>1.8.10</aspectj.version>
+            <!--
+              这里是将后面plugins插件中的配置设置到properties前面
+              1 env.后面的字符串对应Jenkins中设置的字符名称，
+              2 <xml.file>和<environment>中的xml.file和environment对应plugins中的配置
+             -->
+            <!--suppress UnresolvedMavenProperty -->
+            <xml.file>${env.xmlFileName}</xml.file>
     </properties>
 
 
@@ -59,16 +66,9 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <properties>
-                        <!--
-                          这里是将后面plugins插件中的配置设置到properties前面
-                          1 env.后面的字符串对应Jenkins中设置的字符名称，
-                          2 <xml.file>和<environment>中的xml.file和environment对应plugins中的配置
-                         -->
-                        <!--suppress UnresolvedMavenProperty -->
-                        <xml.file>${env.xmlFileName}</xml.file>
-                    </properties>
-
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${xml.file}</suiteXmlFile>
+                    </suiteXmlFiles>
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
