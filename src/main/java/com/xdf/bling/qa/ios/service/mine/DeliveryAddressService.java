@@ -22,8 +22,6 @@ public class DeliveryAddressService {
 
 
     public void deliveryAddressService() throws InterruptedException {
-        deliveryAddressPage.clickMineTab();
-        Thread.sleep(3000);
         deliveryAddressPage.clickShipPage();
         deliveryAddressPage.isShipPage();
         Assert.assertTrue(deliveryAddressPage.isShipPage(), "//进入优惠券失败");
