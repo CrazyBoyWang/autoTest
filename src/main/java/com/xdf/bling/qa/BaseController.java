@@ -133,11 +133,11 @@ public class BaseController {
         if (appiumService != null) {
             appiumService.stop();
         }
-
-        Process result = Commons.excuteShell("allure generate report/ -o report/html --clean");
-        assert result != null;
-        reader = new BufferedReader(new InputStreamReader(result.getInputStream()));
-        System.out.println("清理并生成测试报告：" + reader.readLine());
+// 生成报告命令
+//        Process result = Commons.excuteShell("allure generate report/ -o report/html --clean");
+//        assert result != null;
+//        reader = new BufferedReader(new InputStreamReader(result.getInputStream()));
+//        System.out.println("清理并生成测试报告：" + reader.readLine());
     }
 
     @DataProvider

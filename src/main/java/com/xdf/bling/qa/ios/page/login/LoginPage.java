@@ -56,7 +56,7 @@ public class LoginPage extends BasePage {
      * @return
      */
     public boolean homePageTabIsExist () {
-        MobileElement homePageElement = driver.findElementByXPath("//XCUIElementTypeImage[contains(@name=\"首页\")]\n");
+        MobileElement homePageElement = driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,\"首页\")]");
 
         return isPresent(homePageElement);
     }
