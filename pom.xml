@@ -10,6 +10,10 @@
 
     <properties>
         <aspectj.version>1.8.10</aspectj.version>
+        <!--suppress UnresolvedMavenProperty -->
+        <xml.file>${env.xmlFileName}</xml.file>
+        <!--suppress UnresolvedMavenProperty -->
+        <testType>${env.testType}</testType>
     </properties>
 
 
@@ -57,11 +61,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.20</version>
                 <configuration>
+                    <systemPropertyVariables>
+                        <propertyName>${testType}}</propertyName>
+                    </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <!--suppress UnresolvedMavenProperty -->
-                        <suiteXmlFile>/Users/wangxuesong/.jenkins/workspace/allure/src/main/resources/testng/ios/message/searchMsg.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/${xml.file}</suiteXmlFile>
                     </suiteXmlFiles>
-
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>

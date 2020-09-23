@@ -1,0 +1,6 @@
+<parameter name="testType" value="${testType}"/>
+<test name="可用性测试">
+<classes>
+    <class name="common.testsuites.TempTest"></class>
+</classes>
+</test>
