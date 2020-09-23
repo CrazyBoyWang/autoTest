@@ -13,6 +13,8 @@
         <!--suppress UnresolvedMavenProperty -->
         <xml.file>${env.xmlFileName}</xml.file>
         <!--suppress UnresolvedMavenProperty -->
+        <xml.system>${env.xmlSystem}</xml.system>
+        <!--suppress UnresolvedMavenProperty -->
         <testType>${env.testType}</testType>
     </properties>
 
@@ -65,7 +67,8 @@
                         <propertyName>${testType}}</propertyName>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <suiteXmlFile>/Users/wangxuesong/.jenkins/workspace/allure/src/main/resources/testng/ios/${xml.file}</suiteXmlFile>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <suiteXmlFile>/Users/wangxuesong/.jenkins/workspace/allure/src/main/resources/testng/${xmlSystem}/${xml.file}</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
