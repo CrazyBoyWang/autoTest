@@ -64,11 +64,11 @@
                 <version>2.20</version>
                 <configuration>
                     <systemPropertyVariables>
-                        <propertyName>${testType}}</propertyName>
+                        <propertyName>${testType}</propertyName>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
                         <!--suppress UnresolvedMavenProperty -->
-                        <suiteXmlFile>/Users/wangxuesong/.jenkins/workspace/allure/src/main/resources/testng/${xmlSystem}/${xml.file}</suiteXmlFile>
+                        <suiteXmlFile>/Users/wangxuesong/.jenkins/workspace/allure/src/main/resources/testng/${xml.system}/${xml.file}</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
