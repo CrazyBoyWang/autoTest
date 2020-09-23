@@ -103,7 +103,7 @@ public class BaseController {
                 capabilities.setCapability("appActivity", "com.blingabc.student.MainActivity");
                 capabilities.setCapability("unicodeKeyboard", "true");//使用unicode编码方式发送字符串
                 capabilities.setCapability("resetKyboard", "true");//键盘隐藏起来
-                capabilities.setCapability(MobileCapabilityType.UDID, udid);
+                capabilities.setCapability(MobileCapabilityType.UDID, "00008020-000E74113CF2002E");
 
                 appiumService = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingPort(Integer.parseInt(port)));
                 appiumService.start();
