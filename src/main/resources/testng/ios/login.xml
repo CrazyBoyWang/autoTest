@@ -13,7 +13,6 @@
             </classes>
         </test>
     <test name="消息通知" >
-        <parameter name="port" value="4571"></parameter>
         <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
         <!--        <parameter name="udid" value="c7626d73"></parameter>-->
         <classes>
