@@ -31,8 +31,9 @@ public class BlingShopService {
 //            e.printStackTrace();
 //        }
 
-        Thread.sleep(3000);
-        blingShopPage.goBack();
+        //返回按钮ios获取不到
+//        Thread.sleep(3000);
+//        blingShopPage.goBack();
 
        // myOrderPage.clickAllOrderList();
     }
