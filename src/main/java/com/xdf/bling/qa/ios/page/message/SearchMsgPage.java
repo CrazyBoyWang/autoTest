@@ -35,7 +35,7 @@ public class SearchMsgPage extends BasePage {
      */
 
     public boolean isNotice() {
-        MobileElement element = driver.findElementByXPath("//XCUIElementTypeOther[@name=\"通知\"]\n");
+        MobileElement element = driver.findElementByXPath("//XCUIElementTypeOther[contains(@name,\"通知\")]\n");
         return isPresent(element);
     }
 
@@ -43,7 +43,8 @@ public class SearchMsgPage extends BasePage {
      * 进入通讯录
      */
     public void clickList() {
-        driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage\n").click();
+//        driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage\n").click();
+        driver.findElementByXPath("//XCUIElementTypeOther[@name=\"消息\"]/following-sibling::/XCUIElementTypeImage").click();
     }
     /**
      *

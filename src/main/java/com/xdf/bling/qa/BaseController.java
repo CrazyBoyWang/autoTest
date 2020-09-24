@@ -96,14 +96,14 @@ public class BaseController {
                 capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iphone 8");
                 capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
                 capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
-                capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "13.3.1");
+                capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "13.7.1");
                 capabilities.setCapability(IOSMobileCapabilityType.XCODE_ORG_ID, "314158893@qq.com");
                 capabilities.setCapability(IOSMobileCapabilityType.XCODE_SIGNING_ID, "iPhone Developer");
                 capabilities.setCapability(MobileCapabilityType.APP, "com.blingabc.student");
                 capabilities.setCapability("appActivity", "com.blingabc.student.MainActivity");
                 capabilities.setCapability("unicodeKeyboard", "true");//使用unicode编码方式发送字符串
                 capabilities.setCapability("resetKyboard", "true");//键盘隐藏起来
-                capabilities.setCapability(MobileCapabilityType.UDID, "00008020-000E74113CF2002E");
+                capabilities.setCapability(MobileCapabilityType.UDID, udid);
 
                 appiumService = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingPort(Integer.parseInt(port)));
                 appiumService.start();
