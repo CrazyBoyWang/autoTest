@@ -4,7 +4,7 @@
  <!--           <listener class-name="com.xdf.bling.qa.listener.TestngListener"></listener> -->
             <listener class-name="com.xdf.bling.qa.listener.AlertPageListener"/>
                     </listeners>
-                    <test name="emulator-5554" >
+                    <test name="登录" >
                         <parameter name="port" value="4567"/>
             <!--        <parameter name="udid" value="c7626d73"></parameter>-->
 <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
@@ -12,13 +12,4 @@
                 <class name="com.xdf.bling.qa.ios.controller.login.LoginController" />
             </classes>
         </test>
-
-    <test name="消息通知" >
-        <parameter name="port" value="4571"></parameter>
-        <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
-        <!--        <parameter name="udid" value="c7626d73"></parameter>-->
-        <classes>
-            <class name="com.xdf.bling.qa.ios.controller.message.SearchMsgController" />
-        </classes>
-    </test>
 </suite>
