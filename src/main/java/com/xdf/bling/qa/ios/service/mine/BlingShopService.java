@@ -32,7 +32,7 @@ public class BlingShopService {
 //        }
 
         Thread.sleep(3000);
-        blingShopPage.clickBack();
+        blingShopPage.goBack();
 
        // myOrderPage.clickAllOrderList();
     }
