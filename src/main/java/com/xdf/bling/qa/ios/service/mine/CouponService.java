@@ -31,7 +31,7 @@ public class CouponService {
 //        }
 
         Thread.sleep(3000);
-        couponPage.clickBack();
+        couponPage.goBack();
 
        // myOrderPage.clickAllOrderList();
     }
