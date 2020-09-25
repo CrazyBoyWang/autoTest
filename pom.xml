@@ -68,7 +68,7 @@
                     </systemPropertyVariables>
                     <suiteXmlFiles>
                         <!--suppress UnresolvedMavenProperty -->
-                        <suiteXmlFile>/Users/wangxuesong/.jenkins/workspace/allure/src/main/resources/testng/${xml.system}/${xml.file}</suiteXmlFile>
+                        <suiteXmlFile>src/main/resources/testng/${xml.system}/${xml.file}</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
