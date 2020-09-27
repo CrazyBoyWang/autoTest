@@ -23,7 +23,6 @@
         </classes>
     </test>
 
-
     <test name="测试我的账户-比邻商城" >
         <parameter name="port" value="4571"/>
         <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
@@ -51,8 +50,8 @@
         </classes>
     </test>
 
-    <!--消息通知部分-->
 
+    <!--消息通知部分-->
     <test name="消息通知" >
         <parameter name="port" value="4571"/>
         <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->

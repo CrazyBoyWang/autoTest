@@ -25,16 +25,15 @@ public class CouponService {
         couponPage.clickMineTab();
         Thread.sleep(2000);
         couponPage.clickCouponPage();
-        if (couponPage.isCouponPage().equals("兑换")) {
-            Thread.sleep(3000);
-            couponPage.goBack();
-        }
+        Thread.sleep(2000);
+        couponPage.goBack();
+    }
 //        Assert.assertTrue(couponPage.isShopPage(), "//进入优惠券失败");
 //        try {
 //            Thread.sleep(4000);
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
-        // myOrderPage.clickAllOrderList();
-    }
+    // myOrderPage.clickAllOrderList();
+
 }
