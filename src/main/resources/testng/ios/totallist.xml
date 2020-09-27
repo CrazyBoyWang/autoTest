@@ -13,18 +13,9 @@
             </classes>
         </test>
 
-    <test name="消息通知" >
-        <parameter name="port" value="4571"></parameter>
-        <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
-        <!--        <parameter name="udid" value="c7626d73"></parameter>-->
-        <classes>
-            <class name="com.xdf.bling.qa.ios.controller.message.SearchMsgController" />
-        </classes>
-    </test>
-
     <!--min相关内容-->
     <test name="我的-我的账户-我的课程" >
-        <parameter name="port" value="4570"></parameter>
+        <parameter name="port" value="4570"/>
         <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
         <!--        <parameter name="udid" value="c7626d73"></parameter>-->
         <classes>
@@ -34,7 +25,7 @@
 
 
     <test name="测试我的账户-比邻商城" >
-        <parameter name="port" value="4571"></parameter>
+        <parameter name="port" value="4571"/>
         <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
         <!--        <parameter name="udid" value="c7626d73"></parameter>-->
         <classes>
@@ -43,7 +34,7 @@
     </test>
 
     <test name="测试我的账户-我的-优惠券" >
-        <parameter name="port" value="4571"></parameter>
+        <parameter name="port" value="4571"/>
         <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
         <!--        <parameter name="udid" value="c7626d73"></parameter>-->
         <classes>
@@ -52,12 +43,24 @@
     </test>
 
     <test name="测试我的账户-收货地址" >
-        <parameter name="port" value="4571"></parameter>
+        <parameter name="port" value="4571"/>
         <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
         <!--        <parameter name="udid" value="c7626d73"></parameter>-->
         <classes>
             <class name="com.xdf.bling.qa.ios.controller.mine.DeliveryAddressController" />
         </classes>
     </test>
+
+    <!--消息通知部分-->
+
+    <test name="消息通知" >
+        <parameter name="port" value="4571"/>
+        <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
+        <!--        <parameter name="udid" value="c7626d73"></parameter>-->
+        <classes>
+            <class name="com.xdf.bling.qa.ios.controller.message.SearchMsgController" />
+        </classes>
+    </test>
+
 
 </suite>
