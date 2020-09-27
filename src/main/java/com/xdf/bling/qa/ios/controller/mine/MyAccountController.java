@@ -28,8 +28,5 @@ public class MyAccountController extends BaseController {
         MyAccountService myAccountService = new MyAccountService(myAccountPage);
         //执行设置
         myAccountService.myAccountService();
-
-
     }
-
 }

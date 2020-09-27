@@ -23,6 +23,16 @@
     </test>
 
     <!--min相关内容-->
+    <test name="我的-我的账户-我的课程" >
+        <parameter name="port" value="4570"></parameter>
+        <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
+        <!--        <parameter name="udid" value="c7626d73"></parameter>-->
+        <classes>
+            <class name="com.xdf.bling.qa.ios.controller.mine.MyAccountController" />
+        </classes>
+    </test>
+
+
     <test name="测试我的账户-比邻商城" >
         <parameter name="port" value="4571"></parameter>
         <!--        <parameter name="udid" value="CLB0219309002436"></parameter>-->
