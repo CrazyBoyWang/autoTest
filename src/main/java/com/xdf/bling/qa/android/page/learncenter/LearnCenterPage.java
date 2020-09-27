@@ -38,7 +38,7 @@ public class LearnCenterPage extends BasePage {
     /**
      * 判断弹出课程提示信息出现
      *
-     * @return
+     *
      */
     public boolean isCenterToast() {
         MobileElement element = driver.findElementByXPath("//android.view.View[@text='在这里切换「课程类型」和「等级」']");

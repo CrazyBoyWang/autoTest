@@ -27,7 +27,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断我的页面头像显示
-     * @return
+     *
      */
     public boolean isShowMinePageHeaderImage () {
         MobileElement minePageHeaderImg = driver.findElementByXPath("//android.widget.ImageView[2]");
@@ -36,7 +36,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断我的页面用户名显示
-     * @return
+     *
      */
     public boolean isShowMinePageUserName () {
         MobileElement minePageHeaderUserName = driver.findElementByXPath("//android.widget.ImageView[2]/following-sibling::android.view.View[1]");
@@ -46,7 +46,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断宝贝页面头像显示
-     * @return
+     *
      */
     public boolean isShowBabyPageHeaderImage () {
         MobileElement babyPageHeaderImage = driver.findElementByXPath("//android.view.View[@text='头像']/android.widget.ImageView");
@@ -72,7 +72,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断更换头像成功toast出现
-     * @return
+     *
      */
     public boolean changeHeaderImageSuccessToast () {
         return isShowToast("头像更新成功");
@@ -81,7 +81,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断宝贝页面生日显示
-     * @return
+     *
      */
     public boolean isShowBabyPageBirthday () {
         MobileElement babyPageBirthday = driver.findElementByXPath("//android.view.View[@text='头像']/following-sibling::android.widget.ImageView[1]");
@@ -90,7 +90,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断宝贝页面英文名称显示
-     * @return
+     *
      */
     public boolean isShowBabyPageEnglishName () {
         MobileElement babyPageEnglishName = driver.findElementByXPath("//android.view.View[@text='头像']/following-sibling::android.widget.ImageView[2]");
@@ -116,7 +116,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断宝贝页面中文名称显示
-     * @return
+     *
      */
     public boolean isShowBabyPageChineseName () {
         MobileElement babyPageChineseName = driver.findElementByXPath("//android.view.View[@text='头像']/following-sibling::android.widget.ImageView[3]");
@@ -158,7 +158,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断宝贝页面性别显示
-     * @return
+     *
      */
     public boolean isShowBabyPageGender () {
         MobileElement babyPageGender = driver.findElementByXPath("//android.view.View[@text='头像']/following-sibling::android.widget.ImageView[4]");
@@ -167,7 +167,7 @@ public class MinePage extends BasePage {
 
     /**
      * 获取展示的性别
-     * @return
+     *
      */
     public String getShowBabyPageGender () {
         MobileElement babyPageGender = driver.findElementByXPath("//android.view.View[@text='头像']/following-sibling::android.widget.ImageView[4]");
@@ -198,7 +198,7 @@ public class MinePage extends BasePage {
 
     /**
      * 更新性别toast
-     * @return
+     *
      */
     public boolean isShowBabyGenderupdateSuccessToast () {
         return isShowToast("宝贝信息更新成功");
@@ -221,7 +221,7 @@ public class MinePage extends BasePage {
 
     /**
      * 是否存在用户姓名
-     * @return
+     *
      */
     public boolean isExistUserName () {
         MobileElement mobileElement =  driver.findElementByXPath("//android.widget.ImageView[1]");
@@ -230,7 +230,7 @@ public class MinePage extends BasePage {
 
     /**
      * 获取用户姓名
-     * @return
+     *
      */
     public String getUserName () {
         MobileElement mobileElement =  driver.findElementByXPath("//android.widget.ImageView[1]");
@@ -239,7 +239,7 @@ public class MinePage extends BasePage {
 
     /**
      * 点击用户姓名
-     * @return
+     *
      */
     public void clickUserName () {
         MobileElement mobileElement =  driver.findElementByXPath("//android.widget.ImageView[1]");
@@ -248,7 +248,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断更新成功的toast
-     * @return
+     *
      */
     public boolean isShowUpdateSuccessToast () {
         return isShowToast("更新成功~");
@@ -256,7 +256,7 @@ public class MinePage extends BasePage {
 
     /**
      * 获取手机号
-     * @return
+     *
      */
     public String getPhone () {
         MobileElement mobileElement =  driver.findElementByXPath("//android.widget.ImageView[1]/following-sibling::android.view.View[1]");
@@ -265,7 +265,7 @@ public class MinePage extends BasePage {
 
     /**
      * 获取所在地
-     * @return
+     *
      */
     public String getLocation () {
         MobileElement mobileElement =  driver.findElementByXPath("//android.widget.ImageView[2]");

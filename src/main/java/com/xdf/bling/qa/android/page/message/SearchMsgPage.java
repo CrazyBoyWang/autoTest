@@ -31,7 +31,7 @@ public class SearchMsgPage extends BasePage {
     /**
      * 判断进入通知消息
      *
-     * @return
+     *
      */
 
     public boolean isNotice() {

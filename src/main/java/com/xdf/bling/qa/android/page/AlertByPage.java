@@ -63,7 +63,7 @@ public class AlertByPage extends BasePage {
     /**
      * 判断协议配置存在
      *
-     * @return
+     *
      */
 //    public boolean isAgreement(String agreement){
 //            MobileElement element = driver.findElementByXPath("android.view.View[@text='隐私政策以及用户协议']");

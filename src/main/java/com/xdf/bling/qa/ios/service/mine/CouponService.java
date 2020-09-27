@@ -1,6 +1,7 @@
 package com.xdf.bling.qa.ios.service.mine;
 
 
+import com.google.gson.internal.$Gson$Preconditions;
 import com.xdf.bling.qa.ios.page.mine.CouponPage;
 
 /**
@@ -22,17 +23,18 @@ public class CouponService {
 
     public void couponService() throws InterruptedException {
         couponPage.clickMineTab();
+        Thread.sleep(2000);
         couponPage.clickCouponPage();
+        if (couponPage.isCouponPage().equals("兑换")) {
+            Thread.sleep(3000);
+            couponPage.goBack();
+        }
 //        Assert.assertTrue(couponPage.isShopPage(), "//进入优惠券失败");
 //        try {
 //            Thread.sleep(4000);
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
-
-        Thread.sleep(3000);
-        couponPage.goBack();
-
-       // myOrderPage.clickAllOrderList();
+        // myOrderPage.clickAllOrderList();
     }
 }

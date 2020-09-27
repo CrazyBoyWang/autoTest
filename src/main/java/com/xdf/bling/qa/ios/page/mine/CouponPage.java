@@ -34,7 +34,11 @@ public class CouponPage extends BasePage {
         int[] center = site(element);
        new  TouchAction<>(driver).tap(PointOption.point(center[0], center[1] + 30)).perform();
     }
-
+    //判断进入优惠券
+    public String isCouponPage(){
+        MobileElement element = driver.findElementByXPath("//XCUIElementTypeButton[@name=\"兑换\"]\n");
+       return element.getText().trim();
+    }
     /**
      * 判断进入商城
      */

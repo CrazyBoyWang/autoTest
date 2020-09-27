@@ -29,7 +29,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断我的页面头像显示
-     * @return
+     *
      */
     public boolean isShowMinePageHeaderImage () {
         MobileElement minePageHeaderImg = driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[2]\n");
@@ -38,7 +38,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断我的页面用户名显示
-     * @return
+     *
      */
     public boolean isShowMinePageUserName () {
         MobileElement minePageHeaderUserName = driver.findElementByXPath("//XCUIElementTypeOther[@name=\"账户信息\"]\n");
@@ -48,7 +48,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断宝贝页面头像显示
-     * @return
+     *
      */
     public boolean isShowBabyPageHeaderImage () {
         MobileElement babyPageHeaderImage = driver.findElementByXPath("//XCUIElementTypeOther[@name=\"头像\"]\n");
@@ -77,7 +77,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断更换头像成功toast出现
-     * @return
+     *
      */
     public boolean changeHeaderImageSuccessToast () {
         driver.findElementByXPath("//XCUIElementTypeStaticText[@name=\"确定\"]\n").click();
@@ -87,7 +87,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断宝贝页面生日显示
-     * @return
+     *
      */
     public boolean isShowBabyPageBirthday () {
         MobileElement babyPageBirthday = driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,\"出生日期\")]\n");
@@ -96,7 +96,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断宝贝页面英文名称显示
-     * @return
+     *
      */
     public boolean isShowBabyPageEnglishName () {
         MobileElement babyPageEnglishName = driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,\"英文名字\")]\n");
@@ -130,7 +130,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断宝贝页面中文名称显示
-     * @return
+     *
      */
     public boolean isShowBabyPageChineseName () {
         MobileElement babyPageChineseName = driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,\"中文名字\")]\n");
@@ -180,7 +180,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断宝贝页面性别显示
-     * @return
+     *
      */
     public boolean isShowBabyPageGender () {
         MobileElement babyPageGender = driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,\"选择孩子的性别\")]\n");
@@ -189,7 +189,7 @@ public class MinePage extends BasePage {
 
     /**
      * 获取展示的性别
-     * @return
+     *
      */
     public String getShowBabyPageGender () {
         MobileElement babyPageGender = driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,\"选择孩子的性别\")]\n");
@@ -220,7 +220,7 @@ public class MinePage extends BasePage {
 
     /**
      * 更新性别toast
-     * @return
+     *
      */
     public boolean isShowBabyGenderupdateSuccessToast () {
         return isShowToast("宝贝信息更新成功");
@@ -243,7 +243,7 @@ public class MinePage extends BasePage {
 
     /**
      * 是否存在用户姓名
-     * @return
+     *
      */
     public boolean isExistUserName () {
         MobileElement mobileElement =  driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,\"用户姓名\")]\n");
@@ -252,7 +252,7 @@ public class MinePage extends BasePage {
 
     /**
      * 获取用户姓名
-     * @return
+     *
      */
     public String getUserName () {
         MobileElement mobileElement =  driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,\"用户姓名\")]\n");
@@ -261,7 +261,7 @@ public class MinePage extends BasePage {
 
     /**
      * 点击用户姓名
-     * @return
+     *
      */
     public void clickUserName () {
         MobileElement mobileElement =  driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,\"用户姓名\")]\n");
@@ -270,7 +270,7 @@ public class MinePage extends BasePage {
 
     /**
      * 判断更新成功的toast
-     * @return
+     *
      */
     public boolean isShowUpdateSuccessToast () {
         return isShowToast("更新成功~");
@@ -278,7 +278,7 @@ public class MinePage extends BasePage {
 
     /**
      * 获取手机号
-     * @return
+     *
      */
     public String getPhone () {
         MobileElement mobileElement =  driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,\"手机号码\")]\n");
@@ -287,7 +287,7 @@ public class MinePage extends BasePage {
 
     /**
      * 获取所在地
-     * @return
+     *
      */
     public String getLocation () {
         MobileElement mobileElement =  driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,\"所在地区\")]\n");

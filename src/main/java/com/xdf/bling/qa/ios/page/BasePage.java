@@ -52,7 +52,7 @@ public class BasePage {
      * 判断元素出现
      *
      * @param element
-     * @return
+     *
      */
     protected boolean isPresent(MobileElement element) {
         try {
@@ -125,7 +125,7 @@ public class BasePage {
     /**
      * 根据元素获取坐标位置
      *
-     * @return
+     *
      */
     public int[] site(MobileElement element) {
         //获取元素开始标点
@@ -172,7 +172,7 @@ public class BasePage {
      * 判断toast出现
      *
      * @param toast
-     * @return
+     *
      */
     protected boolean isShowToast(String toast) {
         try {

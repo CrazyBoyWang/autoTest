@@ -26,9 +26,6 @@ public class CouponController extends BaseController {
         CouponPage couponPage = new CouponPage((IOSDriver<MobileElement>) driver);
         CouponService couponService = new CouponService(couponPage);
         couponService.couponService();
-
-
-
     }
 
 }

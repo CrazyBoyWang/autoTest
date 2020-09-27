@@ -89,7 +89,7 @@ public class ReviewDaLeDouPage extends BasePage {
     /**
      * 录音下一步
      *
-     * @return
+     *
      */
     public void clickVoiceAhead() {
         driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[5]").click();

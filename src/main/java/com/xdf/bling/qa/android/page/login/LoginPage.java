@@ -53,7 +53,7 @@ public class LoginPage extends BasePage {
 
     /**
      * 判断首页tab出现
-     * @return
+     *
      */
     public boolean homePageTabIsExist () {
         MobileElement homePageElement = driver.findElementByXPath("//android.widget.ImageView[@text='首页\n" +
