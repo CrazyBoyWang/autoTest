@@ -32,7 +32,7 @@ public class CouponPage extends BasePage {
         MobileElement element = driver.findElementByXPath("//XCUIElementTypeImage[@name='优惠券']\n");
         //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
         int[] center = site(element);
-       new  TouchAction<>(driver).tap(PointOption.point(center[0], center[1] - 40)).perform();
+       new  TouchAction<>(driver).tap(PointOption.point(center[0], center[1] - 10)).perform();
     }
     //判断进入优惠券
     public String isCouponPage(){
