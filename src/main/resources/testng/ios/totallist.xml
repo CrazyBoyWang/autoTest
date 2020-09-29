@@ -10,44 +10,6 @@
         </classes>
     </test>
 
-    <!--min相关内容-->
-    <test name="我的-我的账户-我的课程" >
-        <parameter name="port" value="4570"/>
-        <classes>
-            <class name="com.xdf.bling.qa.ios.controller.mine.MyAccountController" />
-        </classes>
-    </test>
-
-    <test name="测试我的账户-比邻商城" >
-        <parameter name="port" value="4571"/>
-        <classes>
-            <class name="com.xdf.bling.qa.ios.controller.mine.BlingShopController" />
-        </classes>
-    </test>
-
-    <test name="测试我的账户-我的-优惠券" >
-        <parameter name="port" value="4571"/>
-        <classes>
-            <class name="com.xdf.bling.qa.ios.controller.mine.CouponController" />
-        </classes>
-    </test>
-
-    <test name="测试我的账户-收货地址" >
-        <parameter name="port" value="4571"/>
-        <classes>
-            <class name="com.xdf.bling.qa.ios.controller.mine.DeliveryAddressController" />
-        </classes>
-    </test>
-
-
-    <!--消息通知部分-->
-    <test name="消息通知" >
-        <parameter name="port" value="4571"/>
-        <classes>
-            <class name="com.xdf.bling.qa.ios.controller.message.SearchMsgController" />
-        </classes>
-    </test>
-
 
     <!--首页-界面操作部分-->
     <test name="主页--首页相关操作" >
@@ -78,6 +40,43 @@
         <classes>
             <class name="com.xdf.bling.qa.ios.controller.learncenter.LearnCenterController" />
             <class name="com.xdf.bling.qa.ios.controller.learncenter.previewcapsule.ReviewDaLeDouController" />
+        </classes>
+    </test>
+
+    <!--消息通知部分-->
+    <test name="消息通知" >
+        <parameter name="port" value="4571"/>
+        <classes>
+            <class name="com.xdf.bling.qa.ios.controller.message.SearchMsgController" />
+        </classes>
+    </test>
+
+    <!--min相关内容-->
+    <test name="我的-我的账户-我的课程" >
+        <parameter name="port" value="4570"/>
+        <classes>
+            <class name="com.xdf.bling.qa.ios.controller.mine.MyAccountController" />
+        </classes>
+    </test>
+
+    <test name="测试我的账户-比邻商城" >
+        <parameter name="port" value="4571"/>
+        <classes>
+            <class name="com.xdf.bling.qa.ios.controller.mine.BlingShopController" />
+        </classes>
+    </test>
+
+    <test name="测试我的账户-我的-优惠券" >
+        <parameter name="port" value="4571"/>
+        <classes>
+            <class name="com.xdf.bling.qa.ios.controller.mine.CouponController" />
+        </classes>
+    </test>
+
+    <test name="测试我的账户-收货地址" >
+        <parameter name="port" value="4571"/>
+        <classes>
+            <class name="com.xdf.bling.qa.ios.controller.mine.DeliveryAddressController" />
         </classes>
     </test>
 
