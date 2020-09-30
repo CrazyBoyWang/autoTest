@@ -20,12 +20,12 @@
     </test>
 
     <!--首页学习中心-->
-    <test name="学习中心-进入学习课程" >
-        <parameter name="port" value="4571"/>
-        <classes>
-            <class name="com.xdf.bling.qa.ios.controller.learncenter.LearnCenterController" />
-        </classes>
-    </test>
+<!--    <test name="学习中心-进入学习课程" >-->
+<!--        <parameter name="port" value="4571"/>-->
+<!--        <classes>-->
+<!--            <class name="com.xdf.bling.qa.ios.controller.learncenter.LearnCenterController" />-->
+<!--        </classes>-->
+<!--    </test>-->
 
     <test name="学习中心-进入预习小胶囊" >
         <parameter name="port" value="4571"/>
