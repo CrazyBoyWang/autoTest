@@ -35,6 +35,11 @@ import java.util.concurrent.TimeUnit;
 public class BaseController {
     BufferedReader reader;
     public static OS executionOS = OS.IOS;
+
+    public static AppiumDriver getDriver() {
+        return driver;
+    }
+
     public enum OS {
         ANDROID,
         IOS,
@@ -112,7 +117,7 @@ public class BaseController {
 
         }
         //隐式等待
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
         //流畅等待
 

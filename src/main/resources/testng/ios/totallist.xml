@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Suite" parallel="tests" thread-count="1" >
     <listeners>
-        <listener class-name="com.xdf.bling.qa.listener.AlertPageListener"/>
+        <listener class-name="com.xdf.bling.qa.listener.TestngListener"/>
     </listeners>
     <test name="登录" >
         <parameter name="port" value="4567"/>
