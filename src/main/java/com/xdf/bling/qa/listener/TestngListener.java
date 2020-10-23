@@ -1,5 +1,6 @@
 package com.xdf.bling.qa.listener;
 
+import com.apple.eawt.AppEvent;
 import com.xdf.bling.qa.BaseController;
 import io.appium.java_client.AppiumDriver;
 import io.qameta.allure.Allure;
@@ -29,7 +30,9 @@ public class TestngListener extends TestListenerAdapter {
             e.printStackTrace();
         }
         try {
-            Allure.addAttachment("失败截图",new FileInputStream(new File("images/failure.png")));
+
+            Allure.addAttachment("失败截图",new FileInputStream(new File(location+"/"+screenShotName)));
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
