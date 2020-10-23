@@ -3,6 +3,7 @@ package com.xdf.bling.qa;
 import com.xdf.bling.qa.android.controller.AlertByPageController;
 import com.xdf.bling.qa.common.Commons;
 import com.xdf.bling.qa.common.Get_devices_info;
+import com.xdf.bling.qa.listener.TestngListener;
 import com.xdf.bling.qa.util.XmlParse;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -13,10 +14,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -32,6 +30,8 @@ import java.util.concurrent.TimeUnit;
  * @Author: 王雪松
  * @Date: 2020/7/15 7:19 下午
  */
+@Listeners(TestngListener.class)
+
 public class BaseController {
     BufferedReader reader;
     public static OS executionOS = OS.IOS;
