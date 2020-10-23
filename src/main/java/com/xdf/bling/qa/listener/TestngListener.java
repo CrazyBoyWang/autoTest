@@ -1,6 +1,5 @@
 package com.xdf.bling.qa.listener;
 
-import com.apple.eawt.AppEvent;
 import com.xdf.bling.qa.BaseController;
 import io.appium.java_client.AppiumDriver;
 import io.qameta.allure.Allure;
