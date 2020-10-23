@@ -20,7 +20,7 @@ import java.util.Map;
  * @Author: liuzhanhui
  * @Date: 2020/6/15 7:18 下午
  */
-@Feature("登录场景")
+@Feature("全流程操作")
 public class LoginController extends BaseController {
 
     @Test(retryAnalyzer = AlertPageListener.class, description = "测试手机号和密码登录", dataProvider = "providerMethod")

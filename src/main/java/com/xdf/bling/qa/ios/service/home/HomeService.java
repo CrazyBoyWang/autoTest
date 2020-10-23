@@ -56,7 +56,7 @@ public class HomeService {
         Thread.sleep(2000);
         //   homePage.swipeBlingOpenClass();
 
-            homePage.swipeDownTeacher();
+        homePage.swipeDownTeacher();
 
 
         Assert.assertTrue(homePage.isBlingOpenClass(), "界面中没有比邻公开课内容");
@@ -71,33 +71,36 @@ public class HomeService {
     /**
      * 比邻绘本
      */
-    public void blingPictureBookService() throws InterruptedException {
-        homePage.swipeHomePage();
-        Assert.assertTrue(homePage.isPictureBook(), "获取绘本失败");
-        homePage.clickPictureBook();
-        Thread.sleep(1000);
-        for (int i = 0; i < 3; i++) {
-            homePage.swipePictureBook();
-        }
-        homePage. pictureBookBack();
-
-    }
+//    public void blingPictureBookService() throws InterruptedException {
+//        for (int i = 0; i < 3; i++) {
+//            homePage.swipeHomePage();
+//        }
+//        Thread.sleep(3000);
+//        Assert.assertTrue(homePage.isPictureBook(), "获取绘本失败");
+//        homePage.clickPictureBook();
+//        Thread.sleep(1000);
+//        for (int i = 0; i < 3; i++) {
+//            homePage.swipePictureBook();
+//        }
+//        homePage.pictureBookBack();
+//
+//    }
 
     /**
-     *
      * 课表相关
      */
     public void classListService() throws InterruptedException {
-        Assert.assertTrue(homePage.isDateList(),"获取课表列表失败");
+        Assert.assertTrue(homePage.isDateList(), "获取课表列表失败");
         Thread.sleep(2000);
         homePage.clickClassList();
         Thread.sleep(1000);
         homePage.clickDateList();
-        for (int i = 0; i < 5 ; i++) {
+        for (int i = 0; i < 5; i++) {
             homePage.clickDate();
         }
         homePage.goBack();
     }
+
     public void swipeHomePageService() {
         homePage.swipeHomePage();
 
