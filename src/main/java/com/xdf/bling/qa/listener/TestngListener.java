@@ -22,6 +22,7 @@ public class TestngListener extends TestListenerAdapter {
         AppiumDriver driver = BaseController.getDriver();
         File location = new File("screenshots");
         String screenShotName = location.getAbsolutePath() + File.separator + tr.getMethod().getMethodName() + ".png";
+       System.out.println("图拍呢地址"+screenShotName);
         File screenShot = driver.getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(screenShot, new File(screenShotName));
@@ -30,7 +31,7 @@ public class TestngListener extends TestListenerAdapter {
         }
         try {
 
-            Allure.addAttachment("失败截图",new FileInputStream(screenShot));
+            Allure.addAttachment("失败截图",new FileInputStream(new File(screenShotName)));
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
