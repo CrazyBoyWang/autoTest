@@ -31,7 +31,7 @@ public class TestngListener extends TestListenerAdapter {
         }
         try {
 
-            Allure.addAttachment("失败截图",new FileInputStream(new File(screenShotName)));
+            Allure.addAttachment("失败截图",new FileInputStream(screenShotName));
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
