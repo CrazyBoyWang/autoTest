@@ -3,3 +3,5 @@ target/
 allure-results
 test-output
 allure-report
+report
+screenshots

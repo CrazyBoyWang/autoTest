@@ -85,6 +85,8 @@ public class BaseController {
                 capabilities.setCapability("platformName", "Android");
                 capabilities.setCapability("noReset", "true");//是否重头开始
                 capabilities.setCapability("udid",udid);
+                //设置是否跳过安装驱动包skipServerInstallation
+                capabilities.setCapability("skipServerInstallation","true");
                 capabilities.setCapability("appPackage", "com.blingabc.student");
                 capabilities.setCapability("appActivity", "com.blingabc.student.MainActivity");
                 capabilities.setCapability("automationName", "uiautomator2");
