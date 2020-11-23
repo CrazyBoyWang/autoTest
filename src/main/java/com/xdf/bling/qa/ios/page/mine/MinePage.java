@@ -149,7 +149,7 @@ public class MinePage extends BasePage {
      * 点击输入框保存按钮
      */
     public void clickBabyPageTextInputSaveButton () {
-    //    MobileElement babyPageTextEditorSaveButton = driver.findElementByXPath("//android.widget.Button[@text='保存']");
+    //    MobileElement babyPageTextEditorSaveButton = driver.findElementByXPath("//android.widget.Button[@content-desc='保存']");
         MobileElement babyPageTextEditorSaveButton = driver.findElementByXPath("//XCUIElementTypeButton[@name=\"保存\"]\n");
         babyPageTextEditorSaveButton.click();
     }
@@ -303,7 +303,7 @@ public class MinePage extends BasePage {
     }
 
     public String getCityName () {
-        MobileElement mobileElement =  driver.findElementByXPath("//android.widget.Button[@text='确定']/following-sibling::android.widget.SeekBar[1]");
+        MobileElement mobileElement =  driver.findElementByXPath("//android.widget.Button[@content-desc='确定']/following-sibling::android.widget.SeekBar[1]");
         return mobileElement.getText().split("所在地区")[1].trim();
     }
 

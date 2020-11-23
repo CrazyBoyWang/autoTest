@@ -95,9 +95,10 @@ public class PreviewCapsuleService {
      */
 
     public void LookAndListenService() throws InterruptedException {
-        for (int i = 0; i < 2; i++) {
-            previewCapsulePage.clickChangeCode();
-        }
+//        for (int i = 0; i < 2; i++) {
+//           previewCapsulePage.clickChangeCode();
+//        }
+        sleep(2000);
         for (int i = 0; i < 10; i++) {
             sleep(1000);
             previewCapsulePage.clickTurn();

@@ -24,23 +24,23 @@ public class ConsumerTest extends BaseController {
 
     @Test
     public void test1() throws InterruptedException {
-//        driver.findElementByXPath("//android.view.View[@text='密码登录']").click();
-//        driver.findElementByXPath("//android.widget.EditText[@text='请输入报名手机号']").click();
+//        driver.findElementByXPath("//android.view.View[@content-desc='密码登录']").click();
+//        driver.findElementByXPath("//android.widget.EditText[@content-desc='请输入报名手机号']").click();
 //        Actions action = new Actions(driver);
 //        action.sendKeys("17621763856").perform();
-//        driver.findElementByXPath("//android.widget.EditText[@text='请输入密码']").click();
+//        driver.findElementByXPath("//android.widget.EditText[@content-desc='请输入密码']").click();
 //        action.sendKeys("123456a").perform();
-//        driver.findElementByXPath("//android.view.View[@text='登录']").click();
+//        driver.findElementByXPath("//android.view.View[@content-desc='登录']").click();
 //        try {
 //            Thread.sleep(2000);
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
-        driver.findElementByXPath("//android.widget.ImageView[@text='我的\n" +
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc='我的\n" +
                 "第 3 个标签，共 3 个']").click();
         driver.findElementByXPath("//android.widget.ImageView[2]").click();
-        driver.findElementByXPath("//android.view.View[@text='头像']/android.widget.ImageView").click();
-        driver.findElementByXPath("//android.widget.Button[@text='从手机相册选择']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='头像']/android.widget.ImageView").click();
+        driver.findElementByXPath("//android.widget.Button[@content-desc='从手机相册选择']").click();
         driver.findElementByXPath("//*[@resource-id='com.android.documentsui:id/dir_list']/android.widget.LinearLayout[1]").click();
         driver.findElementByXPath("//*[@resource-id='com.blingabc.student:id/tv_control_finish']").click();
         String key = "头像更新成功";
@@ -48,16 +48,16 @@ public class ConsumerTest extends BaseController {
         WebDriverWait wait = new WebDriverWait(driver, 5);
 // 点击上一个按钮
         WebElement target = wait.until(
-                ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@text,'"+key+"')]")));
+                ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@content-desc,'"+key+"')]")));
         System.out.println(target.getText());
-        MobileElement birthday = driver.findElementByXPath("//android.view.View[@text='头像']/following-sibling::android.widget.ImageView[1]");
+        MobileElement birthday = driver.findElementByXPath("//android.view.View[@content-desc='头像']/following-sibling::android.widget.ImageView[1]");
         String sr = birthday.getText().split("出生日期")[1].trim();
         System.out.println(sr);
         birthday.click();
         Thread.sleep(3000);
         System.out.println(driver.getPageSource());
-       driver.findElementByXPath("//android.widget.Button[@text='取消']").click();
-        MobileElement englishName = driver.findElementByXPath("//android.view.View[@text='头像']/following-sibling::android.widget.ImageView[2]");
+       driver.findElementByXPath("//android.widget.Button[@content-desc='取消']").click();
+        MobileElement englishName = driver.findElementByXPath("//android.view.View[@content-desc='头像']/following-sibling::android.widget.ImageView[2]");
 
         //System.out.println(shouye);
         try {

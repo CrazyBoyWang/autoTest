@@ -29,8 +29,8 @@ public class MyOrderPage extends BasePage {
     public void clickMyOrder() {
 //        int x = 434;
 //        int y = 810;
-        MobileElement element = driver.findElementByXPath("//android.widget.ImageView[@text='我的订单']");
-        //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
+        MobileElement element = driver.findElementByXPath("//android.widget.ImageView[@content-desc='我的订单']");
+        //       MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='我的课程']");
         int[] center = site(element);
         new TouchAction<>(driver).tap(PointOption.point(center[0], center[1] + 30)).perform();
     }
@@ -39,7 +39,7 @@ public class MyOrderPage extends BasePage {
      * 判断进入我的订单
      */
     public boolean isMyOrder() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='全部订单']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='全部订单']");
         return isPresent(element);
     }
 
@@ -48,7 +48,7 @@ public class MyOrderPage extends BasePage {
      * 暂时找不到方法
      */
     public void clickAllOrderList() {
-   //     MobileElement element = driver.findElementByXPath("//android.view.View[@text='全部订单']");
+   //     MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='全部订单']");
         MobileElement element = driver.findElementByClassName("全部订单");
         int[] center = site(element);
         System.out.println("+++++++++++++++++++++++++"+center[0]);

@@ -31,7 +31,7 @@ public class BlingShopPage extends BasePage {
 //        int y = 810;
         MobileElement element = driver.findElementByXPath("//XCUIElementTypeImage[@name='比邻商城']\n");
 
-        //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
+        //       MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='我的课程']");
         int[] center = site(element);
        new TouchAction<>(driver).tap(PointOption.point(center[0], center[1] - 20)).perform();
     }

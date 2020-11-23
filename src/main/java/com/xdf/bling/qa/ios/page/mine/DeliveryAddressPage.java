@@ -30,7 +30,7 @@ public class DeliveryAddressPage extends BasePage {
 //        int y = 810;
         MobileElement element = driver.findElementByXPath("//XCUIElementTypeOther[@name=\"收货地址\"]\n");
         element.click();
-        //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
+        //       MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='我的课程']");
 
     }
 

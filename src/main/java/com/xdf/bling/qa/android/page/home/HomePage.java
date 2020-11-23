@@ -25,19 +25,19 @@ public class HomePage extends BasePage {
      * 点击banner
      */
     public void clickBanner() {
-        driver.findElementByXPath("//android.widget.ImageView[@text='我的老师']/following-sibling::android.view.View[1]").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc='我的老师']/following-sibling::android.view.View[1]").click();
     }
 
     /**
      * 进入我的老师
      */
     public void clickMyTeacher() {
-        driver.findElementByXPath("//android.widget.ImageView[@text='我的老师']").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc='我的老师']").click();
     }
 
     //判读进入我的老师界面
     public boolean isMyTeacher() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的老师']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='我的老师']");
         return isPresent(element);
     }
 
@@ -64,7 +64,7 @@ public class HomePage extends BasePage {
      */
 
     public boolean isBlingOpenClass() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='比邻公开课']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc=\"比邻公开课\"]\n");
 
         return isPresent(element);
 //        String country = "比邻公开课";
@@ -81,7 +81,7 @@ public class HomePage extends BasePage {
 
     //点击进入公开课更多
     public void clickOpenMoreClass() {
-        driver.findElementByXPath("//android.widget.ImageView[@text='更多']").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc=\"更多\"]\n").click();
 
     }
 
@@ -97,7 +97,7 @@ public class HomePage extends BasePage {
 
     //判断比邻绘本
     public boolean isPictureBook(){
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='比邻绘本']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc=\"比邻绘本\"]\n");
 
         return isPresent(element);
 
@@ -106,12 +106,16 @@ public class HomePage extends BasePage {
 
     //点击分级阅读
     public void clickPictureBook(){
-        driver.findElementByXPath("//android.widget.ImageView[@text='分级阅读']").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc=\"更多\"]\n").click();
     }
 
     //滑动分级阅读
     public void swipePictureBook(){
         swipe(Direction.LEFT, null);
+    }
+
+    public void clickLevelBack(){
+        driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.ImageView\n").click();
     }
 
     /**
@@ -120,24 +124,24 @@ public class HomePage extends BasePage {
      */
     //判断课表
     public boolean isDateList()  {
-        for (int i = 0; i < 3; i++) {
-            swipe(Direction.DOWN, null);
-        }
-        MobileElement element = driver.findElementByXPath("//android.widget.ImageView[contains(@text,'课表')]");
+//        for (int i = 0; i < 3; i++) {
+//            swipe(Direction.DOWN, null);
+//        }
+        MobileElement element = driver.findElementByXPath("//android.widget.ImageView[@content-desc=\"我的课表\"]\n");
       return isPresent(element);
     }
     //进入课表
     public void clickClassList(){
-        driver.findElementByXPath("//android.widget.ImageView[@text='课表']").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc=\"我的课表\"]\n").click();
     }
     //下拉日期列表
     public void clickDateList(){
-        driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[3]").click();
+        driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[3]\n").click();
     }
     //随机选择日期
     public void clickDate(){
         int date = new Random().nextInt(26)+1;
-        driver.findElementByXPath("//android.view.View[@text="+date+"]").click();
+        driver.findElementByXPath("//android.view.View[@content-desc="+date+"]").click();
     }
 
 

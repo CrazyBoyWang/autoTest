@@ -22,11 +22,11 @@ public class SettingPage extends BasePage {
      *
      * */
     public void clickSetUp(){
-        MobileElement mobileElement = driver.findElementByXPath("//android.view.View[@text='设置']");
+        MobileElement mobileElement = driver.findElementByXPath("//android.view.View[@content-desc='设置']");
         mobileElement.click();
     }
     public boolean isPresentLogoutButton(){
-        MobileElement mobileElement = driver.findElementByXPath("//android.view.View[@text='退出登录']");
+        MobileElement mobileElement = driver.findElementByXPath("//android.view.View[@content-desc='退出登录']");
         return isPresent(mobileElement);
     }
     /**
@@ -36,12 +36,12 @@ public class SettingPage extends BasePage {
      *
      * */
     public void accountSecurity(){
-        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@text='账户安全']");
+        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@content-desc='账户安全']");
         mobileElement.click();
     }
 
     public boolean isShowToastAccount(String phone){
-        MobileElement mobileElement = driver.findElementByXPath("//android.view.View[contains(@text,'绑定手机')]");
+        MobileElement mobileElement = driver.findElementByXPath("//android.view.View[contains(@content-desc,'绑定手机')]");
         return phone.equals(mobileElement.getText().split("绑定手机")[1].trim());
 
 
@@ -53,7 +53,7 @@ public class SettingPage extends BasePage {
      *
      * */
     public void CleanCache(){
-        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@text='清理缓存']");
+        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@content-desc='清理缓存']");
         mobileElement.click();
     }
     public boolean isShowToastCleanCache(){
@@ -67,11 +67,11 @@ public class SettingPage extends BasePage {
      *
      * */
     public void aboutUs(){
-        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@text='关于我们']");
+        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@content-desc='关于我们']");
         mobileElement.click();
     }
     public boolean isPresentAboutUs(){
-        MobileElement mobileElement = driver.findElementByXPath("//android.view.View[@text='关于我们']");
+        MobileElement mobileElement = driver.findElementByXPath("//android.view.View[@content-desc='关于我们']");
         return isPresent(mobileElement);
     }
 
@@ -81,12 +81,12 @@ public class SettingPage extends BasePage {
      *
      * */
     public void CheckUpdate(){
-        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@text='关于我们']/following-sibling::android.widget.ImageView[1]");
+        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@content-desc='关于我们']/following-sibling::android.widget.ImageView[1]");
         mobileElement.click();
     }
     //判断版本号是否一致
     public boolean checkVersionText(String version){
-        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@text='关于我们']/following-sibling::android.widget.ImageView[1]");
+        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@content-desc='关于我们']/following-sibling::android.widget.ImageView[1]");
         String text = mobileElement.getText();
         String versionText = text.split("检查更新")[1].trim();
         return version.equals(versionText);

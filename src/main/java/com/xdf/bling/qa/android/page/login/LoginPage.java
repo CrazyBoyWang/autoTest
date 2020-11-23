@@ -31,7 +31,7 @@ public class LoginPage extends BasePage {
      * @param phone
      */
     public void setLoginMobileNumber (String phone) {
-        MobileElement mobileElement = driver.findElementByXPath("//android.widget.EditText[contains(@text,\"请输入报名手机号\")]");
+        MobileElement mobileElement = driver.findElementByXPath("//android.widget.EditText[contains(@content-desc,\"请输入报名手机号\")]");
         actionSendkeys(mobileElement, phone, false, false);
     }
 
@@ -40,7 +40,7 @@ public class LoginPage extends BasePage {
      * @param password
      */
     public void setLoginPassword (String password) {
-        MobileElement loginPasswordInput = driver.findElementByXPath("//android.widget.EditText[contains(@text,\"请输入密码\")]");
+        MobileElement loginPasswordInput = driver.findElementByXPath("//android.widget.EditText[contains(@content-desc,\"请输入密码\")]");
         actionSendkeys(loginPasswordInput, password, false, false);
     }
 

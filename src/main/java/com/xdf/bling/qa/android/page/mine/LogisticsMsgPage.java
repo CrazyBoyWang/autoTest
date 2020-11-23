@@ -21,12 +21,12 @@ public class LogisticsMsgPage extends BasePage {
      * 我的-物流信息
      */
     public void clickLogisticsMsg() {
-        MobileElement mobileElement = driver.findElementByXPath("//android.view.View[@text='物流信息']");
+        MobileElement mobileElement = driver.findElementByXPath("//android.view.View[@content-desc='物流信息']");
         mobileElement.click();
     }
 
     public boolean isPresentLogoutButton() {
-        MobileElement mobileElement = driver.findElementByXPath("//android.view.View[@text='退出登录']");
+        MobileElement mobileElement = driver.findElementByXPath("//android.view.View[@content-desc='退出登录']");
         return isPresent(mobileElement);
     }
 

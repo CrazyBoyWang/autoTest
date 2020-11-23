@@ -54,7 +54,6 @@ public class BasePage {
      * 判断元素出现
      *
      * @param element
-     *
      */
     protected boolean isPresent(MobileElement element) {
         try {
@@ -66,14 +65,14 @@ public class BasePage {
     }
 
     //系统退出按钮
-    public void clickSystemBack(){
+    public void clickSystemBack() {
         driver.navigate().back();
 
     }
 
     //后退按钮
     public void clickBack() {
-        MobileElement element = driver.findElementByXPath("//android.widget.Button[1]");
+        MobileElement element = driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.ImageView\n");
         element.click();
     }
 
@@ -89,7 +88,7 @@ public class BasePage {
      * 点击消息tab
      */
     public void clickMessageTab() {
-        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@content-desc='消息\n" +
+        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@content-desc='学习\n" +
                 "第 2 个标签，共 3 个']");
         mobileElement.click();
     }
@@ -107,19 +106,19 @@ public class BasePage {
      */
     public void clickBackClass() {
         MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView");
-        //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
+        //       MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='我的课程']");
         int[] center = site(element);
         new TouchAction<>(driver).tap(PointOption.point(center[0] - 20, center[1] - 20)).perform();
     }
 
     /**
-     *
      * 小课堂内返回按钮
      */
-    public void clickBackInClass(){
-        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[1]");
-        int[] center = site(element);
-        new TouchAction<>(driver).tap(PointOption.point(center[0]/2, center[1]/2)).perform();
+    public void clickBackInClass() {
+    //    MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[1]");
+   //     int[] center = site(element);
+        //      new TouchAction<>(driver).tap(PointOption.point(center[0]/2, center[1]/2)).perform();
+        new TouchAction<>(driver).tap(PointOption.point(134, 121)).perform();
     }
 
     /**
@@ -127,13 +126,11 @@ public class BasePage {
      */
 
     public void clickNextLevel() {
-        driver.findElementByXPath("//android.view.View[@text='下一关']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='下一关']").click();
     }
 
     /**
      * 根据元素获取坐标位置
-     *
-     *
      */
     public int[] site(MobileElement element) {
         //获取元素开始标点
@@ -153,14 +150,14 @@ public class BasePage {
      */
 
     public void clickAhead() {
-        driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[6]").click();
+        driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[6]\n").click();
     }
 
     /**
      * 轮轮看/知识小预热复习，点击向后
      */
     public void clickBackWard() {
-        driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[4]").click();
+        driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[4]\n").click();
 
     }
 
@@ -169,7 +166,7 @@ public class BasePage {
      * 判断学习完成
      */
     public boolean isAroundFinish() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='恭喜你，完成了本关卡']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='恭喜你，完成了本关卡']");
 
         return isPresent(element);
 
@@ -180,13 +177,12 @@ public class BasePage {
      * 判断toast出现
      *
      * @param toast
-     *
      */
     protected boolean isShowToast(String toast) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, 5);
             WebElement target = wait.until(
-                    ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@text,'" + toast + "')]")));
+                    ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@content-desc,'" + toast + "')]")));
             return true;
         } catch (Exception e) {
             return false;

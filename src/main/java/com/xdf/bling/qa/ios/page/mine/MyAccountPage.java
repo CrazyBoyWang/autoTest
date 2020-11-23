@@ -28,7 +28,7 @@ public class MyAccountPage extends BasePage {
      */
     public void clickMyCourse() {
 
-        //     MobileElement element = driver.findElementByXPath("//android.widget.ImageView[@text='我的课程']");
+        //     MobileElement element = driver.findElementByXPath("//android.widget.ImageView[@content-desc='我的课程']");
         MobileElement element = driver.findElementByXPath("//XCUIElementTypeImage[@name=\"我的课程\"]\n");
         int[] center = site(element);
         new TouchAction<>(driver).tap(PointOption.point(center[0], center[1] - 20)).perform();

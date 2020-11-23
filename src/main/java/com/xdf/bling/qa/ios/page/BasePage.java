@@ -93,7 +93,7 @@ public class BasePage {
      */
     public void clickMineTab() {
         driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,'第 3 个标签')]\n").click();
-        //[contains(@text,'挑战了你的进度')]
+        //[contains(@content-desc,'挑战了你的进度')]
     }
 
     /**
@@ -101,7 +101,7 @@ public class BasePage {
      */
     public void clickBackClass() {
         MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView");
-        //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
+        //       MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='我的课程']");
         int[] center = site(element);
         new TouchAction<>(driver).tap(PointOption.point(center[0] - 20, center[1] - 20)).perform();
     }

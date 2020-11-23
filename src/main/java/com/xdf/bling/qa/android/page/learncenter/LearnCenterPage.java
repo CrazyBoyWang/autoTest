@@ -24,7 +24,7 @@ public class LearnCenterPage extends BasePage {
      * 点击进入学习中心
      */
     public void clickLearnCenter() {
-        driver.findElementByXPath("//android.widget.ImageView[contains(@text,'学习中心')]").click();
+        driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.ImageView[1]\n").click();
     }
 
 
@@ -32,7 +32,7 @@ public class LearnCenterPage extends BasePage {
      * 在这里切换「课程类型」和「等级」
      */
     public void clickCenterToast() {
-        driver.findElementByXPath("//android.view.View[@text='在这里切换「课程类型」和「等级」']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='在这里切换「课程类型」和「等级」']").click();
     }
 
     /**
@@ -41,7 +41,7 @@ public class LearnCenterPage extends BasePage {
      *
      */
     public boolean isCenterToast() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='在这里切换「课程类型」和「等级」']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='在这里切换「课程类型」和「等级」']");
         return isPresent(element);
     }
     /**
@@ -49,7 +49,7 @@ public class LearnCenterPage extends BasePage {
      * 点击切换课程
      */
     public void clickChangeClass(){
-        driver.findElementByXPath("//android.view.View[@text='切换课程']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc=\"切换课程\"]\n").click();
     }
 
     /**
@@ -57,7 +57,7 @@ public class LearnCenterPage extends BasePage {
      * 根据图片获取
      */
     public void clickPop(){
-        driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[4]").click();
+        driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[4]\n").click();
     }
 
     /**
@@ -68,7 +68,7 @@ public class LearnCenterPage extends BasePage {
      */
     public void clickPlayBack(){
     //    driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View/android.widget.ImageView[1]/android.widget.Button").click();
-        driver.findElementByXPath("//*[contains(@text,'查看回放')]").click();
+        driver.findElementByXPath("//*[contains(@content-desc,'查看回放')]").click();
     }
 
     /**
@@ -83,7 +83,7 @@ public class LearnCenterPage extends BasePage {
      * 点击进入滑动到课程
      */
     public void clikAimClass(){
-        driver.findElementByXPath("//android.widget.ImageView[@text='课前课后测试']").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc='课前课后测试']").click();
 
     }
 
@@ -92,14 +92,14 @@ public class LearnCenterPage extends BasePage {
      * 选择关卡1进入
      */
     public void clickCheckPoint(){
-        driver.findElementByXPath("//android.widget.ImageView[contains(@text,'关卡1')]").click();
+        driver.findElementByXPath("//android.widget.ImageView[contains(@content-desc,'关卡1')]").click();
     }
     /**
      *
      * 判断进入到课前课后关卡1
      */
     public boolean isAimClass(){
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='课前课后关卡1']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='课前课后关卡1']");
         return isPresent(element);
     }
 }

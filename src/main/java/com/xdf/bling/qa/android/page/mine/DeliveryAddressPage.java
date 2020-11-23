@@ -28,9 +28,9 @@ public class DeliveryAddressPage extends BasePage {
     public void clickShipPage() {
 //        int x = 434;
 //        int y = 810;
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='收货地址']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='收货地址']");
         element.click();
-        //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
+        //       MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='我的课程']");
 
     }
 
@@ -38,7 +38,7 @@ public class DeliveryAddressPage extends BasePage {
      * 判断进入收货地址
      */
     public boolean isShipPage() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='收货地址']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='收货地址']");
         return isPresent(element);
     }
 

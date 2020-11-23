@@ -29,8 +29,8 @@ public class BlingShopPage extends BasePage {
     public void clickShopPage() {
 //        int x = 434;
 //        int y = 810;
-        MobileElement element = driver.findElementByXPath("//android.widget.ImageView[@text='比邻商城']");
-        //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
+        MobileElement element = driver.findElementByXPath("//android.widget.ImageView[@content-desc='比邻商城']");
+        //       MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='我的课程']");
         int[] center = site(element);
         new TouchAction<>(driver).tap(PointOption.point(center[0], center[1] + 30)).perform();
     }
@@ -39,7 +39,7 @@ public class BlingShopPage extends BasePage {
      * 判断进入商城
      */
     public boolean isShopPage() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='比邻币商城']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='比邻币商城']");
         return isPresent(element);
     }
 }

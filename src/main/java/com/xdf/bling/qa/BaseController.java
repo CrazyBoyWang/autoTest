@@ -125,7 +125,7 @@ public class BaseController {
 //                .withTimeout(2, TimeUnit.SECONDS)
 //                .pollingEvery(1,TimeUnit.SECONDS)
 //                .ignoring(NoSuchElementException.class);
-        //     fluentWait.until(ExpectedConditions.visibilityOf(driver.findElementByXPath("//android.view.View[@text='密码登录']"))).click();
+        //     fluentWait.until(ExpectedConditions.visibilityOf(driver.findElementByXPath("//android.view.View[@content-desc='密码登录']"))).click();
 
 
     }

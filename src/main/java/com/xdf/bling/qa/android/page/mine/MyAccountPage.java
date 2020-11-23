@@ -29,35 +29,35 @@ public class MyAccountPage extends BasePage {
     public void clickMyCourse() {
         int x =175;
         int y = 823;
-        MobileElement element = driver.findElementByXPath("//android.widget.ImageView[@text='我的课程']");
-  //      MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
+        MobileElement element = driver.findElementByXPath("//android.widget.ImageView[@content-desc='我的课程']");
+  //      MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='我的课程']");
 
         new TouchAction<>(driver).tap(PointOption.point(x,y)).perform();
     }
 
     //判断进入我的课程界面
     public boolean isMyCourse() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='我的课程']");
         return isPresent(element);
     }
 
     //切换到已开课
     public void clickClassStarted() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='已开课\n" +
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='已开课\n" +
                 "第 1 个标签，共 2 个']");
         element.click();
     }
 
     //随机找到课程点击进入
     public void clickClasses() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='比邻外教']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='比邻外教']");
         element.click();
     }
 
 
     //判断进入课程详情
     public boolean isCourseDetails() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='课程详情']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='课程详情']");
         return isPresent(element);
 
     }
@@ -66,7 +66,7 @@ public class MyAccountPage extends BasePage {
     //点击课程进入
     //开课和未开课都这样
     public void clickCourseDetails() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='比邻外教\n" +
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='比邻外教\n" +
                 "外教老师']/following-sibling::android.widget.ImageView[2]");
         element.click();
 
@@ -75,7 +75,7 @@ public class MyAccountPage extends BasePage {
 
     //切换到未开课
     public void clickClassNoStarted() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='未开课\n" +
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='未开课\n" +
                 "第 2 个标签，共 2 个']");
         element.click();
     }

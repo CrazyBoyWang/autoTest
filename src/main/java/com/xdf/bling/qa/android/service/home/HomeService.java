@@ -55,10 +55,10 @@ public class HomeService {
     public void blingOpenClassService() throws InterruptedException {
         Thread.sleep(2000);
         //   homePage.swipeBlingOpenClass();
-        for (int i = 0; i <2 ; i++) {
-            homePage.swipeDownTeacher();
-
-        }
+//        for (int i = 0; i <2 ; i++) {
+//            homePage.swipeDownTeacher();
+//
+//        }
         Assert.assertTrue(homePage.isBlingOpenClass(), "界面中没有比邻公开课内容");
 
         homePage.clickOpenMoreClass();
@@ -79,7 +79,8 @@ public class HomeService {
         for (int i = 0; i < 3; i++) {
             homePage.swipePictureBook();
         }
-        homePage. clickBack();
+        homePage. clickLevelBack();
+
 
     }
 
@@ -88,6 +89,7 @@ public class HomeService {
      * 课表相关
      */
     public void classListService() throws InterruptedException {
+        homePage.clickMessageTab();
         Assert.assertTrue(homePage.isDateList(),"获取课表列表失败");
         homePage.clickClassList();
         Thread.sleep(1000);

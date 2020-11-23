@@ -21,35 +21,35 @@ public class ReviewDaLeDouPage extends BasePage {
      */
     public void clickReviewDaLeDou() {
         swipe(Direction.LEFT, null);
-        driver.findElementByXPath("//android.view.View[@text='复习大乐斗']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='复习大乐斗']").click();
     }
 
     /**
      * 点击赞过我
      */
     public void clickPraiseMe() {
-        driver.findElementByXPath("//android.widget.ImageView[@text='赞过我']").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc='赞过我']").click();
     }
 
     /**
      * 点击戳过我
      */
     public void clickStabbedMe() {
-        driver.findElementByXPath("//android.widget.ImageView[@text='戳过我']").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc='戳过我']").click();
     }
 
     /**
      * 点击Language Review
      */
     public void clickLanguageReview() {
-        driver.findElementByXPath("//android.widget.ImageView[@text='Language Review']").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc='Language Review']").click();
     }
 
     /**
      * Pronunciation Fun
      */
     public void clickPronunciationFun() {
-        driver.findElementByXPath("//android.widget.ImageView[@text='Pronunciation Fun']").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc='Pronunciation Fun']").click();
 
     }
 
@@ -82,7 +82,7 @@ public class ReviewDaLeDouPage extends BasePage {
     }
 
     public boolean isScore() {
-        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[5][contains(@text,'分')]");
+        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[5][contains(@content-desc,'分')]");
         return isPresent(element);
     }
 
@@ -91,7 +91,7 @@ public class ReviewDaLeDouPage extends BasePage {
      * 判断视频播放完成
      */
     public boolean isFinshVideo() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='恭喜你完成本关卡~']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='恭喜你完成本关卡~']");
         return isPresent(element);
     }
 
@@ -99,9 +99,10 @@ public class ReviewDaLeDouPage extends BasePage {
      * 点击全部完成后视频按钮
      */
     public void clickFinshVideo() {
-        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[2]");
-        int[] center = site(element);
-        new TouchAction<>(driver).tap(PointOption.point(center[0] - 50, center[1])).perform();
+//        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[2]");
+  //      int[] center = site(element);
+ //       new TouchAction<>(driver).tap(PointOption.point(center[0] - 50, center[1])).perform();
+        new TouchAction<>(driver).tap(PointOption.point(1673, 838)).perform();
     }
 
     /**
@@ -115,7 +116,7 @@ public class ReviewDaLeDouPage extends BasePage {
 
     public void clickSmallTalkQuiz() {
 
-        MobileElement element = driver.findElementByXPath("//android.widget.ImageView[@text='Small Talk Quiz']");
+        MobileElement element = driver.findElementByXPath("//android.widget.ImageView[@content-desc='Small Talk Quiz']");
         element.click();
     }
 
@@ -123,7 +124,7 @@ public class ReviewDaLeDouPage extends BasePage {
      * Choose the correct answer
      */
     public boolean isCorrectAnswer() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='Choose the correct answer']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='Choose the correct answer']");
         return isPresent(element);
     }
 
@@ -131,29 +132,29 @@ public class ReviewDaLeDouPage extends BasePage {
      * What's the title of their new song?相关答案
      */
     public void clickOurHobbies() {
-        driver.findElementByXPath("//android.view.View[@text='Our hobbies.']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='Our hobbies.']").click();
     }
 
     //Our favourite subject.正确答案
     public void clickFavouriteSubject() {
-        driver.findElementByXPath("//android.view.View[@text='Our favourite subject.']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='Our favourite subject.']").click();
     }
 
     /**
      * ▁▁▁the snake cute? No, It▁▁▁. It's scary.相关答案
      */
     public boolean isSnakeCute() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[contains(@text,'snake cute')]");
+        MobileElement element = driver.findElementByXPath("//android.view.View[contains(@content-desc,'snake cute')]");
         return isPresent(element);
     }
 
     //Is; aren't
     public void clickIsArent() {
-        driver.findElementByXPath("//android.view.View[contains(@text,'Is; aren')]").click();
+        driver.findElementByXPath("//android.view.View[contains(@content-desc,'Is; aren')]").click();
     }
     //Is; isn't
     public void clickIsIsnt(){
-        driver.findElementByXPath("//android.view.View[contains(@text,'Is; isn')]").click();
+        driver.findElementByXPath("//android.view.View[contains(@content-desc,'Is; isn')]").click();
     }
 
     /**

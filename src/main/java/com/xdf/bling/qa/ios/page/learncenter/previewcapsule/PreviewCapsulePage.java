@@ -29,28 +29,28 @@ public class PreviewCapsulePage extends BasePage {
      * 点掉课前预习弹窗
      */
     public void clickClassPrepare() {
-        driver.findElementByXPath("//android.view.View[@text='「课前预习」要在课前完成哦~']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='「课前预习」要在课前完成哦~']").click();
     }
 
     /**
      * 点掉监课弹窗
      */
     public void clickClassSupervise() {
-        driver.findElementByXPath("//android.view.View[@text='在这里可以「监课」也可以看 「课程回放」哦~']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='在这里可以「监课」也可以看 「课程回放」哦~']").click();
     }
 
     /**
      * 点掉课后作业弹窗
      */
     public void clickHomeWork() {
-        driver.findElementByXPath("//android.view.View[@text='「课后作业」，记得按时完成哦~']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='「课后作业」，记得按时完成哦~']").click();
     }
 
     /**
      * 滑动到预习小胶囊
      */
     public void swipeCapsule() {
-        //   MobileElement element = driver.findElementByXPath("//android.view.View[@text='预习小锦囊']");
+        //   MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='预习小锦囊']");
         MobileElement element = driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]\n");
         ////XCUIElementTypeOther[@name="预习小锦囊"]
         swipe(Direction.RIGHT, null);

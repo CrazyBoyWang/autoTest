@@ -24,7 +24,7 @@ public class SearchMsgPage extends BasePage {
      * 点击消息页签
      */
     public void clickNotice() {
-        driver.findElementByXPath("//android.widget.ImageView[contains(@text,'通知')]").click();
+        driver.findElementByXPath("//android.widget.ImageView[contains(@content-desc,'通知')]").click();
 
     }
 
@@ -35,7 +35,7 @@ public class SearchMsgPage extends BasePage {
      */
 
     public boolean isNotice() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='通知']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='通知']");
         return isPresent(element);
     }
 
@@ -43,7 +43,7 @@ public class SearchMsgPage extends BasePage {
      * 进入通讯录
      */
     public void clickList() {
-        driver.findElementByXPath("//android.view.View[@text='消息']/following-sibling::android.widget.ImageView[1]").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='消息']/following-sibling::android.widget.ImageView[1]").click();
     }
 
 }

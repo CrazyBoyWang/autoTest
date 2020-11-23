@@ -29,28 +29,28 @@ public class PreviewCapsulePage extends BasePage {
      * 点掉课前预习弹窗
      */
     public void clickClassPrepare() {
-        driver.findElementByXPath("//android.view.View[@text='「课前预习」要在课前完成哦~']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='「课前预习」要在课前完成哦~']").click();
     }
 
     /**
      * 点掉监课弹窗
      */
     public void clickClassSupervise() {
-        driver.findElementByXPath("//android.view.View[@text='在这里可以「监课」也可以看 「课程回放」哦~']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='在这里可以「监课」也可以看 「课程回放」哦~']").click();
     }
 
     /**
      * 点掉课后作业弹窗
      */
     public void clickHomeWork() {
-        driver.findElementByXPath("//android.view.View[@text='「课后作业」，记得按时完成哦~']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='「课后作业」，记得按时完成哦~']").click();
     }
 
     /**
      * 滑动到预习小胶囊
      */
     public void swipeCapsule() {
-        //   MobileElement element = driver.findElementByXPath("//android.view.View[@text='预习小锦囊']");
+        //   MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='预习小锦囊']");
         swipe(Direction.RIGHT, null);
     }
 
@@ -58,7 +58,7 @@ public class PreviewCapsulePage extends BasePage {
      * 点击进入预习小胶囊
      */
     public void clickCapsule() {
-        driver.findElementByXPath("//android.view.View[@text='预习小锦囊']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='预习小锦囊']").click();
     }
 
 
@@ -66,21 +66,21 @@ public class PreviewCapsulePage extends BasePage {
      * 点击赞过我
      */
     public void clickPraiseMe() {
-        driver.findElementByXPath("//android.widget.ImageView[@text='赞过我']").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc='赞过我']").click();
     }
 
     /**
      * 点击戳过我
      */
     public void clickStabbedMe() {
-        driver.findElementByXPath("//android.widget.ImageView[@text='戳过我']").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc='戳过我']").click();
     }
 
     /**
      * 词句轮轮看
      */
     public void clickLookAround() {
-        driver.findElementByXPath("//android.widget.ImageView[@text='词句轮轮看']").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc='词句轮轮看']").click();
     }
 
 
@@ -89,7 +89,7 @@ public class PreviewCapsulePage extends BasePage {
      */
 
     public void clickWordFun() {
-        driver.findElementByXPath("//android.widget.ImageView[@text='Word Fun']").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc='Word Fun']").click();
     }
 
     /**
@@ -118,7 +118,7 @@ public class PreviewCapsulePage extends BasePage {
      * 点击知识小预热
      */
     public void clickKnowledgePreheating() {
-        driver.findElementByXPath("//android.widget.ImageView[@text='知识小预热']").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc='知识小预热']").click();
     }
 
 
@@ -126,7 +126,7 @@ public class PreviewCapsulePage extends BasePage {
      * 点击look and listen
      */
     public void clickLookAndListen() {
-        driver.findElementByXPath("//android.widget.ImageView[@text='Look and Listen']").click();
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc='Look and Listen']").click();
     }
 
     /**
@@ -151,7 +151,7 @@ public class PreviewCapsulePage extends BasePage {
      * 判断视频播放完成
      */
     public boolean isFinshVideo() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='恭喜你完成本关卡~']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='恭喜你完成本关卡~']");
         return isPresent(element);
     }
 
@@ -170,7 +170,7 @@ public class PreviewCapsulePage extends BasePage {
      * 判断预习完成界面
      */
     public boolean isPrepareSucess() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='恭喜你完成预习 ！']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='恭喜你完成预习 ！']");
         return isPresent(element);
     }
 
@@ -178,7 +178,7 @@ public class PreviewCapsulePage extends BasePage {
      * 点击进入预习排行榜
      */
     public void clickLearnRank() {
-        driver.findElementByXPath("//android.view.View[@text='学习排行']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='学习排行']").click();
 
     }
 
@@ -186,7 +186,7 @@ public class PreviewCapsulePage extends BasePage {
      * 判断文件列表出现
      */
     public boolean isLearnRank() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[contains(@text,'完成')]");
+        MobileElement element = driver.findElementByXPath("//android.view.View[contains(@content-desc,'完成')]");
         return isPresent(element);
     }
 

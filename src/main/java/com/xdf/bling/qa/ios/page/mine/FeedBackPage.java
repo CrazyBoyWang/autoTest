@@ -31,7 +31,7 @@ public class FeedBackPage extends BasePage {
 //        int y = 810;
         driver.findElementByXPath("//XCUIElementTypeOther[@name=\"意见反馈\"]\n").click();
 
-        //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
+        //       MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='我的课程']");
 
     }
 

@@ -27,9 +27,9 @@ public class FeedBackPage extends BasePage {
     public void clickFeedBackPage() {
 //        int x = 434;
 //        int y = 810;
-        driver.findElementByXPath("//android.view.View[@text='意见反馈']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='意见反馈']").click();
 
-        //       MobileElement element = driver.findElementByXPath("//android.view.View[@text='我的课程']");
+        //       MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='我的课程']");
 
     }
 
@@ -37,7 +37,7 @@ public class FeedBackPage extends BasePage {
      * 判断进入收货地址
      */
     public boolean isFeedBackPage() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='问题与反馈']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='问题与反馈']");
         return isPresent(element);
     }
 
@@ -46,7 +46,7 @@ public class FeedBackPage extends BasePage {
      */
 
     public void clickFeedBack() {
-        driver.findElementByXPath("//android.view.View[@text='意见反馈']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='意见反馈']").click();
 
     }
 
@@ -56,7 +56,7 @@ public class FeedBackPage extends BasePage {
      */
 
     public void clickType(){
-        driver.findElementByXPath("//android.view.View[@text='学习问题']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='学习问题']").click();
     }
 
 
@@ -74,7 +74,7 @@ public class FeedBackPage extends BasePage {
      * @param problem
      */
     public void clickEnterProblem(String problem){
-        MobileElement element = driver.findElementByXPath("//android.widget.EditText[@text='您的反馈将会是我们最大的动力']");
+        MobileElement element = driver.findElementByXPath("//android.widget.EditText[@content-desc='您的反馈将会是我们最大的动力']");
         actionSendkeys(element, problem, false, false);
     }
 
@@ -84,7 +84,7 @@ public class FeedBackPage extends BasePage {
      */
 
     public void clickEnter(){
-        driver.findElementByXPath("//android.widget.Button[@text='提交']").click();
+        driver.findElementByXPath("//android.widget.Button[@content-desc='提交']").click();
 
     }
 
@@ -94,7 +94,7 @@ public class FeedBackPage extends BasePage {
      * 判断提交成功信息
      */
     public boolean isEnterScuess(){
-        MobileElement element = driver.findElementByXPath("//android.view.View[@text='反馈提交成功！感谢您的反馈！']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='反馈提交成功！感谢您的反馈！']");
         return isPresent(element);
     }
 
@@ -103,7 +103,7 @@ public class FeedBackPage extends BasePage {
      *
      */
     public void clickSuccess(){
-        driver.findElementByXPath("//android.widget.Button[@text='确定']").click();
+        driver.findElementByXPath("//android.widget.Button[@content-desc='确定']").click();
     }
 
     /**
@@ -112,7 +112,7 @@ public class FeedBackPage extends BasePage {
      *
      */
     public void clickMyFeedBack(){
-        driver.findElementByXPath("//android.view.View[@text='我的反馈']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc='我的反馈']").click();
     }
 
 

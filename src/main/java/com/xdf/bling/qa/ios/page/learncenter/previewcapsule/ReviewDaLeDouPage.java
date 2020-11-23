@@ -96,7 +96,7 @@ public class ReviewDaLeDouPage extends BasePage {
     }
 
     public boolean isScore() {
-        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[5][contains(@text,'分')]");
+        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[5][contains(@content-desc,'分')]");
         return isPresent(element);
     }
 
@@ -155,7 +155,7 @@ public class ReviewDaLeDouPage extends BasePage {
      * ▁▁▁the snake cute? No, It▁▁▁. It's scary.相关答案
      */
     public boolean isSnakeCute() {
-        MobileElement element = driver.findElementByXPath("//XCUIElementTypeOther[contains(@text,'snake cute')]");
+        MobileElement element = driver.findElementByXPath("//XCUIElementTypeOther[contains(@content-desc,'snake cute')]");
         return isPresent(element);
     }
 
