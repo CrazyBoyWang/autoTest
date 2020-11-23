@@ -81,7 +81,7 @@ public class BasePage {
      * 点击首页tab
      */
     public void clickHomePageTab() {
-        MobileElement homePageElement = driver.findElementByXPath("//android.widget.ImageView[@text='首页\n" +
+        MobileElement homePageElement = driver.findElementByXPath("//android.widget.ImageView[@content-desc='首页\n" +
                 "第 1 个标签，共 3 个']");
     }
 
@@ -89,7 +89,7 @@ public class BasePage {
      * 点击消息tab
      */
     public void clickMessageTab() {
-        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@text='消息\n" +
+        MobileElement mobileElement = driver.findElementByXPath("//android.widget.ImageView[@content-desc='消息\n" +
                 "第 2 个标签，共 3 个']");
         mobileElement.click();
     }
@@ -98,7 +98,7 @@ public class BasePage {
      * 点击我的tab
      */
     public void clickMineTab() {
-        driver.findElementByXPath("//android.widget.ImageView[@text='我的\n" +
+        driver.findElementByXPath("//android.widget.ImageView[@content-desc='我的\n" +
                 "第 3 个标签，共 3 个']").click();
     }
 

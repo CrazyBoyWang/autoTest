@@ -25,7 +25,7 @@ public class LoginController extends BaseController {
 
     @Test(retryAnalyzer = AlertPageListener.class, description = "测试手机号和密码登录", dataProvider = "providerMethod")
     //@Test(retryAnalyzer = AlertPageListener.class)
-    public void testLogin (Map<String, String> param) {
+    public void testLogin (Map<String, String> param) throws InterruptedException {
         LoginPage loginPage = new LoginPage((AndroidDriver<MobileElement>) driver);
         LoginService loginService = new LoginService(loginPage);
         Login login = new Login();

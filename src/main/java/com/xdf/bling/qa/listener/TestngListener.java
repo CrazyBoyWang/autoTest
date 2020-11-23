@@ -23,7 +23,7 @@ public class TestngListener extends TestListenerAdapter {
         File location = new File("screenshots");
         String screenShotName = location.getAbsolutePath() + File.separator + tr.getMethod().getMethodName() + ".png";
 
-       System.out.println("图拍呢地址"+screenShotName);
+       System.out.println("地址"+screenShotName);
         File screenShot = driver.getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(screenShot, new File(screenShotName));

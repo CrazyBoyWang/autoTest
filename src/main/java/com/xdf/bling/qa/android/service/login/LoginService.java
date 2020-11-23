@@ -25,8 +25,9 @@ public class LoginService {
      *
      * @param login
      */
-    public void login(Login login) {
+    public void login(Login login) throws InterruptedException {
             loginPage.clickPasswordToLoginTab();
+            Thread.sleep(2000);
             loginPage.setLoginMobileNumber(login.getPhone());
             loginPage.setLoginPassword(login.getPassword());
             loginPage.clickLoginButton();

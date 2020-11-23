@@ -23,7 +23,7 @@ public class LoginPage extends BasePage {
      * 点击密码去登录tab
      */
     public void clickPasswordToLoginTab () {
-        driver.findElementByXPath("//android.view.View[@text='密码登录']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc=\"密码登录\"]\n").click();
     }
 
     /**
@@ -31,7 +31,7 @@ public class LoginPage extends BasePage {
      * @param phone
      */
     public void setLoginMobileNumber (String phone) {
-        MobileElement mobileElement = driver.findElementByXPath("//android.widget.EditText[@text='请输入报名手机号']");
+        MobileElement mobileElement = driver.findElementByXPath("//android.widget.EditText[contains(@text,\"请输入报名手机号\")]");
         actionSendkeys(mobileElement, phone, false, false);
     }
 
@@ -40,7 +40,7 @@ public class LoginPage extends BasePage {
      * @param password
      */
     public void setLoginPassword (String password) {
-        MobileElement loginPasswordInput = driver.findElementByXPath("//android.widget.EditText[@text='请输入密码']");
+        MobileElement loginPasswordInput = driver.findElementByXPath("//android.widget.EditText[contains(@text,\"请输入密码\")]");
         actionSendkeys(loginPasswordInput, password, false, false);
     }
 
@@ -48,7 +48,7 @@ public class LoginPage extends BasePage {
      * 点击登录
      */
     public void clickLoginButton () {
-        driver.findElementByXPath("//android.view.View[@text='登录']").click();
+        driver.findElementByXPath("//android.view.View[@content-desc=\"登录\"]\n").click();
     }
 
     /**
@@ -56,8 +56,7 @@ public class LoginPage extends BasePage {
      *
      */
     public boolean homePageTabIsExist () {
-        MobileElement homePageElement = driver.findElementByXPath("//android.widget.ImageView[@text='首页\n" +
-                "第 1 个标签，共 3 个']");
+        MobileElement homePageElement = driver.findElementByXPath("//android.widget.ImageView[@content-desc=\"首页\n第 1 个标签，共 3 个\"]\n");
 
         return isPresent(homePageElement);
     }

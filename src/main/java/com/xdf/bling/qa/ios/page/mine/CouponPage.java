@@ -43,7 +43,7 @@ public class CouponPage extends BasePage {
      * 判断进入商城
      */
     public boolean isShopPage() {
-        MobileElement element = driver.findElementByXPath("//XCUIElementTypeStaticText[contains(@name,'优惠券')}");
+        MobileElement element = driver.findElementByXPath("//XCUIElementTypeStaticText[contains(@name,'优惠券')]");
         return isPresent(element);
     }
 }
