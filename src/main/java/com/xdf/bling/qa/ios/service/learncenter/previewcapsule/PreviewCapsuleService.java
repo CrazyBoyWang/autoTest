@@ -87,7 +87,7 @@ public class PreviewCapsuleService {
      */
     public void KnowledgePreheatingService() throws InterruptedException {
 
-        sleep(2000);
+        sleep(3000);
         previewCapsulePage.clickAuto();
         previewCapsulePage.clickAutoStart();
         previewCapsulePage.clickCrossAuto();

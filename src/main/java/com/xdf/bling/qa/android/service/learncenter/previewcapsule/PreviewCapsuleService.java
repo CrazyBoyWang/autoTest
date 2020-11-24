@@ -123,6 +123,7 @@ public class PreviewCapsuleService {
         Assert.assertTrue(previewCapsulePage.isLearnRank(), "判断排行列表成功");
         previewCapsulePage.clickRankClose();
         previewCapsulePage.clickBackInClass();
-        previewCapsulePage.clickBackClasses();
+//        sleep(2000);
+//        previewCapsulePage.clickBackClasses();
     }
 }
