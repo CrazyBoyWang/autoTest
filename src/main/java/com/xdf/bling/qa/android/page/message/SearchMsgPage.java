@@ -29,13 +29,34 @@ public class SearchMsgPage extends BasePage {
     }
 
     /**
+     *
+     *
+     * 弹出消息提示信息
+     */
+    public boolean isToastMessage(){
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc=\"提示\"]\n");
+        return isPresent(element);
+
+    }
+    //点击取消提示信息
+    public void clickToast() {
+        driver.findElementByXPath("//android.widget.Button[@content-desc=\"取消\"]\n").click();
+    }
+
+
+    public void clickMessage(){
+        driver.findElementByXPath("//android.widget.ImageView[contains(@content-desc,'提醒')]\n").click();
+    }
+
+
+    /**
      * 判断进入通知消息
      *
      *
      */
 
     public boolean isNotice() {
-        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='通知']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='消息']");
         return isPresent(element);
     }
 
@@ -44,6 +65,14 @@ public class SearchMsgPage extends BasePage {
      */
     public void clickList() {
         driver.findElementByXPath("//android.view.View[@content-desc='消息']/following-sibling::android.widget.ImageView[1]").click();
+    }
+    /**
+     *
+     * 从通讯录中退出
+     */
+
+    public void clickBackList(){
+        driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.ImageView").click();
     }
 
 }

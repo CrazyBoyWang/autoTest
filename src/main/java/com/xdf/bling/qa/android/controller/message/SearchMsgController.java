@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 public class SearchMsgController extends BaseController {
 
     @Test(description = "消息通知",priority = 1)
-    public void testSearchMsgController () {
+    public void testSearchMsgController () throws InterruptedException {
         SearchMsgPage searchMsgPage = new SearchMsgPage((AndroidDriver<MobileElement>) driver);
         SearchMsgService searchMsgService = new SearchMsgService(searchMsgPage);
         searchMsgService.searchMsgService();

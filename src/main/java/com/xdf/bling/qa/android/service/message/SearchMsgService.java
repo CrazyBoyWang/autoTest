@@ -21,13 +21,19 @@ public class SearchMsgService {
     }
 
 
-    public void searchMsgService() {
+    public void searchMsgService() throws InterruptedException {
         searchMsgPage.clickMessageTab();
+        Thread.sleep(1000);
         searchMsgPage.clickNotice();
+        Thread.sleep(2000);
+        Assert.assertTrue(searchMsgPage.isToastMessage(),"没有提示信息");
+        searchMsgPage.clickToast();
         Assert.assertTrue(searchMsgPage.isNotice(), "进入通知失败");
+        searchMsgPage.clickMessage();
         searchMsgPage.clickBack();
         searchMsgPage.clickList();
-        searchMsgPage.clickBack();
+        Thread.sleep(1000);
+        searchMsgPage.clickBackList();
         // myOrderPage.clickAllOrderList();
     }
 }
