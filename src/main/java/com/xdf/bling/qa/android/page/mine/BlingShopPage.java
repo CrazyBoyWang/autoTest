@@ -42,4 +42,11 @@ public class BlingShopPage extends BasePage {
         MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='比邻币商城']");
         return isPresent(element);
     }
+    /**
+     *
+     * 退出商城
+     */
+   public void clickBackShop(){
+       driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[1]\n").click();
+   }
 }

@@ -32,7 +32,7 @@ public class BlingShopService {
             e.printStackTrace();
         }
 
-        blingShopPage.clickBack();
+        blingShopPage.clickBackShop();
 
        // myOrderPage.clickAllOrderList();
     }

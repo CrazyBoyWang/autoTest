@@ -56,7 +56,7 @@ public class FeedBackPage extends BasePage {
      */
 
     public void clickType(){
-        driver.findElementByXPath("//android.view.View[@content-desc='学习问题']").click();
+        driver.findElementByXPath("//android.widget.Button[@content-desc=\"学习问题\"]").click();
     }
 
 
@@ -64,7 +64,7 @@ public class FeedBackPage extends BasePage {
      * 点击反馈图片
      */
     public void clickFeedImage() {
-        driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.view.View[4]/android.view.View/android.widget.ImageView").click();
+        driver.findElementByXPath("//android.view.View[contains(@content-desc,\"上传凭证\")]/android.view.View/android.view.View/android.widget.ImageView\n").click();
         driver.findElementByXPath("//*[@resource-id='com.android.documentsui:id/dir_list']/android.widget.LinearLayout[1]").click();
     }
     /**
@@ -74,7 +74,7 @@ public class FeedBackPage extends BasePage {
      * @param problem
      */
     public void clickEnterProblem(String problem){
-        MobileElement element = driver.findElementByXPath("//android.widget.EditText[@content-desc='您的反馈将会是我们最大的动力']");
+        MobileElement element = driver.findElementByXPath("//android.view.View[contains(@content-desc,\"上传凭证\")]/android.widget.EditText");
         actionSendkeys(element, problem, false, false);
     }
 
