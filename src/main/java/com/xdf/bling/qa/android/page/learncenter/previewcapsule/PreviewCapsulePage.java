@@ -160,9 +160,10 @@ public class PreviewCapsulePage extends BasePage {
      * 点击全部完成后视频按钮
      */
     public void clickFinshVideo() {
-        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[2]");
-        int[] center = site(element);
-        new TouchAction<>(driver).tap(PointOption.point(center[0] - 50, center[1])).perform();
+//        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[2]");
+//        int[] center = site(element);
+//        new TouchAction<>(driver).tap(PointOption.point(center[0] - 50, center[1])).perform();
+        new TouchAction<>(driver).tap(PointOption.point(1673, 838)).perform();
     }
 
 
@@ -194,9 +195,10 @@ public class PreviewCapsulePage extends BasePage {
      * 点击排行列表
      */
     public void clickRankClose() {
-        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[2]");
-        int[] center = site(element);
-        new TouchAction<>(driver).press(PointOption.point(center[0] - 20, center[1])).release().perform();
+//        MobileElement element = driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[2]");
+//        int[] center = site(element);
+//        new TouchAction<>(driver).press(PointOption.point(center[0] - 20, center[1])).release().perform();
+        new TouchAction<>(driver).tap(PointOption.point(2048, 166)).perform();
 
     }
     /**
