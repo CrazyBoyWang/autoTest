@@ -1,6 +1,7 @@
 package com.xdf.bling.qa.android.service.mine;
 
 import com.xdf.bling.qa.android.page.mine.LogisticsMsgPage;
+import org.testng.Assert;
 
 /**
  * @version v1.0
@@ -21,8 +22,16 @@ public class LogisticsMsgService {
     /**
      * 我的-物流信息
      */
-    public void logisticsMsgService() {
+    public void logisticsMsgService() throws InterruptedException {
+        logisticsMsgPage.clickMineTab();
+        Thread.sleep(1000);
         logisticsMsgPage.clickLogisticsMsg();
+        Assert.assertTrue(logisticsMsgPage.isLogisticsMsg(), "进入物流查询页面失败");
+        //  logisticsMsgPage.clickLogisticsList();
+        Thread.sleep(1000);
+        logisticsMsgPage.swipeUpList();
+        Thread.sleep(2000);
+        logisticsMsgPage.clickBackLogistics();
 
 
     }

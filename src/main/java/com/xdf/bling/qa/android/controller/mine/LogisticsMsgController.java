@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
 public class LogisticsMsgController extends BaseController {
 
     @Test(description = "测试我的-物流信息", priority = 1)
-    public void testLogisticsMsgPage() {
+    public void testLogisticsMsgPage() throws InterruptedException {
         //进入物流信息
         //    LogisticsMsgController logisticsMsgController = new LogisticsMsgController(driver);
         LogisticsMsgPage logisticsMsgPage = new LogisticsMsgPage((AndroidDriver<MobileElement>) driver);
