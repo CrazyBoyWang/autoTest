@@ -183,7 +183,7 @@ public class BasePage {
         try {
             WebDriverWait wait = new WebDriverWait(driver, 5);
             WebElement target = wait.until(
-                    ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@content-desc,'" + toast + "')]")));
+                    ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@text,'" + toast + "')]")));
             return true;
         } catch (Exception e) {
             return false;

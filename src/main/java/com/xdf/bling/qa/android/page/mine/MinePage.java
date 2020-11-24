@@ -101,7 +101,7 @@ public class MinePage extends BasePage {
      * 点击英文名称
      */
     public void clickBabyPageEnglishName () {
-        MobileElement babyPageEnglishName = driver.findElementByXPath("//android.view.View[@content-desc='头像']/following-sibling::android.widget.ImageView[2]");
+        MobileElement babyPageEnglishName = driver.findElementByXPath("//android.widget.ImageView[contains(@content-desc,\"英文名字\")]");
         babyPageEnglishName.click();
     }
 
@@ -109,8 +109,8 @@ public class MinePage extends BasePage {
      * 获取英文名称
      */
     public String getBabyPageEnglishName () {
-        MobileElement babyPageEnglishName = driver.findElementByXPath("//android.view.View[@content-desc='头像']/following-sibling::android.widget.ImageView[2]");
-        return babyPageEnglishName.getText().split("英文名字")[1].trim();
+        MobileElement babyPageEnglishName = driver.findElementByXPath("//android.widget.EditText[contains(@text,\"请输入\")]");
+        return babyPageEnglishName.getText().split(",")[1].trim();
     }
 
 
@@ -119,7 +119,7 @@ public class MinePage extends BasePage {
      *
      */
     public boolean isShowBabyPageChineseName () {
-        MobileElement babyPageChineseName = driver.findElementByXPath("//android.view.View[@content-desc='头像']/following-sibling::android.widget.ImageView[3]");
+        MobileElement babyPageChineseName = driver.findElementByXPath("//android.widget.ImageView[contains(@content-desc,\"中文名字\")]");
         return isPresent(babyPageChineseName);
     }
 
@@ -127,7 +127,7 @@ public class MinePage extends BasePage {
      * 点击中文名称
      */
     public void clickBabyPageChineseName () {
-        MobileElement babyPageChineseName = driver.findElementByXPath("//android.view.View[@content-desc='头像']/following-sibling::android.widget.ImageView[3]");
+        MobileElement babyPageChineseName = driver.findElementByXPath("//android.widget.ImageView[contains(@content-desc,\"中文名字\")]");
         babyPageChineseName.click();
     }
 
@@ -135,8 +135,8 @@ public class MinePage extends BasePage {
      * 点击输入框保存按钮
      */
     public void clickBabyPageTextInputSaveButton () {
-    //    MobileElement babyPageTextEditorSaveButton = driver.findElementByXPath("//android.widget.Button[@content-desc='保存']");
-        MobileElement babyPageTextEditorSaveButton = driver.findElementByXPath("//android.widget.Button/following-sibling::android.view.View[2]");
+        MobileElement babyPageTextEditorSaveButton = driver.findElementByXPath("//android.widget.Button[@content-desc='保存']");
+   //     MobileElement babyPageTextEditorSaveButton = driver.findElementByXPath("//android.widget.Button/following-sibling::android.view.View[2]");
         babyPageTextEditorSaveButton.click();
     }
 
@@ -161,7 +161,7 @@ public class MinePage extends BasePage {
      *
      */
     public boolean isShowBabyPageGender () {
-        MobileElement babyPageGender = driver.findElementByXPath("//android.view.View[@content-desc='头像']/following-sibling::android.widget.ImageView[4]");
+        MobileElement babyPageGender = driver.findElementByXPath("//android.widget.ImageView[contains(@content-desc,'性别')]");
         return isPresent(babyPageGender);
     }
 
@@ -170,15 +170,15 @@ public class MinePage extends BasePage {
      *
      */
     public String getShowBabyPageGender () {
-        MobileElement babyPageGender = driver.findElementByXPath("//android.view.View[@content-desc='头像']/following-sibling::android.widget.ImageView[4]");
-        return babyPageGender.getText().split("选择孩子的性别")[1].trim();
+        MobileElement babyPageGender = driver.findElementByXPath("//android.widget.ImageView[contains(@content-desc,\"性别\")]");
+        return babyPageGender.getText().split("性别")[1].trim();
     }
 
     /**
      * 点击性别
      */
     public void clickBabyPageGender () {
-        MobileElement babyPageGender = driver.findElementByXPath("//android.view.View[@content-desc='头像']/following-sibling::android.widget.ImageView[4]");
+        MobileElement babyPageGender = driver.findElementByXPath("//android.widget.ImageView[contains(@content-desc,\"性别\")]");
         babyPageGender.click();
     }
 
@@ -210,13 +210,13 @@ public class MinePage extends BasePage {
 
 
     public void clickBabyInfoTab () {
-       driver.findElementByXPath("//android.widget.Button[1]/following-sibling::android.view.View[2]").click();
+       driver.findElementByXPath("//android.view.View[contains(@content-desc,\"宝贝信息\")]\n").click();
 
     }
 
 
     public void clickMineInfoTab () {
-        driver.findElementByXPath("//android.widget.Button[1]/following-sibling::android.view.View[3]").click();
+        driver.findElementByXPath("//android.view.View[contains(@content-desc,\"我的信息\")]\n").click();
     }
 
     /**
@@ -224,7 +224,7 @@ public class MinePage extends BasePage {
      *
      */
     public boolean isExistUserName () {
-        MobileElement mobileElement =  driver.findElementByXPath("//android.widget.ImageView[1]");
+        MobileElement mobileElement =  driver.findElementByXPath("//android.widget.ImageView[contains(@content-desc,\"用户姓名 奶酪\")]");
         return mobileElement.getText().contains("用户姓名");
     }
 

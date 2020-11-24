@@ -43,6 +43,12 @@ public class MyOrderPage extends BasePage {
         return isPresent(element);
     }
 
+
+    //退出订单
+    public void clickBackList(){
+        driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[1]\n").click();
+    }
+
     /**
      * 点击全部订单
      * 暂时找不到方法

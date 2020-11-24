@@ -38,12 +38,12 @@ public class MineController extends BaseController {
         MineService mineService = new MineService(minePage);
         mineService.verifyEnterBabyPageService();
         mineService.verityEnterMineInfoPage();
-        mineService.verifyChangeAvatar();
+//        mineService.verifyChangeAvatar();
         mineService.changeBabyEnglishNameService(param.get("englishName"));
 //        mineService.changeBabyChineseNameService(param.get("chineseName"));
-        mineService.changeBabyGenderService();
-        mineService.changeUserName(param.get("userName"));
-        mineService.changeLocation();
+//        mineService.changeBabyGenderService();
+ //       mineService.changeUserName(param.get("userName"));
+//        mineService.changeLocation();
     }
 
 }

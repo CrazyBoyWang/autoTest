@@ -28,7 +28,7 @@ public class MyAccountPage extends BasePage {
      */
     public void clickMyCourse() {
         int x =175;
-        int y = 823;
+        int y = 911;
         MobileElement element = driver.findElementByXPath("//android.widget.ImageView[@content-desc='我的课程']");
   //      MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='我的课程']");
 

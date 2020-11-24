@@ -31,7 +31,7 @@ public class MyOrderService {
             e.printStackTrace();
         }
 
-        myOrderPage.clickBack();
+        myOrderPage.clickBackList();
 
        // myOrderPage.clickAllOrderList();
     }
