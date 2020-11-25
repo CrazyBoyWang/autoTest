@@ -45,7 +45,8 @@ public class BasePage {
             return;
         }
         Actions action = new Actions(driver);
-        action.sendKeys(keys+"\n").perform();
+      //  action.sendKeys(keys+"\n").perform();
+        action.sendKeys(keys+"\n");
     }
 
     /**
@@ -83,7 +84,7 @@ public class BasePage {
      * 点击消息tab
      */
     public void clickMessageTab() {
-        MobileElement mobileElement = driver.findElementByXPath("//XCUIElementTypeImage[@name='消息\n" +
+        MobileElement mobileElement = driver.findElementByXPath("//XCUIElementTypeImage[@name='学习\n" +
                 "第 2 个标签，共 3 个']");
         mobileElement.click();
     }

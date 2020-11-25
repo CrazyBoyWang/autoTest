@@ -11,6 +11,5 @@
         <classes>
             <class name="com.xdf.bling.qa.ios.controller.home.HomeController" />
         </classes>
-
     </test>
 </suite>

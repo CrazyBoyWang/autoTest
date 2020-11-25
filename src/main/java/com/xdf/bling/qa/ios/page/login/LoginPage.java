@@ -31,8 +31,10 @@ public class LoginPage extends BasePage {
      * @param phone
      */
     public void setLoginMobileNumber (String phone) {
-        MobileElement mobileElement = driver.findElementByXPath("//XCUIElementTypeTextField[@name=\"请输入报名手机号\"]");
-        actionSendkeys(mobileElement, phone, false, false);
+   //     MobileElement mobileElement = driver.findElementByXPath("//XCUIElementTypeTextField[@name=\"请输入报名手机号\"]\n");
+        MobileElement element = driver.findElementByAccessibilityId("请输入报名手机号");
+        element.sendKeys(phone);
+     //   actionSendkeys(element, phone, false, false);
     }
 
     /**
@@ -41,7 +43,8 @@ public class LoginPage extends BasePage {
      */
     public void setLoginPassword (String password) {
         MobileElement loginPasswordInput = driver.findElementByXPath("//XCUIElementTypeTextField[@name=\"请输入密码\"]\n");
-        actionSendkeys(loginPasswordInput, password, false, false);
+        loginPasswordInput.sendKeys(password);
+  //      actionSendkeys(loginPasswordInput, password, false, false);
     }
 
     /**
