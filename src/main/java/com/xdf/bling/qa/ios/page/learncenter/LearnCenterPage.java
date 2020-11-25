@@ -26,7 +26,7 @@ public class LearnCenterPage extends BasePage {
      * 点击进入学习中心
      */
     public void clickLearnCenter() {
-        driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,'学习中心')]").click();
+        driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeImage[1]\n").click();
     }
 
 
@@ -51,7 +51,7 @@ public class LearnCenterPage extends BasePage {
      * 点击切换课程
      */
     public void clickChangeClass(){
-        driver.findElementByAccessibilityId("切换课程").click();
+        driver.findElementByXPath("//XCUIElementTypeOther[@name=\"切换课程\"]\n").click();
     }
 
     /**
@@ -59,7 +59,8 @@ public class LearnCenterPage extends BasePage {
      * 根据图片获取
      */
     public void clickPop(){
-        driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[4]\n").click();
+    //    driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[4]\n").click();
+        driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[4]\n").click();
     }
 
     /**

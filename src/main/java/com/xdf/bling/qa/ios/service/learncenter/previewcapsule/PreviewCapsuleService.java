@@ -24,8 +24,9 @@ public class PreviewCapsuleService {
      * 预习小胶囊
      */
     public void previewCapsuleService() throws InterruptedException {
-        sleep(2000);
+        sleep(3000);
         previewCapsulePage.swipeCapsule();
+        sleep(1000);
         previewCapsulePage.clickCapsule();
     }
     /**
@@ -139,7 +140,7 @@ public class PreviewCapsuleService {
         sleep(2000);
         previewCapsulePage.clickFinshVideo();
         Assert.assertTrue(previewCapsulePage.isPrepareSucess(), "获取闯关完成失败");
-        sleep(1000);
+        sleep(5000);
         previewCapsulePage.clickLearnRank();
         Assert.assertTrue(previewCapsulePage.isLearnRank(), "判断排行列表成功");
         sleep(2000);

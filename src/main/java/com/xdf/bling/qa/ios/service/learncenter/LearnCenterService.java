@@ -20,6 +20,7 @@ public class LearnCenterService {
     }
 
     public void learnCenterService() throws InterruptedException {
+        learnCenterPage.clickMessageTab();
         learnCenterPage.clickLearnCenter();
 //        Assert.assertTrue(learnCenterPage.isCenterToast(),"没有弹出「课程类型」和「等级");
  //       learnCenterPage.clickCenterToast();
