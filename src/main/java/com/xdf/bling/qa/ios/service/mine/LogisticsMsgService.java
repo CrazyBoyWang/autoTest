@@ -1,6 +1,7 @@
 package com.xdf.bling.qa.ios.service.mine;
 
 import com.xdf.bling.qa.ios.page.mine.LogisticsMsgPage;
+import org.testng.Assert;
 
 /**
  * @version v1.0
@@ -25,8 +26,14 @@ public class LogisticsMsgService {
         logisticsMsgPage.clickMineTab();
         logisticsMsgPage.clickLogisticsMsg();
         Thread.sleep(3000);
-        logisticsMsgPage.clickBack();
+    //    logisticsMsgPage.clickBack();
 
+        logisticsMsgPage.clickLogisticsList();
+        Assert.assertTrue(logisticsMsgPage.isLogisticsList(),"进入物流详情失败");
+
+        //退出
+        logisticsMsgPage.clickBackLogisticsList();
+        logisticsMsgPage.clickBackLogisticsList();
 
     }
 

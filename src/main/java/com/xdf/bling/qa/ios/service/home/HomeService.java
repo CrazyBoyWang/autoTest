@@ -38,6 +38,7 @@ public class HomeService {
 
     public void enterMinePageService() {
         homePage.clickMineTab();
+        homePage.clickHeader();
     }
 
     /**

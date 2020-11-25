@@ -37,11 +37,6 @@ public class SearchMsgService {
         searchMsgPage.clickBackMsg();
 
 
-
-
-
-
-
     //    Thread.sleep(2000);
         //ios消息信息获取失败
 //        searchMsgPage.clickList();

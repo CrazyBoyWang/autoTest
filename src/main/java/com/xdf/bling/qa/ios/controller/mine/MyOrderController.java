@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 public class MyOrderController extends BaseController {
 
     @Test(description = "测试我的账户-我的订单",priority = 1)
-    public void testMyOrderController () {
+    public void testMyOrderController () throws InterruptedException {
         MyOrderPage myOrderPage = new MyOrderPage((IOSDriver<MobileElement>) driver);
         MyOrderService myOrderService = new MyOrderService(myOrderPage);
         myOrderService.myOrderService();

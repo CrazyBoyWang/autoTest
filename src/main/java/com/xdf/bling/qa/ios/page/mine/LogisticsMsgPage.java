@@ -24,4 +24,22 @@ public class LogisticsMsgPage extends BasePage {
         driver.findElementByXPath("//XCUIElementTypeOther[@name=\"物流信息\"]\n").click();
 
     }
+
+    //点击进入物流信息
+    public void clickLogisticsList(){
+        driver.findElementByXPath("//XCUIElementTypeStaticText[@name=\"已送达\"][1]").click();
+    }
+
+    public boolean isLogisticsList(){
+        MobileElement element = driver.findElementByXPath("//XCUIElementTypeStaticText[@name=\"已送达\"]\n");
+        return isPresent(element);
+    }
+
+    //退出
+    public void clickBackLogisticsList(){
+        driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[1]\n").click();
+    }
+
+
+
 }

@@ -24,7 +24,7 @@ public class MinePage extends BasePage {
      * 点击我的页面头像
      */
     public void clickMinePageHeaderImage () {
-        driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[2]\n").click();
+        driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[1]\n").click();
     }
 
     /**
@@ -32,7 +32,7 @@ public class MinePage extends BasePage {
      *
      */
     public boolean isShowMinePageHeaderImage () {
-        MobileElement minePageHeaderImg = driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[2]\n");
+        MobileElement minePageHeaderImg = driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[1]\n");
         return isPresent(minePageHeaderImg);
     }
 
@@ -80,7 +80,7 @@ public class MinePage extends BasePage {
      *
      */
     public boolean changeHeaderImageSuccessToast () {
-        driver.findElementByXPath("//XCUIElementTypeStaticText[@name=\"确定\"]\n").click();
+        driver.findElementByXPath("//XCUIElementTypeButton[@name=\"确定\"]\n").click();
         return isShowToast("头像更新成功");
     }
 
@@ -115,7 +115,7 @@ public class MinePage extends BasePage {
      * 获取英文名称
      */
     public String getBabyPageEnglishName () {
-        MobileElement babyPageEnglishName = driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,\"英文名字\")]\n");
+       MobileElement babyPageEnglishName = driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,\"英文名字\")]\n");
         return babyPageEnglishName.getText().split("英文名字")[1].trim();
 
     }
@@ -169,7 +169,7 @@ public class MinePage extends BasePage {
 
         MobileElement babyPageTextEditorInput = driver.findElementByXPath("//XCUIElementTypeTextField[@name=\"请输入英文名\"]\n");
         babyPageTextEditorInput.clear();
-        actionSendkeys(babyPageTextEditorInput, value, true, isChinese);
+        babyPageTextEditorInput.sendKeys(value);
     }
     public void setBabyPageTextInputCN (String value, boolean isChinese) {
 

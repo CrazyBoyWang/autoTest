@@ -27,7 +27,7 @@ public class SettingController extends BaseController {
         HomePage homePage = new HomePage((IOSDriver<MobileElement>) driver);
         HomeService homePageService = new HomeService(homePage);
         //执行设置
-        homePageService.enterMinePageService();
+     //   homePageService.enterMinePageService();
         SettingPage settingPage = new SettingPage((IOSDriver<MobileElement>) driver);
 
         SettingService settingService = new SettingService(settingPage);

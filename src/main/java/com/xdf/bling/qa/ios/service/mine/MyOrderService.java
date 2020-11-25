@@ -21,7 +21,7 @@ public class MyOrderService {
         this.myOrderPage = myOrderPage;
     }
 
-    public void myOrderService() {
+    public void myOrderService() throws InterruptedException {
         myOrderPage.clickMineTab();
         myOrderPage.clickMyOrder();
         Assert.assertTrue(myOrderPage.isMyOrder(), "//进入订单失败");
@@ -31,8 +31,9 @@ public class MyOrderService {
             e.printStackTrace();
         }
         myOrderPage.clickAllOrderList();
+        Thread.sleep(3000);
 
-        myOrderPage.clickBack();
+        myOrderPage.clickBackOrderList();
 
        // myOrderPage.clickAllOrderList();
     }

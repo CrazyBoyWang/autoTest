@@ -39,7 +39,7 @@ public class MyOrderPage extends BasePage {
      * 判断进入我的订单
      */
     public boolean isMyOrder() {
-        MobileElement element = driver.findElementByXPath("//XCUIElementTypeStaticText[contains(@name,\"全部订单\")]\n");
+        MobileElement element = driver.findElementByXPath("//XCUIElementTypeOther[@name=\"全部订单\"]\n");
         return isPresent(element);
     }
 
@@ -51,10 +51,14 @@ public class MyOrderPage extends BasePage {
         //     MobileElement element = driver.findElementByXPath("//android.view.View[@content-desc='全部订单']");
         int x = 360;
         int y =70;
-        MobileElement element = driver.findElementByClassName("//XCUIElementTypeStaticText[contains(@name,\"全部订单\")]\n");
+        MobileElement element = driver.findElementByClassName("//XCUIElementTypeOther[@name=\"全部订单\"]\n");
         int[] center = site(element);
         new TouchAction<>(driver).tap(PointOption.point(x, y)).perform();
 //        clickBack();
+    }
+
+    public void  clickBackOrderList(){
+        driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[1]\n").click();
     }
 
 }

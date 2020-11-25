@@ -31,7 +31,7 @@ public class MineService {
      * 验证进入baby页面
      */
     public void verifyEnterBabyPageService() {
-        minePage.clickMinePageHeaderImage();
+ //       minePage.clickMinePageHeaderImage();
         Assert.assertTrue(minePage.isShowBabyPageBirthday(), "进入宝贝页面生日没显示");
         Assert.assertTrue(minePage.isShowBabyPageHeaderImage(), "进入宝贝页面头像没显示");
         Assert.assertTrue(minePage.isShowBabyPageEnglishName(), "进入宝贝页面英文名称没显示");
