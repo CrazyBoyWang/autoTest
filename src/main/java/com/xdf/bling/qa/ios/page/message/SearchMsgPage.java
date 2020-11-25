@@ -35,7 +35,7 @@ public class SearchMsgPage extends BasePage {
      */
 
     public boolean isNotice() {
-        MobileElement element = driver.findElementByXPath("//XCUIElementTypeOther[contains(@name,\"通知\")]\n");
+        MobileElement element = driver.findElementByXPath("//XCUIElementTypeOther[contains(@name,\"消息\")]\n");
         return isPresent(element);
     }
 
@@ -44,8 +44,35 @@ public class SearchMsgPage extends BasePage {
      */
     public void clickList() {
 //        driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage\n").click();
-        driver.findElementByXPath("//XCUIElementTypeOther[@name=\"消息\"]/following-sibling::/XCUIElementTypeImage").click();
+  //      driver.findElementByXPath("//XCUIElementTypeOther[@name=\"消息\"]/following-sibling::/XCUIElementTypeImage").click();
+        driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,'测评')]").click();
     }
+    //去看看
+
+    public void clickLookMsg(){
+        driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[2]\n").click();
+    }
+
+    //滑动观看
+    public void swipeMsg(){
+        swipe(Direction.UP,null);
+    }
+
+    public void clickBackMsg(){
+        driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[1]\n").click();
+    }
+
+
+    //进入通讯录
+    public void clickPhoneList(){
+        driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[2]\n").click();
+    }
+
+
+
+
+
+
     /**
      *
      * 通讯录退出

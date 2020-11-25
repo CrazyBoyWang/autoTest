@@ -25,8 +25,24 @@ public class SearchMsgService {
         searchMsgPage.clickMessageTab();
         searchMsgPage.clickNotice();
         Assert.assertTrue(searchMsgPage.isNotice(), "进入通知失败");
-        searchMsgPage.goBack();
+        searchMsgPage.clickList();
+        Thread.sleep(1000);
+        searchMsgPage.clickLookMsg();
+        Thread.sleep(1000);
+        searchMsgPage.swipeMsg();
         Thread.sleep(2000);
+        searchMsgPage.clickBackMsg();
+        searchMsgPage.goBack();
+        searchMsgPage.clickPhoneList();
+        searchMsgPage.clickBackMsg();
+
+
+
+
+
+
+
+    //    Thread.sleep(2000);
         //ios消息信息获取失败
 //        searchMsgPage.clickList();
 //        searchMsgPage.clickListOut();
