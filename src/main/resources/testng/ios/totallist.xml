@@ -11,13 +11,13 @@
     </test>
 
 
-    <!--首页-界面操作部分-->
-    <test name="主页--首页相关操作" >
-        <parameter name="port" value="4571"/>
-        <classes>
-            <class name="com.xdf.bling.qa.ios.controller.home.HomeController" />
-        </classes>
-    </test>
+<!--    &lt;!&ndash;首页-界面操作部分&ndash;&gt;-->
+<!--    <test name="主页&#45;&#45;首页相关操作" >-->
+<!--        <parameter name="port" value="4571"/>-->
+<!--        <classes>-->
+<!--            <class name="com.xdf.bling.qa.ios.controller.home.HomeController" />-->
+<!--        </classes>-->
+<!--    </test>-->
 
 <!--    首页学习中心-->
     <test name="学习中心-进入学习课程" >
