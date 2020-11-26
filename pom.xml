@@ -11,9 +11,9 @@
     <properties>
         <aspectj.version>1.8.10</aspectj.version>
         <!--suppress UnresolvedMavenProperty -->
-        <xml.file>${env.xmlFileName}</xml.file>
+        <xml.file>${xmlFileName}</xml.file>
         <!--suppress UnresolvedMavenProperty -->
-        <xml.system>${env.xmlSystem}</xml.system>
+        <xml.system>${xmlSystem}</xml.system>
         <!--suppress UnresolvedMavenProperty -->
         <testType>${env.testType}</testType>
     </properties>
