@@ -41,6 +41,17 @@ public class HomeService {
         homePage.clickHeader();
     }
 
+
+    public void curriculaService() throws InterruptedException {
+
+        homePage.clickCurricula();
+        Thread.sleep(3000);
+        homePage.clickBackCurricula();
+
+    }
+
+
+
     /**
      * banner相关操作
      */

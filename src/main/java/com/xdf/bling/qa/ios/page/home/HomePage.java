@@ -86,6 +86,25 @@ public class HomePage extends BasePage {
 
     }
 
+
+
+
+    /**
+     *
+     * 点击课程体系
+     */
+    public void clickCurricula(){
+        driver.findElementByXPath("//XCUIElementTypeImage[@name=\"课程体系\"]\n").click();
+
+    }
+
+
+    public void clickBackCurricula(){
+        driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"新东方比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[2]\n").click();
+
+    }
+
+
     //点击进入公开课更多
     public void clickOpenMoreClass() {
         driver.findElementByXPath("//XCUIElementTypeImage[@name=\"更多\"][1]\n").click();

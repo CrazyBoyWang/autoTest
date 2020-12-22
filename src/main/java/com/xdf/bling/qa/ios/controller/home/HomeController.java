@@ -18,6 +18,7 @@ public class HomeController extends BaseController {
         HomePage homePage = new HomePage((IOSDriver<MobileElement>) driver);
         HomeService homeService = new HomeService(homePage);
         homeService.enterMyTeacherService();
+        homeService.curriculaService();
         homeService.bannerAboutService();
         homeService.blingOpenClassService();
         // 首页相关信息
