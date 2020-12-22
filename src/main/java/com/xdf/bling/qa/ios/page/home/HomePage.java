@@ -27,14 +27,15 @@ public class HomePage extends BasePage {
     public void clickBanner() {
         driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[6]/XCUIElementTypeOther[2]/XCUIElementTypeImage\n").click();
     }
+
     /**
-     *
      * 点击头像
      */
 
-    public void clickHeader(){
+    public void clickHeader() {
         driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[2]\n").click();
     }
+
     /**
      * 进入我的老师
      */
@@ -87,22 +88,40 @@ public class HomePage extends BasePage {
     }
 
 
-
-
     /**
-     *
      * 点击课程体系
      */
-    public void clickCurricula(){
+    public void clickCurricula() {
         driver.findElementByXPath("//XCUIElementTypeImage[@name=\"课程体系\"]\n").click();
 
     }
 
+    //购课咨询
+    public void clickBuyClass(){
+        driver.findElementByXPath("//XCUIElementTypeImage[@name=\"购课咨询\"]\n").click();
+    }
 
-    public void clickBackCurricula(){
+    //购课相关测试
+    public void clickBackCurricula() {
         driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"新东方比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[2]\n").click();
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     //点击进入公开课更多
@@ -122,7 +141,7 @@ public class HomePage extends BasePage {
     }
 
     //判断比邻绘本
-    public boolean isPictureBook(){
+    public boolean isPictureBook() {
         MobileElement element = driver.findElementByXPath("//XCUIElementTypeOther[@name=\"比邻绘本\"]\n");
 
         return isPresent(element);
@@ -131,44 +150,46 @@ public class HomePage extends BasePage {
 
 
     //点击分级阅读
-    public void clickPictureBook(){
+    public void clickPictureBook() {
         driver.findElementByXPath("//XCUIElementTypeImage[contains(@name,\"分级阅读\")]").click();
     }
 
     //滑动分级阅读
-    public void swipePictureBook(){
+    public void swipePictureBook() {
         swipe(Direction.LEFT, null);
     }
 
     //绘本退出
-    public void pictureBookBack(){
+    public void pictureBookBack() {
         driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeButton\n").click();
     }
 
     /**
-     *
      * 课表相关
      */
     //判断课表
-    public boolean isDateList()  {
+    public boolean isDateList() {
         for (int i = 0; i < 3; i++) {
             swipe(Direction.DOWN, null);
         }
         MobileElement element = driver.findElementByXPath("//XCUIElementTypeImage[@name=\"课表\"]\n");
-      return isPresent(element);
+        return isPresent(element);
     }
+
     //进入课表
-    public void clickClassList(){
+    public void clickClassList() {
         driver.findElementByXPath("//XCUIElementTypeImage[@name=\"课表\"]\n").click();
     }
+
     //下拉日期列表
-    public void clickDateList(){
+    public void clickDateList() {
         driver.findElementByXPath("//XCUIElementTypeApplication[@name=\"比邻外教\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeImage[3]\n  ").click();
     }
+
     //随机选择日期
-    public void clickDate(){
-        int date = new Random().nextInt(26)+1;
-        driver.findElementByXPath("//XCUIElementTypeOther[@name="+date+"]").click();
+    public void clickDate() {
+        int date = new Random().nextInt(26) + 1;
+        driver.findElementByXPath("//XCUIElementTypeOther[@name=" + date + "]").click();
     }
 
 

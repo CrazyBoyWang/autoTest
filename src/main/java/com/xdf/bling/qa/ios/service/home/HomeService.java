@@ -47,9 +47,11 @@ public class HomeService {
         homePage.clickCurricula();
         Thread.sleep(3000);
         homePage.clickBackCurricula();
+        homePage.clickBuyClass();
+        Thread.sleep(3000);
+        homePage.clickBackCurricula();
 
     }
-
 
 
     /**
